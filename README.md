@@ -1,3 +1,16 @@
+# Flux
+Flux is another completely necessary chromium fork
+I will eventually bring it to a point that I want to daily drive it
+
+Do not git clone it unless you want git, github, and your machine to turn into dust (i think not 100% sure never tested)
+Go look down for how to clone this shit
+
+This took me 3 hours and 42 minutes of initial compilation. It better be worth it.
+
+
+
+
+# Old chromium README
 # ![Logo](chrome/app/theme/chromium/product_logo_64.png) Chromium
 
 Chromium is an open-source browser project that aims to build a safer, faster,
