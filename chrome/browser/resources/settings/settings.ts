@@ -70,6 +70,7 @@ export {AppearanceBrowserProxyImpl} from './appearance_page/appearance_browser_p
 export type {AppearanceBrowserProxy} from './appearance_page/appearance_browser_proxy.js';
 export {SettingsAppearancePageElement, SystemTheme} from './appearance_page/appearance_page.js';
 export {SettingsAppearancePageIndexElement} from './appearance_page/appearance_page_index.js';
+export {SettingsFluxFeaturesPageElement} from './flux_features_page/flux_features_page.js';
 export {HomeUrlInputElement} from './appearance_page/home_url_input.js';
 export {SettingsAutofillAiEntriesListElement} from './autofill_page/autofill_ai_entries_list.js';
 export {SettingsAutofillPageElement} from './autofill_page/autofill_page.js';

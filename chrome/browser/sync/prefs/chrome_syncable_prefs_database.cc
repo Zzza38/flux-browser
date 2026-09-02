@@ -13,6 +13,7 @@
 #include "chrome/browser/glic/glic_pref_names.h"
 #include "chrome/browser/ui/read_anything/read_anything_prefs.h"
 #include "chrome/browser/ui/toolbar/toolbar_pref_names.h"
+#include "chrome/common/flux_sidebar_pref_names.h"
 #include "chrome/common/pref_names.h"
 #include "components/desktop_to_mobile_promos/pref_names.h"
 #include "components/language/core/browser/pref_names.h"
@@ -449,6 +450,9 @@ enum {
   kProfileDefaultContentSettingValuesInlineCueMenu = 100384,
   kExtensionsPinnedByDefault = 100385,
   kAudioFocusEnforcementEnabled = 100386,
+  kFluxSidebarSites = 100387,
+  kFluxSidebarWidth = 100388,
+  kFluxSidebarSplitVertical = 100389,
   // See components/sync_preferences/README.md about adding new entries here.
   // vvvvv IMPORTANT! vvvvv
   // Note to the reviewer: IT IS YOUR RESPONSIBILITY to ensure that new syncable
@@ -1559,6 +1563,18 @@ constexpr auto kChromeSyncablePrefsAllowlist = base::MakeFixedFlatMap<
       sync_preferences::MergeBehavior::kNone}},
     {prefs::kExtensionsPinnedByDefault,
      {syncable_prefs_ids::kExtensionsPinnedByDefault, syncer::PREFERENCES,
+      sync_preferences::PrefSensitivity::kNone,
+      sync_preferences::MergeBehavior::kNone}},
+    {prefs::kFluxSidebarSites,
+     {syncable_prefs_ids::kFluxSidebarSites, syncer::PREFERENCES,
+      sync_preferences::PrefSensitivity::kSensitiveRequiresHistory,
+      sync_preferences::MergeBehavior::kNone}},
+    {prefs::kFluxSidebarSplitVertical,
+     {syncable_prefs_ids::kFluxSidebarSplitVertical, syncer::PREFERENCES,
+      sync_preferences::PrefSensitivity::kNone,
+      sync_preferences::MergeBehavior::kNone}},
+    {prefs::kFluxSidebarWidth,
+     {syncable_prefs_ids::kFluxSidebarWidth, syncer::PREFERENCES,
       sync_preferences::PrefSensitivity::kNone,
       sync_preferences::MergeBehavior::kNone}},
     {prefs::kExtensionsUIDeveloperMode,

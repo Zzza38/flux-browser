@@ -119,6 +119,13 @@
     </div>
   </template>
 
+  <div slot="view" id="fluxFeatures">
+    <template is="dom-if" if="[[renderPlugin_(
+        routes_.FLUX_FEATURES, lastRoute_, inSearchMode_)]]">
+      <settings-flux-features-page></settings-flux-features-page>
+    </template>
+  </div>
+
   <div slot="view" id="search">
     <template is="dom-if" if="[[renderPlugin_(
         routes_.SEARCH, lastRoute_, inSearchMode_)]]">

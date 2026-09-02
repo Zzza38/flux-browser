@@ -1576,6 +1576,16 @@ void AddOnStartupStrings(content::WebUIDataSource* html_source) {
 #endif
 }
 
+void AddFluxFeaturesStrings(content::WebUIDataSource* html_source) {
+  static constexpr webui::LocalizedString kLocalizedStrings[] = {
+      {"fluxFeaturesPageTitle", IDS_SETTINGS_FLUX_FEATURES},
+      {"fluxSidebarEnabledLabel", IDS_SETTINGS_FLUX_SIDEBAR_ENABLED_LABEL},
+      {"fluxSidebarEnabledSubLabel",
+       IDS_SETTINGS_FLUX_SIDEBAR_ENABLED_SUB_LABEL},
+  };
+  html_source->AddLocalizedStrings(kLocalizedStrings);
+}
+
 bool CheckDeviceAuthAvailability(content::WebContents* web_contents) {
   // If `client` is not available, then don't show toggle switch.
   autofill::ContentAutofillClient* client =
@@ -2100,8 +2110,8 @@ void AddAutofillStrings(content::WebUIDataSource* html_source,
       autofill_client &&
           autofill::MayPerformAutofillAiAction(
               *autofill_client, autofill::AutofillAiAction::kOptIn));
-  // TODO(crbug.com/515356902): Check enable/disable eligibility per entity type,
-  // similar to how it is done on Clank. See crrev.com/c/7847781
+  // TODO(crbug.com/515356902): Check enable/disable eligibility per entity
+  // type, similar to how it is done on Clank. See crrev.com/c/7847781
   html_source->AddBoolean(
       "canEnableOrDisableAutofillAi",
       autofill_client &&
@@ -4590,6 +4600,7 @@ void AddLocalizedStrings(content::WebUIDataSource* html_source,
   AddCommonStrings(html_source, profile);
   AddDownloadsStrings(html_source);
   AddExtensionsStrings(html_source);
+  AddFluxFeaturesStrings(html_source);
   AddGlicStrings(html_source, profile);
   AddPerformanceStrings(html_source);
   AddLanguagesStrings(html_source, profile);

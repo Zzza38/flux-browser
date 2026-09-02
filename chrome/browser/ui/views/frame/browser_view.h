@@ -121,6 +121,10 @@ class WebView;
 
 class CustomFloatingCorner;
 
+namespace flux_sidebar {
+class FluxSidebarView;
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 // BrowserView
 //
@@ -1214,6 +1218,14 @@ class BrowserView : public BrowserWindow,
   // Outward-projecting corners of the vertical tab strip.
   raw_ptr<CustomFloatingCorner> vertical_tab_strip_top_corner_ = nullptr;
   raw_ptr<CustomFloatingCorner> vertical_tab_strip_bottom_corner_ = nullptr;
+
+  // Full-height Flux website rail and the corners where it meets browser
+  // chrome.
+  raw_ptr<flux_sidebar::FluxSidebarView> flux_sidebar_ = nullptr;
+  raw_ptr<CustomFloatingCorner> flux_sidebar_top_corner_ = nullptr;
+  raw_ptr<CustomFloatingCorner> flux_sidebar_bottom_corner_ = nullptr;
+  raw_ptr<CustomFloatingCorner> flux_sidebar_top_trailing_corner_ = nullptr;
+  raw_ptr<CustomFloatingCorner> flux_sidebar_bottom_trailing_corner_ = nullptr;
 
   // The view responsible for housing the contents of the organizer panel.
   raw_ptr<OrganizerPanelView> organizer_panel_container_ = nullptr;

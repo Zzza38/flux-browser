@@ -263,6 +263,12 @@ BASE_FEATURE(kForcedAppRelaunchOnPlaceholderUpdate,
              base::FEATURE_ENABLED_BY_DEFAULT);
 #endif  // BUILDFLAG(IS_CHROMEOS)
 
+// Enables the native Flux website rail and resizable profile-backed panels.
+// Flux has a user-facing toggle in chrome://settings/fluxFeatures. Keep the
+// feature available by default so that preference controls a real view rather
+// than a sidebar that was never created.
+BASE_FEATURE(kFluxSidebar, base::FEATURE_ENABLED_BY_DEFAULT);
+
 // Controls whether the actor component of Glic is enabled.
 BASE_FEATURE(kGlicActor, base::FEATURE_ENABLED_BY_DEFAULT);
 
@@ -1120,8 +1126,6 @@ const base::FeatureParam<int> kGlicGuestUrlPresetType{
     &kGlicGuestUrlPresets, "glic-guest-url-preset-type", 0};
 
 BASE_FEATURE(kGlicContextualCueBubble, base::FEATURE_DISABLED_BY_DEFAULT);
-
-
 
 // Enables the `google-chrome://` URI scheme.
 BASE_FEATURE(kGoogleChromeScheme, base::FEATURE_ENABLED_BY_DEFAULT);

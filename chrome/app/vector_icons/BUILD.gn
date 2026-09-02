@@ -143,6 +143,7 @@ aggregate_vector_icons("chrome_vector_icons") {
     "find_in_page.icon",
     "fingerprint.icon",
     "fingerprint_old.icon",
+    "flux_sidebar_logo.icon",
     "forward_arrow_touch_old.icon",
     "fullscreen.icon",
     "fullscreen_old.icon",
