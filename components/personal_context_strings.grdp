@@ -31,7 +31,7 @@
       When used
     </message>
     <message name="IDS_PERSONAL_CONTEXT_AUTOFILL_SETTINGS_LOGS_NOTICE_ANDROID" desc="Bullet point text under 'When used' detailing what specific usage metrics are recorded." formatter_data="android_java">
-      Chrome logs how you use the feature, such as your requests and your behavior when you accept or ignore suggestions
+      Flux logs how you use the feature, such as your requests and your behavior when you accept or ignore suggestions
     </message>
     <message name="IDS_PERSONAL_CONTEXT_AUTOFILL_SETTINGS_ANALYZED_NOTICE_ANDROID" desc="Bullet point text under 'When used' explaining how system data is utilized to enhance the AI model." formatter_data="android_java">
       System data, including form fields and feature performance, is analyzed to improve future suggestions

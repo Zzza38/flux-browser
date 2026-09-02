@@ -19,7 +19,7 @@
     Content couldn't be copied due to your organization's policies
   </message>
   <message name="IDS_ENTERPRISE_CONTENT_ANALYSIS_COPY_KEPT_IN_MANAGED_CHROME_MESSAGE" desc="Message inserted into the clipboard instead of the intended data, when that data was restricted to managed Chrome by content analysis policies.">
-    Content couldn't be pasted outside of the managed Chrome context due to your organization's policies
+    Content couldn't be pasted outside of the managed Flux context due to your organization's policies
   </message>
   <message name="IDS_ENTERPRISE_CONTENT_ANALYSIS_COPY_SCANNING_MESSAGE" desc="Message inserted into the clipboard instead of the intended data while content analysis scanning is ongoing.">
     Based on your organization's policies, the content you copied is being scanned for sensitive information. Pasting may be allowed after the scan is complete.

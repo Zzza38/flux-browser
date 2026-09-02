@@ -286,7 +286,7 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
       <if expr="_is_chrome_for_testing_branded">
         <then>
           <message name="IDS_PRODUCT_NAME" desc="The Chrome for Testing application name" translateable="false">
-            Google Flux for Testing
+            Google Chrome for Testing
           </message>
           <message name="IDS_SHORT_PRODUCT_NAME" desc="The Chrome for Testing application short name." translateable="false">
             Flux for Testing
@@ -447,7 +447,7 @@ New bookmarks can’t be saved in your account until you delete some. If you sig
         <if expr="_is_chrome_for_testing_branded">
           <then>
             <message name="IDS_BROWSER_WINDOW_TITLE_FORMAT" desc="The format for titles displayed in tabs and popup windows">
-              <ph name="PAGE_TITLE">$1<ex>Google</ex></ph> - Google Flux for Testing
+              <ph name="PAGE_TITLE">$1<ex>Google</ex></ph> - Google Chrome for Testing
             </message>
           </then>
           <else>
@@ -486,7 +486,7 @@ New bookmarks can’t be saved in your account until you delete some. If you sig
       <if expr="_is_chrome_for_testing_branded">
         <then>
           <message name="IDS_ACCESSIBLE_BROWSER_WINDOW_TITLE_FORMAT" desc="The format for the accessible name of a tabbed browser window">
-            <ph name="PAGE_TITLE">$1<ex>Google</ex></ph> - Google Flux for Testing
+            <ph name="PAGE_TITLE">$1<ex>Google</ex></ph> - Google Chrome for Testing
           </message>
         </then>
         <else>
@@ -515,10 +515,10 @@ New bookmarks can’t be saved in your account until you delete some. If you sig
         </then>
         <else>
           <message name="IDS_ABOUT_VERSION_COMPANY_NAME" desc="Company name on the about pages">
-            The Chromium Authors
+            The Flux Authors
           </message>
           <message name="IDS_ABOUT_VERSION_COPYRIGHT" desc="Copyright information on the about pages">
-            Copyright <ph name="YEAR">{0,date,y}<ex>2016</ex></ph> The Chromium Authors. All rights reserved.
+            Copyright <ph name="YEAR">{0,date,y}<ex>2016</ex></ph> The Flux Authors. All rights reserved.
           </message>
         </else>
       </if>
@@ -913,7 +913,7 @@ Flux is unable to recover your settings.
       <!-- Download Bubble Items -->
       <message name="IDS_DOWNLOAD_BUBBLE_SUBPAGE_SUMMARY_UNKNOWN_SOURCE"
                desc="Summary of dangerous warning for a file (like an extension) from an unknown source.">
-        Extensions, apps, and themes from unknown sources can harm your device. Flux recommends only installing them from the <ph name="IDS_EXTENSION_WEB_STORE_TITLE">$1<ex>Flux Web Store</ex></ph>
+        Extensions, apps, and themes from unknown sources can harm your device. Flux recommends only installing them from the <ph name="IDS_EXTENSION_WEB_STORE_TITLE">$1<ex>Chrome Web Store</ex></ph>
       </message>
       <message name="IDS_DOWNLOAD_BUBBLE_SUBPAGE_SUMMARY_WARNING_BLOCKED_LEARN_MORE_LINK"
                desc="Text for the link to the help page about why Chromium blocks some downloaded files.">
@@ -1055,7 +1055,7 @@ Flux is unable to recover your settings.
           Extensions are add-ons that let you customize Flux. From staying organized, to simplifying everyday tasks, extensions help you make Flux your own.
         </message>
         <message name="IDS_OPEN_WEB_STORE_BUTTON_TEXT" desc="Text for the open Chrome Web Store button." formatter_data="android_java">
-          Open Flux Web Store
+          Open Chrome Web Store
         </message>
       </if>
 
@@ -1064,7 +1064,7 @@ Flux is unable to recover your settings.
         This extension contains malware and is unsafe. Remove it from Flux so it can no longer see and change your data on sites you visit, including your personal info.
       </message>
       <message name="IDS_SAFETY_CHECK_EXTENSIONS_POLICY_VIOLATION" desc="The text explaining the reason for disabling extension. The extension in question violates Chrome Web Store policy.">
-        This extension violates the Flux Web Store policy, and might be unsafe. Remove it from Flux so it can no longer see and change your data on sites you visit, including your personal info.
+        This extension violates the Chrome Web Store policy, and might be unsafe. Remove it from Flux so it can no longer see and change your data on sites you visit, including your personal info.
       </message>
       <message name="IDS_SAFETY_CHECK_EXTENSIONS_UNPUBLISHED" desc="The text explaining the reason for disabling extension. The extension in question was unpublished by the developer.">
         This extension was unpublished by its developer, and might be unsafe. Remove it from Flux so it can no longer see and change your data on sites you visit, including your personal info.
@@ -1109,10 +1109,10 @@ Flux is unable to recover your settings.
 
       <if expr="enable_extensions">
         <message name="IDS_EXTENSIONS_MULTIPLE_UNSUPPORTED_DISABLED_BODY" desc="Body of the dialog shown when multiple unsupported extensions have been disabled.">
-          To make Flux safer, we disabled some extensions that aren't listed in the <ph name="IDS_EXTENSION_WEB_STORE_TITLE">$1<ex>Flux Web Store</ex></ph> and may have been added without your knowledge.
+          To make Flux safer, we disabled some extensions that aren't listed in the <ph name="IDS_EXTENSION_WEB_STORE_TITLE">$1<ex>Chrome Web Store</ex></ph> and may have been added without your knowledge.
         </message>
         <message name="IDS_EXTENSIONS_SINGLE_UNSUPPORTED_DISABLED_BODY" desc="Body of the dialog shown when a single unsupported extension has been disabled.">
-          To make Flux safer, we disabled the following extension that isn't listed in the <ph name="IDS_EXTENSION_WEB_STORE_TITLE">$1<ex>Flux Web Store</ex></ph> and may have been added without your knowledge.
+          To make Flux safer, we disabled the following extension that isn't listed in the <ph name="IDS_EXTENSION_WEB_STORE_TITLE">$1<ex>Chrome Web Store</ex></ph> and may have been added without your knowledge.
         </message>
       </if>
 
@@ -1142,7 +1142,7 @@ Flux is unable to recover your settings.
         <if expr="_is_chrome_for_testing_branded">
           <then>
             <message name="IDS_ABOUT" desc="In Title Case: The text label of the About Chrome for Testing menu item">
-              About &amp;Google Flux for Testing
+              About &amp;Google Chrome for Testing
             </message>
           </then>
           <else>
@@ -1159,7 +1159,7 @@ Flux is unable to recover your settings.
         <if expr="_is_chrome_for_testing_branded">
           <then>
             <message name="IDS_ABOUT" desc="The text label of the About Chrome for Testing menu item">
-              About &amp;Google Flux for Testing
+              About &amp;Google Chrome for Testing
             </message>
           </then>
           <else>

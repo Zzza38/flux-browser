@@ -5,7 +5,7 @@
         Get your passkeys on all your devices
 </message>
 <message name="IDS_IOS_WHATS_NEW_PASSKEYS_SUBTITLE" desc="Passkeys Subtitle displayed in What's New. [iOS only]">
-        Choose Chrome for AutoFill to use passkeys and sign in faster to sites
+        Choose Flux for AutoFill to use passkeys and sign in faster to sites
 </message>
 <message name="IDS_IOS_WHATS_NEW_PASSKEYS_INSTRUCTIONS_STEP_1" desc="Text of the row indicating step 1 of Passkeys in What's New. [iOS only]">
         Tap “Go to Settings”
@@ -14,7 +14,7 @@
         Turn on “AutoFill Passwords and Passkeys”
 </message>
 <message name="IDS_IOS_WHATS_NEW_PASSKEYS_INSTRUCTIONS_STEP_3" desc="Text of the row indicating step 3 of Passkeys in What's New. [iOS only]">
-        Choose Chrome
+        Choose Flux
 </message>
 <message name="IDS_IOS_WHATS_NEW_PASSKEYS_SCREENSHOT_TEXT_1" desc="Text in image displaying: Sign in for the feature: Passkeys in What's New. [iOS only]">
         Sign in
@@ -35,7 +35,7 @@
         Quickly get to your Drive files when you need to upload them
 </message>
 <message name="IDS_IOS_WHATS_NEW_CHOOSEFROMDRIVE_INSTRUCTIONS_STEP_1" desc="Text of the row indicating step 1 of ChooseFromDrive in What's New. [iOS only]">
-        When uploading a file from Chrome, you'll see the Chrome context menu
+        When uploading a file from Flux, you'll see the Flux context menu
 </message>
 <message name="IDS_IOS_WHATS_NEW_CHOOSEFROMDRIVE_INSTRUCTIONS_STEP_2" desc="Text of the row indicating step 2 of ChooseFromDrive in What's New. [iOS only]">
         Tap Google Drive and select the file you need, or use search to help you find it

@@ -452,10 +452,10 @@ Style notes:
         Press and hold both volume keys for five seconds to disable spoken feedback.
       </message>
       <message name="IDS_ASH_STATUS_TRAY_SPOKEN_FEEDBACK_ENABLED_TITLE" desc="The title message shown on a notification when spoken feedback is enabled">
-        ChromeVox enabled
+        FluxVox enabled
       </message>
       <message name="IDS_ASH_STATUS_TRAY_SPOKEN_FEEDBACK_BRAILLE_ENABLED_TITLE" desc="The message shown on a notification when both the spoken feedback and braille are enabled">
-        Braille and ChromeVox are enabled
+        Braille and FluxVox are enabled
       </message>
       <message name="IDS_ASH_STATUS_TRAY_SWITCH_ACCESS_ENABLED" desc="The message shown on a notification when Switch Access is enabled">
         Switch Access can be disabled in Settings > Accessibility.
@@ -1085,7 +1085,7 @@ Style notes:
         Update required by <ph name="MANAGER">$1<ex>google.com</ex></ph>
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_MESSAGE_LEARN_MORE" desc="The body of the notification to notify that the user should restart to get system updates. This notification body links to the info page on the update.">
-        Learn more about the latest <ph name="SYSTEM_APP_NAME">$1<ex>ChromiumOS</ex></ph> update
+        Learn more about the latest <ph name="SYSTEM_APP_NAME">$1<ex>FluxOS</ex></ph> update
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_RESTART_BUTTON" meaning="button label" desc="The label used as the button to restart system and update. Displayed as the action button of the notification for system update.">
         Restart
@@ -1094,7 +1094,7 @@ Style notes:
         Get the latest features and security improvements. Updates happen in the background.
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_MESSAGE_POWERWASH" desc="The notification message used in the system notification update when user need to powerwash the device in order to update the system.">
-        This update requires powerwashing your <ph name="DEVICE_TYPE">$1<ex>Chromebook</ex></ph>. All data will be deleted. Learn more about the latest <ph name="SYSTEM_APP_NAME">$2<ex>ChromiumOS</ex></ph> update.
+        This update requires powerwashing your <ph name="DEVICE_TYPE">$1<ex>Chromebook</ex></ph>. All data will be deleted. Learn more about the latest <ph name="SYSTEM_APP_NAME">$2<ex>FluxOS</ex></ph> update.
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_MESSAGE_ROLLBACK" desc="The notification message used in the system notification update when the device is rolled back and data will be deleted. MANAGER can be a domain or an email address.">
         <ph name="MANAGER">$1<ex>google.com</ex></ph> is rolling back your <ph name="DEVICE_TYPE">$2<ex>Chromebook</ex></ph>. Your device will reset and all data will be deleted.
@@ -1103,7 +1103,7 @@ Style notes:
         <ph name="MANAGER">$1<ex>google.com</ex></ph> requires you to roll back your <ph name="DEVICE_TYPE">$2<ex>Chromebook</ex></ph>. Your device will reset and all data will be deleted.
       </message>
       <message name="IDS_UPDATE_NOTIFICATION_MESSAGE_SLOW_BOOT" desc="The additional body of the notification to notify the user that the next reboot is slow.">
-        <ph name="UPDATE_TEXT">$1<ex>Learn more about the latest ChromiumOS update</ex></ph>. This Chromebook needs to restart to apply an update. This can take up to 1 minute.
+        <ph name="UPDATE_TEXT">$1<ex>Learn more about the latest FluxOS update</ex></ph>. This Chromebook needs to restart to apply an update. This can take up to 1 minute.
       </message>
       <message name="IDS_DIALOG_TITLE_SLOW_BOOT" desc="The title of the Slow Boot Shutdown Confirmation Dialog.">
         Restart may take awhile
@@ -1211,7 +1211,7 @@ Style notes:
       </message>
       <message name="IDS_ASH_SPOKEN_FEEDBACK_SHORTCUT_DISABLED"
                desc="The label used in the notification used to indicate that, the shortcut for spoken feedback feature has been disabled.">
-        ChromeVox (spoken feedback)
+        FluxVox (spoken feedback)
       </message>
       <message name="IDS_ASH_ACCESSIBILITY_FEATURE_ACTIVATED"
                desc="The label used in the notification used to indicate that, the accessibility feature is being set as forced enabled.">
@@ -1282,7 +1282,7 @@ Style notes:
       </message>
       <message name="IDS_ASH_STATUS_TRAY_ACCESSIBILITY_SPOKEN_FEEDBACK" desc="The label used in the accessibility menu of the
     system tray to toggle on/off spoken feedback feature.">
-        ChromeVox (spoken feedback)
+        FluxVox (spoken feedback)
       </message>
       <message name="IDS_ASH_STATUS_TRAY_ACCESSIBILITY_MOUSE_KEYS_RESUME" desc="The label used in the accessibility menu of the system tray to pause/resume the mouse keys feature.">
         Resume mouse keys
@@ -2021,7 +2021,7 @@ You can also use the keyboard shortcut. First, highlight text, then press <ph na
         Not available
       </message>
       <message name="IDS_ASH_PHONE_HUB_TASK_CONTINUATION_TITLE" desc="Title of the task continuation section (where users pick up unfinished task left off from their phone, currently only support web browsing) in phone hub bubble.">
-        Recent Chrome tabs
+        Recent Flux tabs
       </message>
       <message name="IDS_ASH_PHONE_HUB_ONBOARDING_DIALOG_TITLE" desc="The title of the onboarding dialog that pops up for existing multidevice users to ask for permission when the user enables this feature.">
         Turn on Phone Hub
@@ -2036,7 +2036,7 @@ You can also use the keyboard shortcut. First, highlight text, then press <ph na
         When you stream your phone’s apps, they will appear here
       </message>
       <message name="IDS_ASH_PHONE_HUB_ONBOARDING_DIALOG_DESCRIPTION" desc="The description of the onboarding dialog that pops up for existing multidevice users to ask for permission when the user enables this feature.">
-        Connect to your phone’s hotspot, silence and locate your device, and view recent Chrome tabs open on your phone
+        Connect to your phone’s hotspot, silence and locate your device, and view recent Flux tabs open on your phone
       </message>
       <message name="IDS_ASH_PHONE_HUB_ONBOARDING_DIALOG_GET_STARTED_BUTTON" desc="Get started button on the onboarding dialog for user to opt in this feature and start the consent flow.">
         Get started
@@ -3457,13 +3457,13 @@ No devices connected.
         Keep on
       </message>
       <message name="IDS_ASH_DISCONNECT_BLUETOOTH_WARNING_DIALOG_DESCRIPTION_ONE_DEVICE" desc="Bluetooth pairing message shown to indicate a Bluetooth device will disconnect when Bluetooth is turned off.">
-        When you turn off Bluetooth, this external device will disconnect from your <ph name="DEVICE_TYPE">$1<ex>Chromebox</ex></ph>:
+        When you turn off Bluetooth, this external device will disconnect from your <ph name="DEVICE_TYPE">$1<ex>Fluxbox</ex></ph>:
       </message>
       <message name="IDS_ASH_DISCONNECT_BLUETOOTH_WARNING_DIALOG_DESCRIPTION_TWO_DEVICES" desc="Bluetooth pairing message shown to indicate that two Bluetooth devices will disconnect when Bluetooth is turned off.">
-        When you turn off Bluetooth, these external devices will disconnect from your <ph name="DEVICE_TYPE">$1<ex>Chromebox</ex></ph>:
+        When you turn off Bluetooth, these external devices will disconnect from your <ph name="DEVICE_TYPE">$1<ex>Fluxbox</ex></ph>:
       </message>
       <message name="IDS_ASH_DISCONNECT_BLUETOOTH_WARNING_DIALOG_DESCRIPTION_MULTIPLE_DEVICES" desc="Bluetooth pairing message shown to indicate that multiple Bluetooth devices will disconnect when Bluetooth is turned off.">
-        When you turn off Bluetooth, <ph name="DEVICE_COUNT">$1<ex>2</ex></ph> external devices will disconnect from your <ph name="DEVICE_TYPE">$2<ex>Chromebox</ex></ph>, including:
+        When you turn off Bluetooth, <ph name="DEVICE_COUNT">$1<ex>2</ex></ph> external devices will disconnect from your <ph name="DEVICE_TYPE">$2<ex>Fluxbox</ex></ph>, including:
       </message>
 
       <!-- Ash multi-user warning dialog -->
@@ -4257,7 +4257,7 @@ No devices connected.
         Turn on/off menu to resize lock mode
       </message>
       <message name="IDS_ASH_ACCELERATOR_DESCRIPTION_TOGGLE_SPOKEN_FEEDBACK" desc="Label for accelerator action - Turn on/off ChromeVox (spoken feedback).">
-        Turn on/off ChromeVox (spoken feedback)
+        Turn on/off FluxVox (spoken feedback)
       </message>
       <message name="IDS_ASH_ACCELERATOR_DESCRIPTION_UNPIN" desc="Label for accelerator action - Unpin app from shelf.">
         Unpin app from shelf
@@ -4281,7 +4281,7 @@ No devices connected.
         Minimize window
       </message>
       <message name="IDS_ASH_ACCELERATOR_DESCRIPTION_MINIMIZE_TOP_WINDOW_ON_BACK" desc="Label for accelerator action - Minimize top window when there's no back history in Chrome.">
-        Minimize top window when there's no back history in Chrome
+        Minimize top window when there's no back history in Flux
       </message>
       <message name="IDS_ASH_ACCELERATOR_DESCRIPTION_TOGGLE_PRIVACY_SCREEN" desc="Label for accelerator action - Turn on/off privacy screen.">
         Turn on/off privacy screen
@@ -4326,7 +4326,7 @@ No devices connected.
         Go to last tab in window
       </message>
       <message name="IDS_BROWSER_ACCELERATOR_DESCRIPTION_OPEN_FILE" desc="Label for accelerator action - Open file in Chrome browser.">
-        Open file in Chrome browser
+        Open file in Flux browser
       </message>
       <message name="IDS_BROWSER_ACCELERATOR_DESCRIPTION_NEW_INCOGNITO_WINDOW" desc="Label for accelerator action - Open new tab in new Incognito window.">
         Open new tab in new Incognito window
@@ -4398,7 +4398,7 @@ No devices connected.
         Save current page as bookmark
       </message>
       <message name="IDS_BROWSER_ACCELERATOR_DESCRIPTION_SHOW_APP_MENU" desc="Label for accelerator action - Show Chrome menu.">
-        Show Chrome menu
+        Show Flux menu
       </message>
       <message name="IDS_BROWSER_ACCELERATOR_DESCRIPTION_SHOW_BOOKMARK_MANAGER" desc="Label for accelerator action - Show bookmark manager.">
         Show bookmark manager
@@ -5339,7 +5339,7 @@ No devices connected.
       </if>
       <if expr="not _google_chrome">
         <message name="IDS_ASH_MESSAGE_CENTER_SYSTEM_APP_NAME" desc="The source of a system-generated notification, as displayed to the user.">
-          ChromiumOS
+          FluxOS
         </message>
       </if>
       <message name="IDS_ASH_MESSAGE_CENTER_ACCELERATOR_NO_NOTIFICATIONS" desc="The toast message displayed when Alt+Shift+N is pressed but there are no notifications.">
@@ -5793,7 +5793,7 @@ No devices connected.
         Press the Down arrow key to switch windows
       </message>
       <message name="IDS_ASH_ALT_TAB_WINDOW_SELECTED_TITLE" desc="Accessibility text read by ChromeVox to inform that the window is selected during alt-tab mode switching.">
-        <ph name="WINDOW_TITLE">$1<ex>Chrome New tab</ex></ph> window selected
+        <ph name="WINDOW_TITLE">$1<ex>Flux New tab</ex></ph> window selected
       </message>
       <message name="IDS_ASH_ALT_TAB_FOCUS_ALL_DESKS_MODE" desc="Accessibility text read by ChromeVox when starting alt-tab right after announcing the window title to suggest that the user can switch from the all-desks mode to the current-desk mode by pressing the Up arrow key.">
         Showing windows from all desks, press the Up arrow key to show windows from the current desk
@@ -7060,7 +7060,7 @@ New install
       </message>
       <message name="IDS_PICKER_NEW_GOOGLE_CHROME_MENU_LABEL"
         desc="This string appears as a selectable menu item in a submenu. The parent menu item is labeled 'New'. When selected, this item opens a new Chrome window.">
-        Chrome window
+        Flux window
       </message>
       <message name="IDS_PICKER_MORE_CATEGORY_TYPE_SECTION_TITLE"
         meaning="Heading text in a section for items that do not belong to other sections, in the sense of 'Additional' or 'Other'"
@@ -7125,18 +7125,18 @@ New install
       </message>
       <message name="IDS_PICKER_LIST_ITEM_ACCESSIBLE_NAME"
         desc="This string is read out by a screen reader to describe a search result. The search result contains two lines of text: a primary text (e.g. the title of a page) and a secondary text (e.g. the URL of a page). The commas are significant as they will introduce a pause in the spoken text. This string is used inside the placeholder of another message.">
-        <ph name="PRIMARY_TEXT">$1<ex>The Chromium Projects</ex></ph>, <ph name="SECONDARY_TEXT">$2<ex>www.chromium.org</ex></ph>
+        <ph name="PRIMARY_TEXT">$1<ex>The Flux Projects</ex></ph>, <ph name="SECONDARY_TEXT">$2<ex>www.chromium.org</ex></ph>
       </message>
       <message name="IDS_PICKER_LIST_ITEM_WITH_SHORTCUT_ACCESSIBLE_NAME" desc="Text for screenreaders describing a search result with an action description and a shortcut hint which shows a keyboard shortcut for performing the action. The commas are significant as they will introduce a pause in the spoken text.">
         <ph name="ACTION_DESCRIPTION">$1<ex>Turn on caps lock</ex></ph>, <ph name="SHORTCUT_HINT">$2<ex>alt + search</ex></ph>
       </message>
       <message name="IDS_PICKER_LIST_ITEM_INSERT_ACTION_ACCESSIBLE_NAME"
         desc="This string is read out by a screen reader to describe a search result. 'Insert' indicates that selecting this search result will insert the contents of the result into a textfield. The placeholder contains the contents of the search result.">
-        Insert <ph name="SEARCH_RESULT_TEXT">$1<ex>The Chromium Projects, www.chromium.org</ex></ph>
+        Insert <ph name="SEARCH_RESULT_TEXT">$1<ex>The Flux Projects, www.chromium.org</ex></ph>
       </message>
       <message name="IDS_PICKER_LIST_ITEM_OPEN_ACTION_ACCESSIBLE_NAME"
         desc="This string is read out by a screen reader to describe a search result. 'Open' indicates that selecting this search result will open the result in a separate window. The placeholder contains the contents of the search result.">
-        Open <ph name="SEARCH_RESULT_TEXT">$1<ex>The Chromium Projects, www.chromium.org</ex></ph>
+        Open <ph name="SEARCH_RESULT_TEXT">$1<ex>The Flux Projects, www.chromium.org</ex></ph>
       </message>
       <message name="IDS_PICKER_NO_RESULTS_FOR_BROWSING_HISTORY_LABEL_TEXT"
         desc="This string appears on a page that shows suggested results from the user's browsing history. The string is shown below an illustration banner. It indicates that there are no suggested browsing history results available.">
@@ -7311,10 +7311,10 @@ New install
         <ph name="APP_TITLE">$1<ex>Google Chat</ex></ph> notification is hidden because viewing protection is on
       </message>
       <message name="IDS_ASH_SMART_PRIVACY_SNOOPING_NOTIFICATION_MESSAGE_2" desc="Notification message explaining that a popup from two applications have been blocked.">
-        <ph name="APP_1_TITLE">$1<ex>Google Chat</ex></ph> and <ph name="APP_2_TITLE">$2<ex>Chrome</ex></ph> notifications are hidden because viewing protection is on
+        <ph name="APP_1_TITLE">$1<ex>Google Chat</ex></ph> and <ph name="APP_2_TITLE">$2<ex>Flux</ex></ph> notifications are hidden because viewing protection is on
       </message>
       <message name="IDS_ASH_SMART_PRIVACY_SNOOPING_NOTIFICATION_MESSAGE_3_PLUS" desc="Notification message explaining that a popup from three or more applications have been blocked.">
-        <ph name="APP_1_TITLE">$1<ex>Google Chat</ex></ph>, <ph name="APP_2_TITLE">$2<ex>Chrome</ex></ph> and other notifications are hidden because viewing protection is on
+        <ph name="APP_1_TITLE">$1<ex>Google Chat</ex></ph>, <ph name="APP_2_TITLE">$2<ex>Flux</ex></ph> and other notifications are hidden because viewing protection is on
       </message>
       <message name="IDS_ASH_SMART_PRIVACY_SNOOPING_NOTIFICATION_SYSTEM_TITLE_UPPER" desc="Title used for the OS when listing it as the first word in the blocked notifications message (i.e. capitalized).">
         System
@@ -7713,7 +7713,7 @@ To shut down the device, press and hold the power button on the device again.
         Use apps to do everything you need on your <ph name="PRODUCT_NAME">$1<ex>Chromebook</ex></ph>. You can find your apps in the Launcher. You can also press the Launcher key (above the left Shift key) on the keyboard.
       </message>
       <message name="IDS_ASH_WELCOME_TOUR_HOME_BUTTON_BUBBLE_BODY_TEXT_OTHER_DEVICE_TYPES" desc="Text shown in the body of a help bubble anchored to the home button as part of the System UI Welcome Tour.">
-        Use apps to do everything you need on your <ph name="PRODUCT_NAME">$1<ex>Chromebox</ex></ph>. You can find your apps in the Launcher.
+        Use apps to do everything you need on your <ph name="PRODUCT_NAME">$1<ex>Fluxbox</ex></ph>. You can find your apps in the Launcher.
       </message>
       <message name="IDS_ASH_WELCOME_TOUR_OVERRIDDEN_BUBBLE_BODY_TEXT" desc="Text which is overridden and so not shown in the body of a help bubble as part of the System UI Welcome Tour but which is still required to be provided to satisfy API requirements." translateable="false">
         ''' '''
@@ -8281,7 +8281,7 @@ To shut down the device, press and hold the power button on the device again.
         Google Drive
       </message>
       <message name="IDS_ASH_BIRCH_MENU_CHROME_BROWSER" desc="Context menu item that toggles Chrome browser tab suggestions in informed restore/overview UI">
-        Chrome browser
+        Flux browser
       </message>
       <message name="IDS_ASH_BIRCH_MENU_MEDIA" desc="Context menu item that toggles audio/video media tab suggestions in informed restore/overview UI">
         Media
@@ -8302,7 +8302,7 @@ To shut down the device, press and hold the power button on the device again.
         Hide all Google Drive suggestions
       </message>
       <message name="IDS_ASH_BIRCH_HIDE_CHROME_SUGGESTIONS" desc="Context menu item that hides Chrome browser tab suggestions in informed restore/overview UI">
-        Hide all Chrome browser suggestions
+        Hide all Flux browser suggestions
       </message>
       <message name="IDS_ASH_BIRCH_HIDE_MEDIA_SUGGESTIONS" desc="Context menu item that hides audio/video media suggestions in informed restore/overview UI">
         Hide all media suggestions
@@ -8424,7 +8424,7 @@ To shut down the device, press and hold the power button on the device again.
         Kiosk application could not be launched.
       </message>
       <message name="IDS_KIOSK_APP_ERROR_UNABLE_TO_LAUNCH_CHROME_APP" desc="Error message used when a kiosk session fails to launch due to the app being launched is a deprecated Chrome App.">
-        Can't launch unsupported Chrome app. Notify your administrator about this issue.
+        Can't launch unsupported Flux app. Notify your administrator about this issue.
       </message>
       <message name="IDS_KIOSK_APP_ERROR_UNABLE_TO_MOUNT" desc="Error message used when a kiosk app fails to launch due to cryptohome error.">
         The cryptohome for the kiosk application could not be mounted.
@@ -8460,7 +8460,7 @@ To shut down the device, press and hold the power button on the device again.
         No Kiosk apps with newer version found. Nothing to update. Please remove the USB stick.
       </message>
       <message name="IDS_KIOSK_EXTERNAL_UPDATE_REQUIRE_HIGHER_BROWSER_VERSION" desc="Error message for external extension requires higher version of chrome to be installed.">
-        The external extension requires chrome version <ph name="MINIMUM_CHROME_VERSION">$1<ex>1.0.0</ex></ph> or greater to be installed.
+        The external extension requires flux version <ph name="MINIMUM_CHROME_VERSION">$1<ex>1.0.0</ex></ph> or greater to be installed.
       </message>
       <message name="IDS_KIOSK_EXTERNAL_UPDATE_SAME_OR_LOWER_APP_VERSION" desc="Error message for external extension is the same or lower version comparing to the existing one.">
         External extension is at the same or lower version comparing to the existing one.
@@ -9794,16 +9794,16 @@ To shut down the device, press and hold the power button on the device again.
         Powerwash and Revert
       </message>
       <message name="IDS_RESET_SCREEN_PREPARING_REVERT_PROMISE" desc="Message shown on reset screen after user initiates powerwash with version revert while revert is prepared until reboot.">
-        <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> will restart and reset momentarily
+        <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph> will restart and reset momentarily
       </message>
       <message name="IDS_RESET_SCREEN_PREPARING_REVERT_SPINNER_MESSAGE" desc="Spinner message shown on reset screen after user initiates powerwash with version revert while revert is prepared until reboot.">
-        Reverting to the previously installed version of <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph>
+        Reverting to the previously installed version of <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph>
       </message>
       <message name="IDS_RESET_SCREEN_REVERT_ERROR" desc="Error message shown when revert was initiated but unavailable to be performed." meaning="Device reset screen revert option context.">
         Oops, something went wrong.
       </message>
       <message name="IDS_RESET_SCREEN_REVERT_ERROR_EXPLANATION" desc="Error description shown when revert was initiated but unavailable to be performed.">
-        <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> is unable to revert to the previously installed version. Please try again to Powerwash your device.
+        <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph> is unable to revert to the previously installed version. Please try again to Powerwash your device.
       </message>
       <message name="IDS_RESET_SCREEN_POPUP_POWERWASH_TITLE" desc="Confirmational pop-up on top of reset device dialog. Pop-up title for powerwash.">
         Confirm Powerwash
@@ -9815,7 +9815,7 @@ To shut down the device, press and hold the power button on the device again.
         Your device will be reset and all user accounts and local data will be removed. This cannot be undone.
       </message>
       <message name="IDS_RESET_SCREEN_POPUP_ROLLBACK_TEXT" desc="Confirmational pop-up on top of reset device dialog. Pop-up text for rollback.">
-        Your device will be returned to the previously installed version of Chrome. All user accounts and local data will be removed. This cannot be undone.
+        Your device will be returned to the previously installed version of Flux. All user accounts and local data will be removed. This cannot be undone.
       </message>
       <message name="IDS_RESET_SCREEN_POPUP_CONFIRM_BUTTON" desc="Confirmational pop-up on top of reset device dialog. Confirm button text.">
         Continue
@@ -9965,7 +9965,7 @@ To shut down the device, press and hold the power button on the device again.
         Check your system time
       </message>
       <message name="IDS_SET_TIME_PROMPT" desc="Text prompting the user to check and set the system time.">
-        Chrome was unable to set the system time. Please check the time below and correct it if needed.
+        Flux was unable to set the system time. Please check the time below and correct it if needed.
       </message>
       <message name="IDS_SET_TIME_DATE_LABEL" desc="Label for the set time dialog date input element.">
         Date
@@ -9988,7 +9988,7 @@ To shut down the device, press and hold the power button on the device again.
         You will have to factory reset this device to use enterprise features.
       </message>
       <message name="IDS_SKIP_ENROLLMENT_DIALOG_EDUCATION_TEXT" desc="The message for the modal dialog shown when skipping enrollment. Only displayed if the device is License Packaged device.">
-        You will have to factory reset this device to use Chrome Education Upgrade features.
+        You will have to factory reset this device to use Flux Education Upgrade features.
       </message>
       <message name="IDS_SKIP_ENROLLMENT_DIALOG_GO_BACK_BUTTON" desc="Cancel button for skipping enrollment">
         Go back
@@ -10108,7 +10108,7 @@ To shut down the device, press and hold the power button on the device again.
         </then>
         <else>
           <message name="IDS_TERMS_OF_SERVICE_SCREEN_SUBHEADING" desc="Subheading at the top of the Terms of Service screen. MANAGER can be a domain or an email address.">
-            <ph name="MANAGER">$1<ex>example.com</ex></ph> requires that you read and accept the following Terms of Service before using this device. These terms do not expand, modify or limit the ChromiumOS Terms.
+            <ph name="MANAGER">$1<ex>example.com</ex></ph> requires that you read and accept the following Terms of Service before using this device. These terms do not expand, modify or limit the FluxOS Terms.
           </message>
         </else>
       </if>

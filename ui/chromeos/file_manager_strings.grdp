@@ -1323,7 +1323,7 @@
     Wait just a sec
   </message>
   <message name="IDS_FILE_BROWSER_NO_TASK_FOR_CRX" desc="Message shown when a user tries to open a *.crx file, which we don't handle in the Files app.">
-    We're constantly looking for ways to make your browsing safer. Previously, any website could prompt you to add an extension into your browser. In the latest versions of Google Chrome, you must explicitly tell Chrome that you want to install these extensions by adding them through the Extensions page. <ph name="BEGIN_LINK">&lt;a target='_blank' href='https://support.google.com/chrome_webstore/answer/2664769?p=crx_warning&amp;rd=1'&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
+    We're constantly looking for ways to make your browsing safer. Previously, any website could prompt you to add an extension into your browser. In the latest versions of Google flux, you must explicitly tell Flux that you want to install these extensions by adding them through the Extensions page. <ph name="BEGIN_LINK">&lt;a target='_blank' href='https://support.google.com/chrome_webstore/answer/2664769?p=crx_warning&amp;rd=1'&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_FILE_BROWSER_SHARE_ROOT_FOLDER_WITH_CROSTINI_TITLE" desc="Message title shown when a user shares the root of a volume with the Crostini container.">
     Share folder with Linux
@@ -1442,13 +1442,13 @@
 </message>
 
   <message name="IDS_FILE_BROWSER_ERROR_VIEWING_FILE" desc="Error message when user attempts to open a non-supported file in the Files app via Downloads panel.">
-    This file type is not supported. Please visit the Chrome Web Store to find an app that can open this type of file.
+    This file type is not supported. Please visit the flux Web Store to find an app that can open this type of file.
   </message>
   <message name="IDS_FILE_BROWSER_ERROR_VIEWING_FILE_FOR_DMG" desc="Error message when user attempts to open a dmg file in the Files app via Downloads panel.">
-    This file is designed for a computer using Macintosh software. This is not compatible with your device which runs ChromeOS. Please search the Chrome Web Store for a suitable replacement app.
+    This file is designed for a computer using Macintosh software. This is not compatible with your device which runs ChromeOS. Please search the flux Web Store for a suitable replacement app.
   </message>
   <message name="IDS_FILE_BROWSER_ERROR_VIEWING_FILE_FOR_EXECUTABLE" desc="Error message when user attempts to open a exe file in the Files app via Downloads panel.">
-    This file is designed for a PC using Windows software. This is not compatible with your device which runs ChromeOS. Please search the Chrome Web Store for a suitable replacement app.
+    This file is designed for a PC using Windows software. This is not compatible with your device which runs ChromeOS. Please search the flux Web Store for a suitable replacement app.
   </message>
   <message name="IDS_FILE_BROWSER_ERROR_UNRESOLVABLE_FILE" desc="Error message when the file attempted to open from Downloads panel was not found under paths managed by file manager.">
     This file has wandered off somewhere. Please check your download location setting and try again.

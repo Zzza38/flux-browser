@@ -232,10 +232,10 @@
     Managed by app
   </message>
   <message name="IDS_ANDROID_PERMISSION_OFF" desc="Text at the top of the Website list, explaining to the user that a permission, such as the location service, is turned off. Contains a link to the settings menu to change it.">
-    Turn on permission for <ph name="APP_NAME">%1$s<ex>Chrome</ex></ph> in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
+    Turn on permission for <ph name="APP_NAME">%1$s<ex>Flux</ex></ph> in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_ANDROID_PERMISSION_OFF_PLURAL" desc="Text at the top of the Website list, explaining to the user that multiple permissions, such as the location service, are turned off. Contains a link to the settings menu to change it.">
-    Turn on permissions for <ph name="APP_NAME">%1$s<ex>Chrome</ex></ph> in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
+    Turn on permissions for <ph name="APP_NAME">%1$s<ex>Flux</ex></ph> in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_ANDROID_TURN_ON_GEO_PRECISE_PERMISSION" desc="Text at the top of the Website list, explaining to the user that the precise location permission is turned off and they can turn it on in the Android Settings.">
     You can turn on precise location in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
@@ -451,11 +451,11 @@
   </message>
 
   <message name="IDS_ANTI_ABUSE_WHEN_ON_SECTION_ONE" desc="Summary text explaining that Chrome saves a small amount of data when the anti-abuse features are enabled.">
-    A site you visit can save a small amount of info with Chrome, mainly to validate you're not a bot
+    A site you visit can save a small amount of info with Flux, mainly to validate you're not a bot
   </message>
 
   <message name="IDS_ANTI_ABUSE_WHEN_ON_SECTION_TWO" desc="Summary text explaining how the anti-abuse features work.">
-    As you keep browsing, sites can check with Chrome and verify with a previous site you've visited that you're likely a real person
+    As you keep browsing, sites can check with Flux and verify with a previous site you've visited that you're likely a real person
   </message>
 
   <message name="IDS_ANTI_ABUSE_WHEN_ON_SECTION_THREE" desc="Summary text explaining that browsing could be helped by the anti-abuse features.">
@@ -482,7 +482,7 @@
     When on, sites can ask to track your camera position and learn about your surroundings. When off, sites can’t track your camera position or learn about your surroundings.
   </message>
   <message name="IDS_ANDROID_AR_CAMERA_PERMISSION_OFF" desc="The message to show when the camera permission needs to be turned on in Android settings in order to use Augmented Reality.">
-    To let <ph name="APP_NAME">%1$s<ex>Chrome</ex></ph> use AR, also turn on camera in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
+    To let <ph name="APP_NAME">%1$s<ex>Flux</ex></ph> use AR, also turn on camera in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_WEBSITE_SETTINGS_AR_PAGE_DESCRIPTION" desc="Description of Augmented reality content setting.">
     Sites usually track your camera position for AR features, like games or heads-up directions
@@ -535,7 +535,7 @@
   <!-- JavaScript Optimizer -->
 
   <message name="IDS_WEBSITE_SETTINGS_CATEGORY_JAVASCRIPT_OPTIMIZER_A11Y" desc="The screen reader announcement describing a toggle with two states, controlling whether JavaScript Optimizer is enabled. Disabling the JavaScript optimizer reduces performance but makes the JavaScript engine more resilient to attacks by malicious actors.">
-    When on, Chrome runs faster and features that use JavaScript should work as designed. When off, this reduces performance but makes V8 more resistant to attacks.
+    When on, Flux runs faster and features that use JavaScript should work as designed. When off, this reduces performance but makes V8 more resistant to attacks.
   </message>
 
   <message name="IDS_WEBSITE_SETTINGS_ADD_SITE_DESCRIPTION_JAVASCRIPT_OPTIMIZER_ALLOW" desc="The description for the allow-v8-optimizer-for-website dialog.">
@@ -545,7 +545,7 @@
     Block site from using V8 optimizer.
   </message>
   <message name="IDS_WEBSITE_SETTINGS_CATEGORY_JAVASCRIPT_OPTIMIZER_TOGGLE" desc="Label for toggle for the JavaScript optimizer setting.">
-    Speed up sites with Chrome's V8 engine but make Chrome slightly less resistant to attacks
+    Speed up sites with Flux's V8 engine but make Flux slightly less resistant to attacks
   </message>
   <message name="IDS_WEBSITE_SETTINGS_CATEGORY_JAVASCRIPT_OPTIMIZER_ALLOWED_LIST" desc="Summary text explaining that sites will use the JavaScript optimizer. To be shown in the list of permission categories.">
     Sites are faster but less secure
@@ -554,19 +554,19 @@
     Sites are slower but more secure
   </message>
   <message name="IDS_WEBSITE_SETTINGS_CATEGORY_JAVASCRIPT_OPTIMIZER_PAGE_DESCRIPTION" desc="An explanation of what V8 is which appears beneath the page title: 'V8 optimizer'.">
-    V8 is Chrome’s JavaScript and WebAssembly engine used to improve site performance
+    V8 is Flux’s JavaScript and WebAssembly engine used to improve site performance
   </message>
   <message name="IDS_WEBSITE_SETTINGS_PRIVACY_AND_SECURITY_JAVASCRIPT_OPTIMIZER_ROW_LABEL" desc="Title for the link row to the V8 security settings.">
     JavaScript optimization &amp; security
   </message>
   <message name="IDS_WEBSITE_SETTINGS_SINGLE_WEBSITE_JAVASCRIPT_OPTIMIZER_TOGGLE" desc="Label for toggle for the JavaScript optimizer setting.">
-    Speed up sites with Chrome's V8 engine but make Chrome slightly less resistant to attacks
+    Speed up sites with Flux's V8 engine but make Flux slightly less resistant to attacks
   </message>
   <message name="IDS_WEBSITE_SETTINGS_JAVASCRIPT_OPTIMIZER_ALLOWED" desc="Primary text corresponding to the allow button in the V8 optimizer permission radio button group.">
-    Speed up sites with Chrome's V8 engine but make Chrome slightly less resistant to attacks
+    Speed up sites with Flux's V8 engine but make Flux slightly less resistant to attacks
   </message>
   <message name="IDS_WEBSITE_SETTINGS_JAVASCRIPT_OPTIMIZER_BLOCKED" desc="Primary text corresponding to the block button in the V8 optimizer permission radio button group.">
-    Do not speed up sites with Chrome's V8 engine but make Chrome slightly more resistant to attacks
+    Do not speed up sites with Flux's V8 engine but make Flux slightly more resistant to attacks
   </message>
 
   <message name="IDS_WEBSITE_SETTINGS_JS_OPT_ADD_EXCEPTIONS_DISABLED_REASON" desc="Explains that the add-exception button is disabled because the Android device does not have enough RAM.">
@@ -606,7 +606,7 @@
     When on, sites can ask to use your camera. When off, sites can’t use your camera.
   </message>
   <message name="IDS_ANDROID_CAMERA_PERMISSION_OFF" desc="The message to show when the camera permission needs to be turned on not just in Chrome, but also in Android settings.">
-    To let <ph name="APP_NAME">%1$s<ex>Chrome</ex></ph> access your camera, also turn on camera in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
+    To let <ph name="APP_NAME">%1$s<ex>Flux</ex></ph> access your camera, also turn on camera in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_WEBSITE_SETTINGS_CAMERA_PAGE_DESCRIPTION" desc="Description of camera content setting.">
     Sites usually use your video camera for communication features like video chatting
@@ -811,7 +811,7 @@
     When on, sites can ask to track your hands. When off, sites can’t track your hands.
   </message>
   <message name="IDS_ANDROID_HAND_TRACKING_PERMISSION_OFF" desc="The message to show when the hand tracking permission needs to be turned on in Android settings.">
-    To let <ph name="APP_NAME">%1$s<ex>Chrome</ex></ph> use hand tracking, also turn on hand tracking in <ph name="BEGIN_LINK">&lt;link&gt;</ph>system settings<ph name="END_LINK">&lt;/link&gt;</ph>.
+    To let <ph name="APP_NAME">%1$s<ex>Flux</ex></ph> use hand tracking, also turn on hand tracking in <ph name="BEGIN_LINK">&lt;link&gt;</ph>system settings<ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
 
   <!-- Idle Detection -->
@@ -873,7 +873,7 @@
     Location access is off for this device. Turn it on in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_ANDROID_LOCATION_PERMISSION_OFF" desc="The message to show when the location permission needs to be turned on not just in Chrome, but also in Android settings.">
-    To let <ph name="APP_NAME">%1$s<ex>Chrome</ex></ph> access your location, also turn on location in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
+    To let <ph name="APP_NAME">%1$s<ex>Flux</ex></ph> access your location, also turn on location in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_WEBSITE_LOCATION_SETTINGS" is_accessibility_with_no_ui="true" desc="Accessibility string for the location settings">
     Open Location Settings
@@ -897,7 +897,7 @@
     When on, sites can ask to use your microphone. When off, sites can’t use your microphone.
   </message>
   <message name="IDS_ANDROID_MICROPHONE_PERMISSION_OFF" desc="The message to show when the microphone permission needs to be turned on not just in Chrome, but also in Android settings.">
-    To let <ph name="APP_NAME">%1$s<ex>Chrome</ex></ph> access your microphone, also turn on microphone in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
+    To let <ph name="APP_NAME">%1$s<ex>Flux</ex></ph> access your microphone, also turn on microphone in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_WEBSITE_SETTINGS_MIC_PAGE_DESCRIPTION" desc="Description of the microphone content settings.">
     Sites usually use your microphone for communication features like video chatting
@@ -994,7 +994,7 @@
     Managed by <ph name="APP_NAME">%1$s<ex>App Name</ex></ph>
   </message>
   <message name="IDS_ANDROID_NOTIFICATIONS_PERMISSION_OFF" desc="The message to show when the notifications permission needs to be turned on not just in Chrome, but also in Android settings.">
-    To let <ph name="APP_NAME">%1$s<ex>Chrome</ex></ph> send you notifications, also turn on notifications in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
+    To let <ph name="APP_NAME">%1$s<ex>Flux</ex></ph> send you notifications, also turn on notifications in <ph name="BEGIN_LINK">&lt;link&gt;</ph>Android Settings<ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_WEBSITE_NOTIFICATION_SETTINGS" desc="Accessibility string for the notification settings">
     Open notification settings
@@ -1161,7 +1161,7 @@
 
   <!-- Auto-darken web content -->
   <message name="IDS_WEBSITE_SETTINGS_CATEGORY_AUTO_DARK_ALLOWED" desc="Summary text explaining that sites are alllowed to be darkend with Chrome branded darkening algorithm.">
-    Apply dark theme to sites when Chrome uses dark theme, when possible
+    Apply dark theme to sites when Flux uses dark theme, when possible
   </message>
   <message name="IDS_WEBSITE_SETTINGS_CATEGORY_AUTO_DARK_BLOCKED" desc="Summary text explaining that sites are blocked to be darkend with Chrome branded darkening algorithm.">
     Don’t apply dark theme to sites
@@ -1327,7 +1327,7 @@
   <message name="IDS_SETTINGS_PRIVACY_AND_SECURITY_ADVANCED_PROTECTION_SECTION_MESSAGE" desc="Displays information about how Android-OS advanced-protection 'on' setting affects Chrome settings.">
 Manage in <ph name="BEGIN_LINK1">&lt;link_android_advanced_protection&gt;</ph>Android settings<ph name="END_LINK1">&lt;/link_android_advanced_protection&gt;</ph>
 
-Advanced Protection controls these Chrome settings:
+Advanced Protection controls these Flux settings:
   </message>
   <message name="IDS_SETTINGS_PRIVACY_AND_SECURITY_ADVANCED_PROTECTION_SECURE_CONNECTIONS_BULLET" desc="Bullet point indicating that Always use secure connections is on when Advanced Protection is on.">
     "Always use secure connections" is on.

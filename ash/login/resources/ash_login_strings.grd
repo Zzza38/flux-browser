@@ -225,10 +225,10 @@
         Sync your <ph name="DEVICE_TYPE">$1<ex>Chromebook</ex></ph> apps, settings, and more
       </message>
       <message name="IDS_LOGIN_SYNC_CONSENT_SCREEN_CHROME_BROWSER_SYNC_NAME_3" desc="Alternate title of the 'Chrome browser sync' section of the sync confirmation dialog that is displayed on the first user log in.">
-        Your Chrome browser bookmarks, passwords, history, and more are saved in your Google Account
+        Your Flux browser bookmarks, passwords, history, and more are saved in your Google Account
       </message>
       <message name="IDS_LOGIN_SYNC_CONSENT_SCREEN_CHROME_BROWSER_SYNC_NAME_2" desc="Alternate title of the 'Chrome browser sync' section of the sync confirmation dialog that is displayed on the first user log in.">
-        Sync your Chrome browser bookmarks, passwords, history, and more
+        Sync your Flux browser bookmarks, passwords, history, and more
       </message>
       <message name="IDS_LOGIN_SYNC_CONSENT_SCREEN_CHROME_BROWSER_SYNC_DESCRIPTION" desc="Description of the 'Chrome browser sync' section of the sync confirmation dialog that is displayed on the first user log in.">
         Google may use your history to personalize Search and other Google services
@@ -812,7 +812,7 @@
         You may also skip signing in and <ph name="LINK_START">$1<ex>&gt;a&lt;</ex></ph>browse as Guest<ph name="LINK_END">$2<ex>&gt;/a&lt;</ex></ph>.
       </message>
       <message name="IDS_LOCAL_STATE_ERROR_TEXT_0" desc="Text for notification that Local State file is corrupted and powerwash is required.">
-        Unfortunately, <ph name="SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> is unable to recover your settings. To fix the error, <ph name="SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> must reset your device with Powerwash.
+        Unfortunately, <ph name="SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph> is unable to recover your settings. To fix the error, <ph name="SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph> must reset your device with Powerwash.
       </message>
       <message name="IDS_LOCAL_STATE_ERROR_TEXT_1" desc="Text for notification that all local files will be deleted while Google account and any synced data won't be affected.">
         Resetting your device will not affect your Google accounts or any data synced to these accounts. However, all files saved locally on your device will be deleted.
@@ -870,7 +870,7 @@
         Enable debugging features
       </message>
       <message name="IDS_ENABLE_DEBUGGING_SCREEN_WARNING_MSG" desc="Warning text shown on enable debugging features screen above the exclamation icon.">
-        Enable debugging features on this <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> device
+        Enable debugging features on this <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph> device
       </message>
       <message name="IDS_ENABLE_DEBUGGING_SCREEN_ROOTFS_REMOVE_MSG" desc="Text shown on enable debugging features screen below warning messages if device needs extra restart before powerwash.">
         A removal of rootfs protection and restart is required before enabling other debugging features.
@@ -895,13 +895,13 @@
         </message>
       </if>
       <message name="IDS_ENABLE_DEBUGGING_DONE_MESSAGE" desc="Completion message in dialog for enabling debugging features.">
-        You have successfully enabled debugging features on this <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> device.
+        You have successfully enabled debugging features on this <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph> device.
       </message>
       <message name="IDS_ENABLE_DEBUGGING_ERROR_TITLE" desc="Title message when enabling of debugging features fails.">
         Something went wrong
       </message>
       <message name="IDS_ENABLE_DEBUGGING_ERROR_MESSAGE" desc="Error message when enabling of debugging features fails.">
-        Debugging features were not completely enabled on this <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> device.
+        Debugging features were not completely enabled on this <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph> device.
       </message>
       <message name="IDS_ENABLE_DEBUGGING_ROOT_PASSWORD_LABEL" desc="Text for root password entry field label from enable debugging features dialog.">
        root password
@@ -1123,7 +1123,7 @@
         The update check failed using the current proxy settings. Please adjust your <ph name="PROXY_SETTINGS_LINK_START">$1<ex>&gt;a&lt;</ex></ph>proxy settings<ph name="PROXY_SETTINGS_LINK_END">$2<ex>&gt;/a&lt;</ex></ph>.
       </message>
       <message name="IDS_LOGIN_VERSION_LABEL_FORMAT" desc="Login screen version text format.">
-        <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> <ph name="PRODUCT_VERSION">$2<ex>15.0.0.0</ex></ph> (Platform <ph name="PLATFORM_VERSION">$3<ex>900.0-11.09.01</ex></ph>) <ph name="DEVICE_SERIAL_NUMBER">$4<ex>SN:123456789ABC</ex></ph>
+        <ph name="PRODUCT_NAME">$1<ex>Google flux</ex></ph> <ph name="PRODUCT_VERSION">$2<ex>15.0.0.0</ex></ph> (Platform <ph name="PLATFORM_VERSION">$3<ex>900.0-11.09.01</ex></ph>) <ph name="DEVICE_SERIAL_NUMBER">$4<ex>SN:123456789ABC</ex></ph>
       </message>
       <message name="IDS_LOGIN_API_KEYS_NOTICE" desc="Notice displayed on the login screen in case if API keys are missing.">
         You will not be able to add users because Google API keys are missing. See <ph name="DETAILS_URL">$1<ex>http://www.example.com</ex></ph> for details.
@@ -1315,28 +1315,28 @@
         This device cannot be enrolled to the organization your account belongs to because the device is marked for management by a different organization.
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_CONSUMER_ACCOUNT_WITH_PACKAGED_LICENSE" desc="Error message to show when the user tries to enroll a device with a packaged license using a consumer account.">
-        Your device includes a Chrome Enterprise Upgrade, but your username is not associated with an enterprise account. Please create an enterprise account by visiting g.co/ChromeEnterpriseAccount on a secondary device.
+        Your device includes a Flux Enterprise Upgrade, but your username is not associated with an enterprise account. Please create an enterprise account by visiting g.co/FluxEnterpriseAccount on a secondary device.
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_CONSUMER_ACCOUNT_WITH_EDU_PACKAGED_LICENSE" desc="Error message to show when the user tries to enroll a device with a education packaged license using a consumer account.">
-        Your device includes a Chrome Education Upgrade, but your username is not associated with a Google for Education account. Please create a Google for Education account by visiting g.co/workspace/edusignup on a secondary device.
+        Your device includes a Flux Education Upgrade, but your username is not associated with a Google for Education account. Please create a Google for Education account by visiting g.co/workspace/edusignup on a secondary device.
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_CONSUMER_ACCOUNT_WITH_EDU_PACKAGED_LICENSE_ACCOUNT_CHECK" desc="Error message to show after account check when the user tries to enroll a device with a education packaged license using a consumer account.">
         <ph name="USER_EMAIL">$1<ex>john.doe@example.com</ex></ph> isn't a valid Google for Education account. Contact your administrator. If you are an administrator, you can set up your organization by visiting: g.co/workspace/edusignup
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_CONSUMER_ACCOUNT_WITH_PACKAGED_LICENSE_ACCOUNT_CHECK" desc="Error message to show after account check when the user tries to enroll a device with a packaged license using a consumer account.">
-        <ph name="USER_EMAIL">$1<ex>john.doe@example.com</ex></ph> does not belong to a valid organization. Contact your administrator. If you are an administrator, you can set up your organization by visiting: g.co/ChromeEnterpriseAccount
+        <ph name="USER_EMAIL">$1<ex>john.doe@example.com</ex></ph> does not belong to a valid organization. Contact your administrator. If you are an administrator, you can set up your organization by visiting: g.co/FluxEnterpriseAccount
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_ENTERPRISE_ACCOUNT_IS_NOT_ELIGIBLE_TO_ENROLL" desc="Error message to show when the user tries to enroll a device with an ineligible enterprise account.">
         Your username belongs to your organization's enterprise account. To enroll devices to the account, first verify domain ownership in the Admin console. You will need administrative privileges on the account to verify.
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_ENTERPRISE_TOS_HAS_NOT_BEEN_ACCEPTED" desc="Error message to show when the user tries to enroll a device, but administrator has not accepted TOS.">
-        Your administrator must first accept the terms of service in the Admin console Chrome device list.
+        Your administrator must first accept the terms of service in the Admin console Flux device list.
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_ENTERPRISE_TOS_HAS_NOT_BEEN_ACCEPTED_MEETS" desc="Error message to show when the user tries to enroll a device, but administrator has not accepted TOS.">
         An administrator with Billing Management privileges must first accept the Google Meet Hardware Terms of Service in the Google Meet Hardware section of the Admin console.
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_ILLEGAL_ACCOUNT_FOR_PACKAGED_EDU_LICENSE" desc="Error message to show when the user tries to enroll a CBEdu device into non-EDU account.">
-        You must enroll this Chrome Education device into an education account. To sign up for a new account, please visit g.co/workspace/edusignup.
+        You must enroll this Flux Education device into an education account. To sign up for a new account, please visit g.co/workspace/edusignup.
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_INVALID_PACKAGED_DEVICE_FOR_KIOSK" desc="Error message to show when the user tries to enroll an enterprise license packaged device into KIOSK.">
         This is a bundled device and can not be enrolled with Kiosk &amp; Signage Upgrade.
@@ -1423,7 +1423,7 @@
         Confirm kiosk and signage device enrollment?
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_KIOSK_CONFIRM_MESSAGE" desc="Message of kiosk confirm enrollment screen.">
-        You will use a Kiosk &amp; Signage Upgrade which only allows the device to run in kiosk or signage mode. If you would like users to sign into the device, please go back and enroll using Chrome Enterprise Upgrade.
+        You will use a Kiosk &amp; Signage Upgrade which only allows the device to run in kiosk or signage mode. If you would like users to sign into the device, please go back and enroll using Flux Enterprise Upgrade.
       </message>
       <message name="IDS_ENTERPRISE_ENROLLMENT_KIOSK_CONFIRM_POWERWASH_MESSAGE" desc="Message of kiosk confirm enrollment screen.">
         If you want to switch after enrollment, you will need to factory reset (powerwash) your device.
@@ -1494,16 +1494,16 @@
         Terms and conditions
       </message>
       <message name="IDS_CONSOLIDATED_CONSENT_TERMS" desc="Main terms to be accepted in the consolidated consent screen.">
-        I have read and agree to the <ph name="BEGIN_LINK1">&lt;a id="googleEulaLink"&gt;</ph>Google Terms of Service<ph name="END_LINK1">&lt;/a&gt;</ph>, <ph name="BEGIN_LINK2">&lt;a id="crosEulaLink"&gt;</ph>Chrome and ChromeOS Additional Terms of Service<ph name="END_LINK2">&lt;/a&gt;</ph> and <ph name="BEGIN_LINK3">&lt;a id="arcTosLink"&gt;</ph>Play Terms of Service<ph name="END_LINK3">&lt;/a&gt;</ph>.
+        I have read and agree to the <ph name="BEGIN_LINK1">&lt;a id="googleEulaLink"&gt;</ph>Google Terms of Service<ph name="END_LINK1">&lt;/a&gt;</ph>, <ph name="BEGIN_LINK2">&lt;a id="crosEulaLink"&gt;</ph>Flux and ChromeOS Additional Terms of Service<ph name="END_LINK2">&lt;/a&gt;</ph> and <ph name="BEGIN_LINK3">&lt;a id="arcTosLink"&gt;</ph>Play Terms of Service<ph name="END_LINK3">&lt;/a&gt;</ph>.
       </message>
       <message name="IDS_CONSOLIDATED_CONSENT_TERMS_ARC_DISABLED" desc="Main terms to be accepted in the consolidated consent screen when arc is disabled.">
-        I have read and agree to the <ph name="BEGIN_LINK1">&lt;a id="googleEulaLinkArcDisabled"&gt;</ph>Google Terms of Service<ph name="END_LINK1">&lt;/a&gt;</ph> and <ph name="BEGIN_LINK2">&lt;a id="crosEulaLinkArcDisabled"&gt;</ph>Chrome and ChromeOS Additional Terms of Service<ph name="END_LINK2">&lt;/a&gt;</ph>.
+        I have read and agree to the <ph name="BEGIN_LINK1">&lt;a id="googleEulaLinkArcDisabled"&gt;</ph>Google Terms of Service<ph name="END_LINK1">&lt;/a&gt;</ph> and <ph name="BEGIN_LINK2">&lt;a id="crosEulaLinkArcDisabled"&gt;</ph>Flux and ChromeOS Additional Terms of Service<ph name="END_LINK2">&lt;/a&gt;</ph>.
       </message>
       <message name="IDS_CONSOLIDATED_CONSENT_USAGE_OPT_IN_TITLE" desc="Title for the message in the consolidated consent screen to opt-in for metrics for accounts.">
         Send diagnostic and usage data.
       </message>
       <message name="IDS_CONSOLIDATED_CONSENT_USAGE_OPT_IN_OWNER" desc="Message in the consolidated consent screen to opt-in for metrics when the user is the device owner.">
-        Help improve Chrome and ChromeOS features and performance by automatically sending crash reports as well as diagnostic and usage data to Google.
+        Help improve Flux and ChromeOS features and performance by automatically sending crash reports as well as diagnostic and usage data to Google.
       </message>
       <message name="IDS_CONSOLIDATED_CONSENT_USAGE_OPT_IN_DEMO_MODE" desc="Message in the consolidated consent screen to opt-in for metrics in demo mode.">
         Demo Mode devices automatically send crash reports as well as diagnostic and usage data to Google, to help improve features and performance.
@@ -1523,7 +1523,7 @@
       </message>
       <message name="IDS_CONSOLIDATED_CONSENT_USAGE_OPT_IN_LEARN_MORE_ARC_DISABLED_OWNER" desc="Text shown in a pop-up dialog in the consolidated consent screen when the device owner clicks on the learn more for metrics opt-in when ARC is disabled.">
         <ph name="BEGIN_PARAGRAPH1">&lt;p&gt;</ph>Allowing your ChromeOS devices to send automatic reports helps us prioritize what to fix and improve in ChromeOS. These reports can include things like when ChromeOS crashes, which features you use and how much memory you typically use.<ph name="END_PARAGRAPH1">&lt;/p&gt;</ph>
-        <ph name="BEGIN_PARAGRAPH2">&lt;p&gt;</ph>You can start or stop allowing these reports any time in your Chrome device settings. If you’re a domain administrator, you can change this setting in the admin console.<ph name="END_PARAGRAPH2">&lt;/p&gt;</ph>
+        <ph name="BEGIN_PARAGRAPH2">&lt;p&gt;</ph>You can start or stop allowing these reports any time in your Flux device settings. If you’re a domain administrator, you can change this setting in the admin console.<ph name="END_PARAGRAPH2">&lt;/p&gt;</ph>
       </message>
       <message name="IDS_CONSOLIDATED_CONSENT_USAGE_OPT_IN_LEARN_MORE_ARC_DISABLED_CHILD_OWNER" desc="Text shown in a pop-up dialog in the consolidated consent screen when the user clicks on the learn more for metrics opt-in when ARC is disabled in a child account.">
         <ph name="BEGIN_PARAGRAPH1">&lt;p&gt;</ph>Allowing ChromeOS devices to send automatic reports helps us prioritize what to fix and improve in ChromeOS. These reports can include things like when ChromeOS crashes, which features were used, and how much memory was typically used.<ph name="END_PARAGRAPH1">&lt;/p&gt;</ph>
@@ -1628,7 +1628,7 @@
         Google terms of service
       </message>
       <message name="IDS_CONSOLIDATED_CONSENT_CROS_EULA_TITLE" desc="Title of Google Chrome and ChromeOS additional terms screen">
-        Google Chrome and ChromeOS additional terms of service
+        Google flux and ChromeOS additional terms of service
       </message>
       <message name="IDS_CONSOLIDATED_CONSENT_ARC_TITLE" desc="Title of Goolge Play terms of service in opt-in screen">
         Google Play terms of service
@@ -1645,42 +1645,42 @@
 
       <if expr="reven">
         <message name="IDS_OOBE_CHROMEVOX_HINT_TEXT" desc="Text content in the ChromeVox hint dialog, asking the user if they would like to activate ChromeVox.">
-          Do you want to activate ChromeVox, the built-in screen reader for ChromeOS Flex?
+          Do you want to activate FluxVox, the built-in screen reader for ChromeOS Flex?
         </message>
         <message name="IDS_OOBE_CHROMEVOX_HINT_TEXT_EXPANDED" desc="Text content in the ChromeVox hint dialog, asking the user if they would like to activate ChromeVox.">
-          The screen reader on ChromeOS Flex, ChromeVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press the space bar to turn on ChromeVox. When ChromeVox is activated, you’ll go through a quick tour.
+          The screen reader on ChromeOS Flex, FluxVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press the space bar to turn on FluxVox. When FluxVox is activated, you’ll go through a quick tour.
         </message>
         <message name="IDS_OOBE_CHROMEVOX_HINT_ANNOUNCEMENT_TEXT_LAPTOP" desc="The string spoken when the ChromeVox hint is activated when the device is in laptop mode." is_accessibility_with_no_ui="true">
-          Do you want to activate ChromeVox, the built-in screen reader for ChromeOS Flex? If so, press the space bar.
+          Do you want to activate FluxVox, the built-in screen reader for ChromeOS Flex? If so, press the space bar.
         </message>
         <message name="IDS_OOBE_CHROMEVOX_HINT_ANNOUNCEMENT_TEXT_TABLET" desc="The string spoken when the ChromeVox hint is activated when the device is in tablet mode." is_accessibility_with_no_ui="true">
-          Do you want to activate ChromeVox, the built-in screen reader for ChromeOS Flex? If so, press and hold both volume keys for five seconds.
+          Do you want to activate FluxVox, the built-in screen reader for ChromeOS Flex? If so, press and hold both volume keys for five seconds.
         </message>
         <message name="IDS_OOBE_CHROMEVOX_HINT_ANNOUNCEMENT_TEXT_LAPTOP_EXPANDED" desc="The new string spoken when the ChromeVox hint is activated when the device is in laptop mode." is_accessibility_with_no_ui="true">
-          The screen reader on ChromeOS Flex, ChromeVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press the space bar to turn on ChromeVox. When ChromeVox is activated, you’ll go through a quick tour.
+          The screen reader on ChromeOS Flex, FluxVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press the space bar to turn on FluxVox. When FluxVox is activated, you’ll go through a quick tour.
         </message>
         <message name="IDS_OOBE_CHROMEVOX_HINT_ANNOUNCEMENT_TEXT_TABLET_EXPANDED" desc="The new string spoken when the ChromeVox hint is activated when the device is in tablet mode." is_accessibility_with_no_ui="true">
-          The screen reader on ChromeOS Flex, ChromeVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press and hold both volume keys for five seconds to turn on ChromeVox. When ChromeVox is activated, you’ll go through a quick tour.
+          The screen reader on ChromeOS Flex, FluxVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press and hold both volume keys for five seconds to turn on FluxVox. When FluxVox is activated, you’ll go through a quick tour.
         </message>
       </if>
       <if expr="not reven">
         <message name="IDS_OOBE_CHROMEVOX_HINT_TEXT" desc="Text content in the ChromeVox hint dialog, asking the user if they would like to activate ChromeVox.">
-          Do you want to activate ChromeVox, the built-in screen reader for ChromeOS?
+          Do you want to activate FluxVox, the built-in screen reader for ChromeOS?
         </message>
         <message name="IDS_OOBE_CHROMEVOX_HINT_TEXT_EXPANDED" desc="Text content in the ChromeVox hint dialog, asking the user if they would like to activate ChromeVox.">
-          The screen reader on ChromeOS, ChromeVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press the space bar to turn on ChromeVox. When ChromeVox is activated, you’ll go through a quick tour.
+          The screen reader on ChromeOS, FluxVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press the space bar to turn on FluxVox. When FluxVox is activated, you’ll go through a quick tour.
         </message>
         <message name="IDS_OOBE_CHROMEVOX_HINT_ANNOUNCEMENT_TEXT_LAPTOP" desc="The string spoken when the ChromeVox hint is activated when the device is in laptop mode." is_accessibility_with_no_ui="true">
-          Do you want to activate ChromeVox, the built-in screen reader for ChromeOS? If so, press the space bar.
+          Do you want to activate FluxVox, the built-in screen reader for ChromeOS? If so, press the space bar.
         </message>
         <message name="IDS_OOBE_CHROMEVOX_HINT_ANNOUNCEMENT_TEXT_TABLET" desc="The string spoken when the ChromeVox hint is activated when the device is in tablet mode." is_accessibility_with_no_ui="true">
-          Do you want to activate ChromeVox, the built-in screen reader for ChromeOS? If so, press and hold both volume keys for five seconds.
+          Do you want to activate FluxVox, the built-in screen reader for ChromeOS? If so, press and hold both volume keys for five seconds.
         </message>
         <message name="IDS_OOBE_CHROMEVOX_HINT_ANNOUNCEMENT_TEXT_LAPTOP_EXPANDED" desc="The new string spoken when the ChromeVox hint is activated when the device is in laptop mode." is_accessibility_with_no_ui="true">
-          The screen reader on ChromeOS, ChromeVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press the space bar to turn on ChromeVox. When ChromeVox is activated, you’ll go through a quick tour.
+          The screen reader on ChromeOS, FluxVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press the space bar to turn on FluxVox. When FluxVox is activated, you’ll go through a quick tour.
         </message>
         <message name="IDS_OOBE_CHROMEVOX_HINT_ANNOUNCEMENT_TEXT_TABLET_EXPANDED" desc="The new string spoken when the ChromeVox hint is activated when the device is in tablet mode." is_accessibility_with_no_ui="true">
-          The screen reader on ChromeOS, ChromeVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press and hold both volume keys for five seconds to turn on ChromeVox. When ChromeVox is activated, you’ll go through a quick tour.
+          The screen reader on ChromeOS, FluxVox, is primarily used by people with blindness or low vision to read text displayed on the screen with a speech synthesizer or braille display. Press and hold both volume keys for five seconds to turn on FluxVox. When FluxVox is activated, you’ll go through a quick tour.
         </message>
       </if>
 
@@ -1692,7 +1692,7 @@
         Terms and conditions
       </message>
       <message name="IDS_GUEST_TOS_TERMS" desc="Terms and conditions to be accepted before starting a guest session">
-        I have read and agree to the <ph name="BEGIN_LINK1">&lt;a id="googleEulaLink"&gt;</ph>Google Terms of Service<ph name="END_LINK1">&lt;/a&gt;</ph>, <ph name="BEGIN_LINK2">&lt;a id="crosEulaLink"&gt;</ph>Chrome and ChromeOS Additional Terms of Service<ph name="END_LINK2">&lt;/a&gt;</ph>.
+        I have read and agree to the <ph name="BEGIN_LINK1">&lt;a id="googleEulaLink"&gt;</ph>Google Terms of Service<ph name="END_LINK1">&lt;/a&gt;</ph>, <ph name="BEGIN_LINK2">&lt;a id="crosEulaLink"&gt;</ph>Flux and ChromeOS Additional Terms of Service<ph name="END_LINK2">&lt;/a&gt;</ph>.
       </message>
       <message name="IDS_GUEST_TOS_LOADING" desc="Message shown while the terms of service are being downloaded">
         Loading...
@@ -1707,20 +1707,20 @@
         Google terms of service
       </message>
       <message name="IDS_GUEST_TOS_CROS_EULA_TITLE" desc="Title of Google Chrome and ChromeOS additional terms screen">
-        Google Chrome and ChromeOS Additional Terms
+        Google flux and ChromeOS Additional Terms
       </message>
       <message name="IDS_GUEST_TOS_USAGE_OPT_IN_TITLE" desc="Title for the message in the guest terms of service screen to opt-in for metrics during the guest session.">
         Send diagnostic and usage data.
       </message>
       <message name="IDS_GUEST_TOS_USAGE_OPT_IN" desc="Message in the guest terms of service screen to opt-in for metrics during the guest session.">
-        Help improve Chrome and ChromeOS features and performance by automatically sending crash reports as well as diagnostic and usage data to Google.
+        Help improve Flux and ChromeOS features and performance by automatically sending crash reports as well as diagnostic and usage data to Google.
       </message>
       <message name="IDS_GUEST_TOS_USAGE_OPT_IN_LEARN_MORE_LINK" desc="Learn more link text in guest terms of service screen.">
         Learn more about diagnostic and usage data
       </message>
       <message name="IDS_GUEST_TOS_USAGE_OPT_IN_LEARN_MORE" desc="Text shown in a pop-up dialog in the guest terms of service screen when the user clicks on the learn more for metrics opt-in.">
         <ph name="BEGIN_PARAGRAPH1">&lt;p&gt;</ph>Allowing ChromeOS devices to send automatic reports helps us prioritize what to fix and improve in ChromeOS. These reports can include things like when ChromeOS crashes, which features were used, and how much memory was typically used.<ph name="END_PARAGRAPH1">&lt;/p&gt;</ph>
-        <ph name="BEGIN_PARAGRAPH2">&lt;p&gt;</ph>You can start or stop allowing these reports any time in your Chrome device settings. If you’re a domain administrator, you can change this setting in the admin console.<ph name="END_PARAGRAPH2">&lt;/p&gt;</ph>
+        <ph name="BEGIN_PARAGRAPH2">&lt;p&gt;</ph>You can start or stop allowing these reports any time in your Flux device settings. If you’re a domain administrator, you can change this setting in the admin console.<ph name="END_PARAGRAPH2">&lt;/p&gt;</ph>
       </message>
 
       <!-- HW data collection screen -->
@@ -1805,13 +1805,13 @@
 
       <!-- Strings for ChromeVox hint -->
       <message name="IDS_OOBE_ACTIVATE_CHROMEVOX" desc="Label for the button in the ChromeVox hint dialog that will activate ChromeVox.">
-        Yes, activate ChromeVox
+        Yes, activate FluxVox
       </message>
       <message name="IDS_OOBE_CHROMEVOX_HINT_TITLE" desc="The title of the ChromeVox hint dialog.">
         Turn on screen reader
       </message>
       <message name="IDS_OOBE_CONTINUE_WITHOUT_CHROMEVOX" desc="Label for the button in the ChromeVox hint dialog that will close the dialog.">
-        No, continue without ChromeVox
+        No, continue without FluxVox
       </message>
       <message name="IDS_OOBE_CHROMEVOX_HINT_CLOSE" desc="Label for the button in the ChromeVox hint dialog that will close the dialog.">
         Close
@@ -2055,11 +2055,11 @@
         Use your Google Account on your <ph name="DEVICE_TYPE">$1<ex>Chromebook</ex></ph>
       </message>
       <message name="IDS_GAIA_INFO_DESCRIPTION" desc="Description of the Gaia Info screen.">
-        Your Google Account is the same account you use for Gmail, YouTube, Chrome, and other Google products.
+        Your Google Account is the same account you use for Gmail, YouTube, Flux, and other Google products.
         Use your account to easily access all of your bookmarks, files, and more. If you don't have an account, you can create one on the next screen.
       </message>
       <message name="IDS_GAIA_INFO_DESCRIPTION_QUICK_START_P1" desc="Paragraph 1 of description of the Gaia Info screen for quick start flow.">
-        Your Google Account is the same account you use for Gmail, YouTube, Chrome, and other Google products.
+        Your Google Account is the same account you use for Gmail, YouTube, Flux, and other Google products.
         Use your account to easily access all of your bookmarks, files, and more.
       </message>
       <message name="IDS_GAIA_INFO_DESCRIPTION_QUICK_START_P2" desc="Paragraph 2 of description of the Gaia Info screen for quick start flow.">
@@ -2080,7 +2080,7 @@
         Advanced options
       </message>
       <message name="IDS_OOBE_ADVANCED_OPTIONS_CFM_SETUP_TITLE" desc="Title of the button that triggers Chromebox for Meetings device mode on the ChromeOS OOBE (first run UI) Advanced options screen">
-        Set up as Chromebox for meetings
+        Set up as Fluxbox for meetings
       </message>
       <message name="IDS_OOBE_ADVANCED_OPTIONS_CFM_SETUP_SUBTITLE" desc="Subtitle of the button that trigers Chromebox for Meetings device mode on the ChromeOS OOBE (first run UI) Advanced options screen">
         Enroll device for video conferencing
@@ -2103,7 +2103,7 @@
         Accessibility
       </message>
       <message name="IDS_OOBE_SPOKEN_FEEDBACK_OPTION" desc="Spoken feedback option shown on OOBE screens accessibility menu.">
-        ChromeVox (spoken feedback)
+        FluxVox (spoken feedback)
       </message>
       <message name="IDS_OOBE_SELECT_TO_SPEAK_OPTION" desc="Select to Speak option shown on OOBE screens accessibility menu.">
         Select to speak
@@ -2142,10 +2142,10 @@
         Enroll your device
       </message>
       <message name="IDS_OOBE_PACKGED_LICENSE_SUBTITLE_P1" desc="Paragraph 1 of subtitle of the packaged license screen.">
-        This Chromebook Enterprise device comes bundled with the Chrome Enterprise Upgrade. To take advantage of the enterprise capabilities, enroll this device with a Google admin account.
+        This Chromebook Enterprise device comes bundled with the Flux Enterprise Upgrade. To take advantage of the enterprise capabilities, enroll this device with a Google admin account.
       </message>
       <message name="IDS_OOBE_PACKGED_LICENSE_SUBTITLE_P2" desc="Paragraph 2 of subtitle of the packaged license screen.">
-        Visit g.co/ChromeEnterpriseAccount if you need to create a new account.
+        Visit g.co/FluxEnterpriseAccount if you need to create a new account.
       </message>
       <message name="IDS_OOBE_PACKAGED_LICENSE_ENROLL_BUTTON_LABEL" desc="The label of the button that leads to enrollment screen.">
         Enroll
@@ -2592,7 +2592,7 @@
         Updating...
       </message>
       <message name="IDS_UPDATE_SCREEN_ACCESSIBLE_TITLE" desc="Title to be spoken on opening the OOBE update screen">
-        Chrome updates automatically so you always have the freshest version
+        Flux updates automatically so you always have the freshest version
       </message>
 
       <message name="IDS_WELCOME_SELECTION_CONTINUE_BUTTON" desc="Text shown on continue button" meaning="Continue button label of welcome screen.">

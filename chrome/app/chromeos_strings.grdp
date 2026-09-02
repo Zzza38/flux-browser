@@ -22,7 +22,7 @@
   </message>
 
   <message name="IDS_WALLPAPER_MANAGER_INVALID_WALLPAPER" desc="The string displayed to user when user selected wallpaper can not be set as a wallpaper.">
-    Chrome cannot set wallpaper.
+    Flux cannot set wallpaper.
   </message>
 
   <!-- MultiDevice setup dialog. -->
@@ -303,7 +303,7 @@
     <ph name="SERVICE_NAME">$1<ex>Google Drive</ex></ph> wants to check if you are using an eligible ChromeOS device.
   </message>
   <message name="IDS_ECHO_DISABLED_CONSENT_DIALOG_TEXT" desc="Dialog text shown when user is informed that redeeming offers is disabled for the device.">
-    Your IT administrator has disabled Chrome Goodies for your device.
+    Your IT administrator has disabled Flux Goodies for your device.
   </message>
   <message name="IDS_ECHO_CONSENT_DISMISS_BUTTON" desc="Dismiss dialog button label for disabled echo dialog.">
     Got it
@@ -612,7 +612,7 @@
     Mobile data
   </message>
   <message name="IDS_3G_NOTIFICATION_MESSAGE" desc="Text of the 3G data notification telling that 3G data is enabled.">
-    Google Chrome will use mobile data if you're not connected to another network.
+    Google flux will use mobile data if you're not connected to another network.
   </message>
 
   <!-- chrome://mobilesetup strings -->
@@ -755,7 +755,7 @@
     Include all log files collected by debugd as a separate archive.
   </message>
   <message name="IDS_NETWORK_UI_NETWORK_LOGS_CHROME_LOGS" desc="Text describing the checkbox option for including the chrome logs in the stored logs file.">
-    Include Chrome log files in the archive.
+    Include Flux log files in the archive.
   </message>
   <message name="IDS_NETWORK_UI_NETWORK_LOGS_STORE_BUTTON" desc="Text displayed on the button for storing system logs.">
     Store system logs
@@ -1102,7 +1102,7 @@
     <ph name="BEGIN_LIST">&lt;ul&gt;</ph>
       <ph name="LIST_ITEM">&lt;li&gt;</ph>Checking the network cables, modem, and router
       <ph name="LIST_ITEM">&lt;li&gt;</ph>Reconnecting to Wi-Fi
-      <ph name="LIST_ITEM">&lt;li&gt;</ph>Running Chrome Connectivity Diagnostics
+      <ph name="LIST_ITEM">&lt;li&gt;</ph>Running Flux Connectivity Diagnostics
     <ph name="END_LIST">&lt;/ul&gt;</ph>
   </message>
   <message name="IDS_ACCOUNT_MANAGER_ERROR_CANNOT_ADD_ACCOUNT_TITLE" desc="Title for the error screen which tells user that account addition resulted in an error.">
@@ -1139,7 +1139,7 @@
     Sign in again to update <ph name="USER_EMAIL">$1<ex>john.doe@example.com</ex></ph>
   </message>
   <message name="IDS_ACCOUNT_MIGRATION_WELCOME_TEXT" desc="Text body for the Account Migration Welcome screen.">
-    Please sign in again to confirm that your account <ph name="USER_EMAIL">$1<ex>john.doe@example.com</ex></ph> can be used with websites, apps, and extensions in Chrome and Google Play. You may also remove this account. <ph name="LINK_BEGIN">&lt;a target="_blank" href="$2<ex>https://google.com/</ex>"&gt;</ph>Learn more<ph name="LINK_END">&lt;/a&gt;</ph>
+    Please sign in again to confirm that your account <ph name="USER_EMAIL">$1<ex>john.doe@example.com</ex></ph> can be used with websites, apps, and extensions in Flux and Google Play. You may also remove this account. <ph name="LINK_BEGIN">&lt;a target="_blank" href="$2<ex>https://google.com/</ex>"&gt;</ph>Learn more<ph name="LINK_END">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_ACCOUNT_MIGRATION_UPDATE_BUTTON" desc="Label for the button in Account Migration dialog to migrate the account.">
     Update account
@@ -1270,7 +1270,7 @@ You can manage this account’s settings by installing the Family Link app on yo
     Can’t use extension
   </message>
   <message name="IDS_PARENT_ACCESS_EXTENSION_APPROVALS_DISABLED_SUBTITLE" desc="Text telling the user that an extension cannot be installed because a parent has disallowed it.">
-    You can’t use this extension. Your parent or guardian has turned off “Permissions for sites, apps and extensions” for Chrome.
+    You can’t use this extension. Your parent or guardian has turned off “Permissions for sites, apps and extensions” for Flux.
   </message>
   <message name="IDS_PARENT_ACCESS_EXTENSION_APPROVALS_BEFORE_TITLE" desc="Title for the dialog asking a supervised user if they would like to ask for approval to install an extension.">
     Ask your parent to allow an extension

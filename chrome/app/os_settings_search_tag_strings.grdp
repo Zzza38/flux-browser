@@ -1125,7 +1125,7 @@
     TTS
   </message>
   <message name="IDS_OS_SETTINGS_TAG_A11y_CHROMEVOX" desc="Text for search result item which, when clicked, navigates the user to accessibility settings, with a toggle to enable/disable ChromeVox (spoken feedback).">
-    ChromeVox (spoken feedback)
+    FluxVox (spoken feedback)
   </message>
   <message name="IDS_OS_SETTINGS_TAG_A11y_CHROMEVOX_ALT1" desc="Text for search result item which, when clicked, navigates the user to accessibility settings, with a toggle to enable/disable ChromeVox (spoken feedback). Alternate phrase for: 'ChromeVox (spoken feedback)'">
     Screen reader
@@ -1206,7 +1206,7 @@
     Magnifier follows the word being read by select-to-speak
   </message>
   <message name="IDS_OS_SETTINGS_TAG_A11Y_MAGNIFIER_CHROMEVOX_FOLLOWING" desc="Text for search result item which, when clicked, navigates the user to accessibility settings, with a toggle to enable/disable full-screen or docked magnification ChromeVox focus following.">
-    Magnifier follows ChromeVox focus
+    Magnifier follows FluxVox focus
   </message>
   <message name="IDS_OS_SETTINGS_TAG_A11Y_DOCKED_MAGNIFIER" desc="Text for search result item which, when clicked, navigates the user to accessibility settings, with a toggle to enable/disable docked screen magnification.">
     Docked magnifier

@@ -23,7 +23,7 @@
     Be careful on this site
   </message>
   <message name="IDS_PAGE_INFO_SUSPICIOUS_SITE_DETAILS" desc="Description of the page info bubble for a suspicious site.">
-    Chrome has detected details that are common on sites associated with phishing, malware, or scams. <ph name="BEGIN_LINK">&lt;link&gt;<ex>&lt;link&gt;</ex></ph>Learn more<ph name="END_LINK">&lt;/link&gt;<ex>&lt;/link&gt;</ex></ph>
+    Flux has detected details that are common on sites associated with phishing, malware, or scams. <ph name="BEGIN_LINK">&lt;link&gt;<ex>&lt;link&gt;</ex></ph>Learn more<ph name="END_LINK">&lt;/link&gt;<ex>&lt;/link&gt;</ex></ph>
   </message>
   <message name="IDS_PAGE_INFO_SUSPICIOUS_SITE_BUTTON_MARK_AS_SAFE" desc="Button text to mark a suspicious site as safe." formatter_data="android_java">
     Mark as safe
@@ -44,10 +44,10 @@
     You're viewing a developer tools page
   </message>
   <message name="IDS_PAGE_INFO_READER_MODE_PAGE_SECURE" desc="Message to display in the page info bubble when the page you are viewing is the reader mode version of an article which was retrieved over a secure connection.">
-    Chrome simplified this page to make it easier to read. Chrome retrieved the original page over a secure connection.
+    Flux simplified this page to make it easier to read. Flux retrieved the original page over a secure connection.
   </message>
   <message name="IDS_PAGE_INFO_READER_MODE_PAGE" desc="Message to display in the page info bubble when the page you are viewing is the reader mode version of an article which was retrieved over an insecure connection.">
-    Chrome simplified this page to make it easier to read. Chrome retrieved the original page over an insecure connection.
+    Flux simplified this page to make it easier to read. Flux retrieved the original page over an insecure connection.
   </message>
 
   <!-- Safety Tip summary strings -->
@@ -103,12 +103,12 @@
   </message>
   <if expr="_google_chrome">
     <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED" desc="A short paragraph explaining to a Chrome user that they have reused their saved password on the current website.">
-      You just entered your password on a deceptive site. To secure your accounts, Chrome recommends checking your saved passwords.
+      You just entered your password on a deceptive site. To secure your accounts, Flux recommends checking your saved passwords.
     </message>
   </if>
   <if expr="not _google_chrome">
     <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SAVED" desc="A short paragraph explaining to a Chromium user that they have reused their saved password on the current website.">
-      You just entered your password on a deceptive site. To secure your accounts, Chromium recommends checking your saved passwords.
+      You just entered your password on a deceptive site. To secure your accounts, Flux recommends checking your saved passwords.
     </message>
   </if>
   <if expr="use_titlecase">
@@ -211,7 +211,7 @@
     <if expr="is_android">
     <!-- Only used in the dialog shown after tapping "Details" in page info -->
     <message name="IDS_PAGE_INFO_SECURE_IDENTITY_VERIFIED" desc="The text of the identity section when the page is secure and uses a valid certificate">
-      <ph name="BROWSER">$1<ex>Chromium</ex></ph> verified that <ph name="ISSUER">$2<ex>VeriSign</ex></ph> issued this website's certificate.
+      <ph name="BROWSER">$1<ex>Flux</ex></ph> verified that <ph name="ISSUER">$2<ex>VeriSign</ex></ph> issued this website's certificate.
     </message>
     </if>
 
@@ -428,16 +428,16 @@
       </message>
     </if>
     <message name="IDS_PAGE_INFO_CAMERA_SYSTEM_SETTINGS_DESCRIPTION" desc="The description for the camera permission with a link to system settings.">
-        To use your camera, give Chrome access in <ph name="LINK">$1<ex>system settings</ex></ph>.
+        To use your camera, give Flux access in <ph name="LINK">$1<ex>system settings</ex></ph>.
     </message>
     <message name="IDS_PAGE_INFO_MICROPHONE_SYSTEM_SETTINGS_DESCRIPTION" desc="The description for the microphone permission with a link to system settings.">
-        To use your microphone, give Chrome access in <ph name="LINK">$1<ex>system settings</ex></ph>.
+        To use your microphone, give Flux access in <ph name="LINK">$1<ex>system settings</ex></ph>.
     </message>
     <message name="IDS_PAGE_INFO_LOCATION_SYSTEM_SETTINGS_DESCRIPTION" desc="The description for the location permission with a link to system settings.">
-        To use your location, give Chrome access in <ph name="LINK">$1<ex>system settings</ex></ph>.
+        To use your location, give Flux access in <ph name="LINK">$1<ex>system settings</ex></ph>.
     </message>
     <message name="IDS_PAGE_INFO_CLIPBOARD_SYSTEM_SETTINGS_DESCRIPTION" desc="The description for the clipboard permission with a link to system settings.">
-        To use your clipboard, give Chrome access in <ph name="LINK">$1<ex>system settings</ex></ph>.
+        To use your clipboard, give Flux access in <ph name="LINK">$1<ex>system settings</ex></ph>.
     </message>
     <message name="IDS_PAGE_INFO_SETTINGS_OF_A_SYSTEM_LINK" desc="This is the text of the link pointing to settings of a system. This appears under a permission in the Page Info bubble if the permission is blocked on the system level.">
         system settings
@@ -498,36 +498,36 @@
     <!-- Password Protection -->
     <if expr="_google_chrome">
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS" desc="A short paragraph explaining to the user that they has reuse their google password on current website.">
-        You could lose access to your Google Account. Chrome recommends changing your password now. You'll be asked to sign in.
+        You could lose access to your Google Account. Flux recommends changing your password now. You'll be asked to sign in.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SYNC" desc="A short paragraph explaining to a Chrome sync user that they have reused their Google password on the current website.">
-        Chrome can help you protect your Google Account and change your password.
+        Flux can help you protect your Google Account and change your password.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SIGNED_IN_NON_SYNC" desc="A short paragraph explaining to a non-sync user that they have reused their Google password on the current website.">
-        You just entered your password on a deceptive site. Chrome can help. To change your password and notify Google that your account may be at risk, click Protect Account.
+        You just entered your password on a deceptive site. Flux can help. To change your password and notify Google that your account may be at risk, click Protect Account.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your organization's account or experience identity theft. Chrome recommends changing your password now.
+        You could lose access to your organization's account or experience identity theft. Flux recommends changing your password now.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE_WITH_ORG_NAME" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your <ph name="ORG_NAME">$1<ex>Google</ex></ph> account or experience identity theft. Chrome recommends changing your password now.
+        You could lose access to your <ph name="ORG_NAME">$1<ex>Google</ex></ph> account or experience identity theft. Flux recommends changing your password now.
       </message>
     </if>
     <if expr="not _google_chrome">
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS" desc="A short paragraph explaining to the user that they has reuse their google password on current website.">
-        You could lose access to your Google Account. Chromium recommends changing your password now. You'll be asked to sign in.
+        You could lose access to your Google Account. Flux recommends changing your password now. You'll be asked to sign in.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SYNC" desc="A short paragraph explaining to a Chrome sync user that they have reused their Google password on the current website.">
-        Chromium can help you protect your Google Account and change your password.
+        Flux can help you protect your Google Account and change your password.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_SIGNED_IN_NON_SYNC" desc="A short paragraph explaining to a non-sync user that they have reused their Google password on the current website.">
-        You just entered your password on a deceptive site. Chromium can help. To change your password and notify Google that your account may be at risk, click Protect Account.
+        You just entered your password on a deceptive site. Flux can help. To change your password and notify Google that your account may be at risk, click Protect Account.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your organization's account or experience identity theft. Chromium recommends changing your password now.
+        You could lose access to your organization's account or experience identity theft. Flux recommends changing your password now.
       </message>
       <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS_ENTERPRISE_WITH_ORG_NAME" desc="A short paragraph explaining to the user that they have reused their password on the current website.">
-        You could lose access to your <ph name="ORG_NAME">$1<ex>Google</ex></ph> account or experience identity theft. Chromium recommends changing your password now.
+        You could lose access to your <ph name="ORG_NAME">$1<ex>Google</ex></ph> account or experience identity theft. Flux recommends changing your password now.
       </message>
     </if>
 

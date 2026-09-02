@@ -4972,6 +4972,11 @@ bool ChromeContentBrowserClient::
 
 void ChromeContentBrowserClient::BrowserURLHandlerCreated(
     BrowserURLHandler* handler) {
+  // Present Flux-branded internal URLs while retaining Chromium's mature
+  // chrome:// WebUI implementation and compatibility surface underneath.
+  handler->AddHandlerPair(&ChromeContentBrowserClient::HandleFluxUI,
+                          &ChromeContentBrowserClient::HandleFluxUIReverse);
+
   // The group policy NTP URL handler must be registered before the other NTP
   // URL handlers below. Also register it before the "parts" handlers, so the
   // NTP policy takes precedence over extensions that override the NTP.
@@ -4999,6 +5004,34 @@ void ChromeContentBrowserClient::BrowserURLHandlerCreated(
   // chrome: & friends.
   handler->AddHandlerPair(&ChromeContentBrowserClient::HandleWebUI,
                           &ChromeContentBrowserClient::HandleWebUIReverse);
+}
+
+// static
+bool ChromeContentBrowserClient::HandleFluxUI(
+    GURL* url,
+    content::BrowserContext* browser_context) {
+  if (!url->SchemeIs(chrome::kFluxUIScheme)) {
+    return false;
+  }
+
+  GURL::Replacements replacements;
+  replacements.SetSchemeStr(content::kChromeUIScheme);
+  *url = url->ReplaceComponents(replacements);
+  return true;
+}
+
+// static
+bool ChromeContentBrowserClient::HandleFluxUIReverse(
+    GURL* url,
+    content::BrowserContext* browser_context) {
+  if (!url->SchemeIs(content::kChromeUIScheme)) {
+    return false;
+  }
+
+  GURL::Replacements replacements;
+  replacements.SetSchemeStr(chrome::kFluxUIScheme);
+  *url = url->ReplaceComponents(replacements);
+  return true;
 }
 
 base::FilePath ChromeContentBrowserClient::GetDefaultDownloadDirectory() {

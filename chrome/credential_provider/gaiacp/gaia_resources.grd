@@ -169,7 +169,7 @@
         Make sure your device is connected to the internet and try again
       </message>
       <message name="IDS_FAILED_CREATE_LOGON_STUB" desc="">
-        Can’t open the Google sign-in screen because there’s an issue with the Chrome installation on this device. Contact your administrator.
+        Can’t open the Google sign-in screen because there’s an issue with the Flux installation on this device. Contact your administrator.
       </message>
       <message name="IDS_PASSWORD_UPDATE_NEEDED" desc="">
         Your work account password has changed. Enter your Windows password to sync your Windows account with your work account.

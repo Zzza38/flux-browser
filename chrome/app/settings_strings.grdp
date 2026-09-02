@@ -68,7 +68,7 @@
     </if>
     <if expr="is_macosx">
       <message name="IDS_ABOUT_CHROME_AUTOUPDATE_ALL" desc="The 'Automatically update Chrome for all users.' button in the About window.  Mac-only.">
-        Automatically update Chrome for all users
+        Automatically update Flux for all users
       </message>
       <message name="IDS_ABOUT_CHROME_AUTOUPDATE_ALL_IS_ON" desc="The text in About Page to indicate automatic update is turned on.  Mac-only.">
         Automatic updates are turned on.
@@ -83,7 +83,7 @@
       Accessibility
     </message>
     <message name="IDS_SETTINGS_ACCESSIBILITY_WEB_STORE" desc="Text for an external link explaining that additional accessibility features are found on the Chrome Web Store.">
-      Open Chrome Web Store
+      Open flux Web Store
     </message>
     <message name="IDS_SETTINGS_MORE_FEATURES_LINK" desc="Link which opens page where users can install extensions which provide additional accessibility features.">
       Add accessibility features
@@ -95,7 +95,7 @@
       Get image descriptions from Google
     </message>
     <message name="IDS_SETTINGS_ACCESSIBLE_IMAGE_LABELS_SUBTITLE" desc="Subtitle for screen reader image labels feature.">
-      If an image doesn’t have a useful description, Chrome will try to provide one for you. To create descriptions, images are sent to Google.
+      If an image doesn’t have a useful description, Flux will try to provide one for you. To create descriptions, images are sent to Google.
     </message>
     <message name="IDS_SETTINGS_MAIN_NODE_ANNOTATIONS_DOWNLOAD_COMPLETE" desc="Success message when it has downloaded main node annotation files.">
       Main node annotation files downloaded
@@ -248,7 +248,7 @@
       Reset toolbar to default settings
     </message>
     <message name="IDS_SETTINGS_CHROME_COLORS" desc="Text of the label describing 'Chrome Colors' theme.">
-      Chrome Colors
+      Flux Colors
     </message>
     <message name="IDS_SETTINGS_COLOR_SCHEME_MODE" desc="Text of the label for selecting a color scheme mode for the browser.">
       Mode
@@ -329,7 +329,7 @@
       Google Search AI Mode
     </message>
     <message name="IDS_SETTINGS_SIDE_PANEL_ALIGNMENT_CHROME_PANELS" desc="Label for the default Chrome Panels alignment setting.">
-      Chrome Panels
+      Flux Panels
     </message>
     <message name="IDS_SETTINGS_SIDE_PANEL_ALIGNMENT_A11Y_LABEL" is_accessibility_with_no_ui="true" desc="Accessible label for side panel alignment dropdown menus, combining the side panel item name and the side panel position category name for screen readers.">
       <ph name="ITEM_NAME">$1<ex>Google Search AI Mode</ex></ph> <ph name="CATEGORY_NAME">$2<ex>Side panel position</ex></ph>
@@ -381,13 +381,13 @@
       Search settings
     </message>
     <message name="IDS_SETTINGS_SEARCH_NO_RESULTS_HELP" desc="Help text for a search that has no results.">
-      Go to <ph name="BEGIN_LINK_CHROMIUM">&lt;a target="_blank" href="$1"&gt;</ph>Google Chrome help<ph name="END_LINK_CHROMIUM">&lt;/a&gt;</ph> if you can't find what you're looking for
+      Go to <ph name="BEGIN_LINK_CHROMIUM">&lt;a target="_blank" href="$1"&gt;</ph>Google flux help<ph name="END_LINK_CHROMIUM">&lt;/a&gt;</ph> if you can't find what you're looking for
     </message>
     <message name="IDS_SETTINGS_SETTINGS" desc="The settings page title.">
       Settings
     </message>
     <message name="IDS_SETTINGS_ALT_PAGE_TITLE" desc="The settings page title for the about page.">
-      Settings - <ph name="SECTION_TITLE">$1<ex>About Chromium</ex></ph>
+      Settings - <ph name="SECTION_TITLE">$1<ex>About Flux</ex></ph>
     </message>
     <message name="IDS_SETTINGS_SUBPAGE_BUTTON" desc="Accessibility description for a button navigating the user from a settings page to one of the settings subpages.">
       Subpage button
@@ -839,16 +839,16 @@
       Edit in Google Account
     </message>
     <message name="IDS_SETTINGS_HOME_AND_WORK_ADDRESS_REMOVE" desc="Label for a context menu item that removes the selected home and work address from Chrome.">
-      Remove from Chrome
+      Remove from Flux
     </message>
     <message name="IDS_SETTINGS_HOME_ADDRESS_REMOVE_CONFIRMATION_DIALOG_TITLE" desc="Title for the dialog that asks for confirmation to remove the selected home address from Chrome.">
-      Remove your home address from Chrome autofill?
+      Remove your home address from Flux autofill?
     </message>
     <message name="IDS_SETTINGS_WORK_ADDRESS_REMOVE_CONFIRMATION_DIALOG_TITLE" desc="Title for the dialog that asks for confirmation to remove the selected work address from Chrome.">
-      Remove your work address from Chrome autofill?
+      Remove your work address from Flux autofill?
     </message>
     <message name="IDS_SETTINGS_NAME_EMAIL_ADDRESS_REMOVE_CONFIRMATION_DIALOG_TITLE" desc="Title for the dialog that asks for confirmation to remove the selected name and email address from Chrome.">
-      Remove this info from Chrome autofill?
+      Remove this info from Flux autofill?
     </message>
     <message name="IDS_SETTINGS_HOME_ADDRESS_REMOVE_CONFIRMATION_DIALOG_NOTICE" desc="Body for the dialog that asks for confirmation to remove the selected home address from Chrome.">
       Your home address can help you get things done across Google services, like more relevant Search results and directions in Google Maps. You can edit or delete your address in your <ph name="BEGIN_LINK">&lt;a href="$1" target=&quot;_blank&quot;&gt;</ph>Google Account<ph name="END_LINK">&lt;/a&gt;</ph> <ph name="USERNAME">$2<ex>example@gmail.com</ex></ph>.
@@ -1425,10 +1425,10 @@
       Sites you visit can verify that you're a real person and not a bot
     </message>
     <message name="IDS_SETTINGS_ANTI_ABUSE_WHEN_ON_SECTION_ONE" desc="A description that informs users that Chrome saves a small amount of data when the anti-abuse features are enabled.">
-      A site you visit can save a small amount of info with Chrome, mainly to validate you're not a bot
+      A site you visit can save a small amount of info with Flux, mainly to validate you're not a bot
     </message>
     <message name="IDS_SETTINGS_ANTI_ABUSE_WHEN_ON_SECTION_TWO" desc="A description that informs users how the anti-abuse features work.">
-      As you keep browsing, sites can check with Chrome and verify with a previous site you've visited that you're likely a real person
+      As you keep browsing, sites can check with Flux and verify with a previous site you've visited that you're likely a real person
     </message>
     <message name="IDS_SETTINGS_ANTI_ABUSE_WHEN_ON_SECTION_THREE" desc="A description that informs users how their browsing could be helped by the anti-abuse features.">
       Browsing is faster because a site is less likely to ask you to verify you're a real person
@@ -1488,7 +1488,7 @@
       Web &#38; App Activity
     </message>
     <message name="IDS_SETTINGS_PRIVACY_GUIDE_COMPLETION_CARD_AI_SETTINGS_LABEL" desc="Text of the AI Innovations sublabel in the completion card of the 'Privacy Guide'.">
-      Learn more about how AI shapes your experience and the controls provided by Chrome
+      Learn more about how AI shapes your experience and the controls provided by Flux
     </message>
     <message name="IDS_SETTINGS_PRIVACY_GUIDE_MSBB_CARD_HEADER" desc="Header of the 'make searches and browsing better' card in the 'Privacy Guide'.">
       Choose your search and browsing quality
@@ -1549,7 +1549,7 @@
         Sends an obfuscated portion of the URL to Google through a privacy server that hides your IP address
       </message>
       <message name="IDS_SETTINGS_PRIVACY_GUIDE_SAFE_BROWSING_CARD_STANDARD_PROTECTION_PRIVACY_DESCRIPTION1_PROXY" desc="A part of the privacy description of the standard protection section of the safe browsing card in the 'Privacy Guide'.">
-        If a site tries to steal your password, or when you download a harmful file, Chrome may also send URLs, including bits of page content, to Google
+        If a site tries to steal your password, or when you download a harmful file, Flux may also send URLs, including bits of page content, to Google
       </message>
     </if>
 
@@ -1705,10 +1705,10 @@
     </message>
     <if expr="_google_chrome">
       <message name="IDS_SETTINGS_SAFEBROWSING_STANDARD_DESC_PROXY" desc="Description for safe browsing standard protection mode">
-        Protects against sites, downloads, and extensions that are known to be dangerous. When you visit a site, Chrome sends an obfuscated portion of the URL to Google through a privacy server that hides your IP address. If a site does something suspicious, full URLs and bits of page content are also sent.
+        Protects against sites, downloads, and extensions that are known to be dangerous. When you visit a site, Flux sends an obfuscated portion of the URL to Google through a privacy server that hides your IP address. If a site does something suspicious, full URLs and bits of page content are also sent.
       </message>
       <message name="IDS_SETTINGS_SAFEBROWSING_STANDARD_BULLET_TWO_PROXY" desc="Bullet point under the safe browsing standard protection mode">
-        Sends an obfuscated portion of the URL to Google through a privacy server that hides your IP address. If a site tries to steal your password, or when you download a harmful file, Chrome may also send URLs, including bits of page content, to Google.
+        Sends an obfuscated portion of the URL to Google through a privacy server that hides your IP address. If a site tries to steal your password, or when you download a harmful file, Flux may also send URLs, including bits of page content, to Google.
       </message>
     </if>
     <message name="IDS_SETTINGS_SAFEBROWSING_STANDARD_EXPAND_ACCESSIBILITY_LABEL" desc="Label for the button that toggles showing the detailed description of safe browsing standard protection. Only visible by screen reader software.">
@@ -2092,10 +2092,10 @@
       Learn more about resetting settings
     </message>
     <message name="IDS_SETTINGS_RESET_AUTOMATED_DIALOG_V2_TITLE" desc="The title of the dialog informing the user that automated resetting of some settings occurred.">
-      Chrome reset these settings
+      Flux reset these settings
     </message>
     <message name="IDS_SETTINGS_RESET_AUTOMATED_DIALOG_V2_BODY" desc="The body of the dialog informing the user that automated resetting of some settings occurred.">
-      These settings were changed from outside of Chrome. To protect you, Chrome reset them.
+      These settings were changed from outside of Flux. To protect you, Flux reset them.
     </message>
     <message name="IDS_SETTINGS_RESET_PINNED_TABS" desc="A string that is used to describe the pinned tabs setting.">
       Pinned tabs
@@ -2228,7 +2228,7 @@
       Site search
     </message>
     <message name="IDS_SETTINGS_SEARCH_ENGINES_SITE_SEARCH_EXPLANATION" desc="Explanation for 'Site Search' section. Used interchangeably with IDS_SETTINGS_SEARCH_ENGINES_SITE_SEARCH_EXPLANATION_STARTER_PACK">
-      To search a specific site or part of Chrome, type its shortcut in the address bar, followed by your preferred keyboard shortcut.
+      To search a specific site or part of Flux, type its shortcut in the address bar, followed by your preferred keyboard shortcut.
     </message>
     <message name="IDS_SETTINGS_SEARCH_ENGINES_NO_SITES_ADDED" desc="Text shown when the 'Site Search' section is empty">
       No sites added
@@ -2243,7 +2243,7 @@
       Extensions
     </message>
     <message name="IDS_SETTINGS_SEARCH_ENGINES_EXTENSION_ENGINES_EXPLANATION" desc="Explanation for a section that displays search engines added by extensions">
-      Some extensions can add search engines to Chrome
+      Some extensions can add search engines to Flux
     </message>
     <message name="IDS_SETTINGS_SEARCH_ENGINES_NAME" desc="Label for a table column that holds the name of a search engine or site search provider">
       Name
@@ -2916,7 +2916,7 @@
     </if>
     <if expr="is_win and _google_chrome">
       <message name="IDS_SETTINGS_SITE_SETTINGS_PROTECTED_CONTENT_IDENTIFIERS_ALLOWED_SUB_LABEL" desc="A subtitle for the ‘Protected Content IDs’ setting, shown if user chooses to allow Protected Content IDs. This text explains that enabling protected content IDs may result in live captioning not working.">
-        Chrome Live Caption might not work
+        Flux Live Caption might not work
       </message>
     </if>
     <message name="IDS_SETTINGS_SITE_SETTINGS_PROTOCOL_HANDLERS_DESCRIPTION" desc="Description of the protocol handlers content setting.">
@@ -3115,7 +3115,7 @@
       Insecure content is blocked by default on secure sites
     </message>
     <message name="IDS_SETTINGS_SITE_SETTINGS_PDF_DOWNLOAD_PDFS" desc="Label for downloading PDF documents instead of automatically opening them in Chrome.">
-      Download PDF files instead of automatically opening them in Chrome
+      Download PDF files instead of automatically opening them in Flux
     </message>
     <message name="IDS_SETTINGS_SITE_SETTINGS_RECENT_ACTIVITY" desc="Label for the section which contains the user's recent permissions changes">
       Recent activity
@@ -3400,7 +3400,7 @@
       No sites added
     </message>
     <message name="IDS_SETTINGS_SITE_SETTINGS_BLOCK_AUTOPLAY" desc="A label for a toggle in site settings to block autoplay. If the toggle is on then Chrome will block autoplay by default and use an algorithm to determine which sites should still be able to autoplay. If the toggle is off then autoplay will be enabled for all sites.">
-      Let Chrome choose when sites can play sound (recommended)
+      Let Flux choose when sites can play sound (recommended)
     </message>
     <message name="IDS_SETTINGS_SITE_SETTINGS_EMPTY_ALL_SITES_PAGE" desc="Explanation shown when there are no sites that have appeared yet on the All Sites page.">
       Sites you visit will appear here
@@ -3681,7 +3681,7 @@
       Show profile stats
     </message>
     <message name="IDS_SETTINGS_ENCRYPT_WITH_SYNC_PASSPHRASE_LABEL" desc="Label for the radio button which, when selected, causes synced settings to be encrypted with a user-provided password.">
-      Encrypt synced data with your own <ph name="BEGIN_LINK">&lt;a href="$1" target=&quot;_blank&quot;&gt;<ex>&lt;a href="$1" target=&quot;_blank&quot;&gt;</ex></ph>sync passphrase<ph name="END_LINK">&lt;/a&gt;<ex>&lt;/a&gt;</ex></ph>. Payment methods and addresses from Google Pay won’t be encrypted. Browsing history from Chrome won’t sync.
+      Encrypt synced data with your own <ph name="BEGIN_LINK">&lt;a href="$1" target=&quot;_blank&quot;&gt;<ex>&lt;a href="$1" target=&quot;_blank&quot;&gt;</ex></ph>sync passphrase<ph name="END_LINK">&lt;/a&gt;<ex>&lt;/a&gt;</ex></ph>. Payment methods and addresses from Google Pay won’t be encrypted. Browsing history from Flux won’t sync.
     </message>
     <message name="IDS_SETTINGS_PASSPHRASE_EXPLANATION_TEXT" desc="Message shown when explicit passphrase is selected.">
       Only someone with your passphrase can read your encrypted data. The passphrase is not sent to or stored by Google. If you forget your passphrase or want to change this setting, you'll need to <ph name="BEGIN_LINK">&lt;a href="$1" target=&quot;_blank&quot;&gt;<ex>&lt;a href="$1" target=&quot;_blank&quot;&gt;</ex></ph>reset sync<ph name="END_LINK">&lt;/a&gt;<ex>&lt;/a&gt;</ex></ph>.
@@ -3822,7 +3822,7 @@
       When you ask questions about your history, you can get answers about specific information from a page you visited
     </message>
     <message name="IDS_SETTINGS_HISTORY_SEARCH_WITH_ANSWERS_CONSIDER_DATA_ENCRYPTED" desc="This is a bullet point in the ‘Things to consider’ column, which describes things users should consider about a feature. This string explains that AI features will save data to the user’s device in order to provide the feature’s respective benefit. The data will be appropriately encrypted for security. The tone should be informative.">
-      As you browse sites, their page contents are encrypted and saved to your device. This may affect Chrome's performance
+      As you browse sites, their page contents are encrypted and saved to your device. This may affect Flux's performance
     </message>
     <message name="IDS_SETTINGS_HISTORY_SEARCH_WITH_ANSWERS_CONSIDER_OUTDATED" desc="This is a bullet point in the ‘Things to consider’ column, which describes things users should consider about a feature. This string explains that history search results and answers powered by AI may become outdated since they are dependent on the user's last visit to the page contents.">
       AI-powered history search results and answers may become outdated if site content has changed since your last visit
@@ -3913,20 +3913,20 @@
           Enable Process Isolation
         </message>
         <message name="IDS_SETTINGS_SYSTEM_ISOLATION_STATE_SUBLABEL" desc="Sublabel for the Enable process isolation toggle.">
-          Process Isolation prevents other applications from tampering with <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph>.
+          Process Isolation prevents other applications from tampering with <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph>.
         </message>
       </if>
       <message name="IDS_SETTINGS_SYSTEM_FEATURE_NOTIFICATIONS_LABEL" desc="Label for the toggle that enables Chrome system notifications about features.">
-        Show system notifications about Chrome features and tips
+        Show system notifications about Flux features and tips
       </message>
       <message name="IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_LABEL" desc="Label for the control that opens the system network proxy settings. These settings apply to the entire computer.">
         Open your computer's proxy settings
       </message>
       <message name="IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_EXTENSION_LABEL" desc="Non-interactive label that describes when Chrome's proxy settings are overwritten by an extension. This is used in place of IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_LABEL above.">
-        <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> is using proxy settings from an extension
+        <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph> is using proxy settings from an extension
       </message>
       <message name="IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_POLICY_LABEL" desc="Non-interactive label that describes when Chrome's proxy settings are overwritten by policy. This is used in place of IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_LABEL above.">
-        <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Chrome</ex></ph> is using proxy settings from your administrator
+        <ph name="IDS_SHORT_PRODUCT_NAME">$1<ex>Flux</ex></ph> is using proxy settings from your administrator
       </message>
       <message name="IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_YOUR_ORGANIZATION_LABEL" desc="Non-interactive label that describes when Chrome's proxy settings are overwritten by the user's organization. This is used in place of IDS_SETTINGS_SYSTEM_PROXY_SETTINGS_LABEL above.">
         Your organization
@@ -3943,10 +3943,10 @@
         On-device AI
       </message>
       <message name="IDS_SETTINGS_SYSTEM_FEATURE_ON_DEVICE_AI_ENABLED_SUB_LABEL" desc="This string describes what turning off the toggle implies.">
-        To power features like scam detection, Chrome can use AI models that run directly on your device. When this is off, these features might not work. <ph name="BEGIN_LINK">&lt;a href="$1" target="_blank" aria-description="$2"&gt;</ph>Learn more about on-device AI<ph name="END_LINK">&lt;/a&gt;</ph>
+        To power features like scam detection, Flux can use AI models that run directly on your device. When this is off, these features might not work. <ph name="BEGIN_LINK">&lt;a href="$1" target="_blank" aria-description="$2"&gt;</ph>Learn more about on-device AI<ph name="END_LINK">&lt;/a&gt;</ph>
       </message>
       <message name="IDS_SETTINGS_SYSTEM_ON_DEVICE_AI_LINK_SUBTITLE" desc="Subtitle for the link row that points to the on-device AI settings.">
-        Choose whether Chrome uses AI models that run directly on your device
+        Choose whether Flux uses AI models that run directly on your device
       </message>
     </if>
 
@@ -4236,7 +4236,7 @@
       Enhanced Safe Browsing is on
     </message>
     <message name="IDS_SETTINGS_SAFETY_HUB_SB_ON_ENHANCED_SUBHEADER" desc="Safety Hub settings page (chrome://settings/safetyHub) gives users an overview over their safety status. Safe browsing card in this page shows the current state of Safe browsing setting (chrome://settings/security). This string is the body text of the Safe Browsing card when the current state is Enhanced protection.">
-      You have Chrome's strongest security
+      You have Flux's strongest security
     </message>
     <message name="IDS_SETTINGS_SAFETY_HUB_SB_ON_STANDARD_HEADER" desc="Safety Hub settings page (chrome://settings/safetyHub) gives users an overview over their safety status. Safe browsing card in this page shows the current state of Safe browsing setting (chrome://settings/security). This string is the headline of the Safe Browsing card when the current state is Standard protection.">
       Safe Browsing is on
@@ -4346,10 +4346,10 @@
         AI innovations
       </message>
       <message name="IDS_SETTINGS_AI_PAGE_TITLE" desc="This label is on the left Navigation sidebar in Chrome’s settings. It tells the user that they can see settings related to AI (artificial intelligence) in this section. It is a noun phrase that refers to our collection of AI settings. These settings include Help me write and more.">
-        AI in Chrome
+        AI in Flux
       </message>
       <message name="IDS_SETTINGS_AI_PAGE_MAIN_SUBLABEL_3" desc="This is a bullet point on a card that sets the context for the ‘AI innovations’ section of Chrome’s settings. Here, the user can see settings related to AI (artificial intelligence) in this section; these settings include Help me write and more. This bullet point is after the ‘Reimagine Chrome, supercharged with AI’ title and ‘Things to consider’ subheading. We want users to read this card and understand the considerations that apply to all Chrome’s AI features. This bullet point specifically notes that AI features are actively developing and results may include errors. The tone should be informative.">
-        Data sent to Google may be seen by human reviewers to improve Chrome AI’s technology
+        Data sent to Google may be seen by human reviewers to improve Flux AI’s technology
       </message>
       <message name="IDS_SETTINGS_AI_PAGE_MAIN_MANAGED_LEARN_MORE_ACCESSIBILITY_LABEL" desc="This string is found in a link that takes the user to the AI features and policies help center article when the user taps it. The tone should be informative">
         Learn more about using generative AI at work
@@ -4372,7 +4372,7 @@
         Automated Password Change
       </message>
       <message name="IDS_SETTINGS_PASSWORD_CHANGE_SUBLABEL" desc="Sublabel for password change entry in settings. The description of the feature beneath the “Automated password change” feature title. This and the bullets beneath this paragraph represent the full description of the feature. * “public” does two things: 1) it provides distance between “Chrome” and “data breach”, because we don’t want users to associate the breach with Chrome (Chrome didn’t have a data leak, 2) and related, it might reassure the user to know that Chrome is using public information to establish these lists of compromised passwords. * “Google Password Manager can offer…”: The user has to agree to have this feature update their password for them each time. So Google Password Manager is ‘offering’ to do something for the user.">
-        If Chrome finds one of your passwords in a public data breach, Google Password Manager can offer to change your password for you if you're signed in.
+        If Flux finds one of your passwords in a public data breach, Google Password Manager can offer to change your password for you if you're signed in.
       </message>
       <message name="IDS_SETTINGS_PASSWORD_CHANGE_DATA_BREACH" desc="Bullet 1 of 2 that appears beneath the “When used” subtitle. This string is repetitive of the feature description, but we want to have a complete description of what happens when the feature is used. * “Google Password Manager asks…”: This part is similar to the general feature description above, but it’s written as if the feature is being used by the user, so we use “asks” and not “can offer”. * “Strong password”: As an existing autofill feature, Google Password Manager can offer to generate and save passwords for the user. These passwords are typically stronger than passwords the user might create on their own">
         If one of your passwords is found in a data breach, Google Password Manager asks if you want it changed to a strong password
@@ -4408,7 +4408,7 @@
 
   <!-- Experimental settings strings -->
   <message name="IDS_SETTINGS_AI_PAGE_MAIN_TITLE" desc="This string is the title of a card that sets the context for the ‘AI innovations’ section of Chrome’s settings. Here, the user can see settings related to AI (artificial intelligence) in this section; these settings include Help me write and more. This title is before the ‘Things to consider’ subheading and bullet points. We want users to read this card and understand the considerations that apply to all Chrome’s AI features. The tone should be motivating." formatter_data="android_java">
-    Reimagine Chrome, supercharged with AI
+    Reimagine Flux, supercharged with AI
   </message>
   <message name="IDS_SETTINGS_AI_PAGE_MAIN_SUBLABEL_1" desc="This is a bullet point on a card that sets the context for the ‘AI innovations’ section of Chrome’s settings. Here, the user can see settings related to AI (artificial intelligence) in this section; these settings include Help me write and more. This bullet point is after the ‘Reimagine Chrome, supercharged with AI’ title and ‘Things to consider’ subheading. We want users to read this card and understand the considerations that apply to all Chrome’s AI features. This bullet point specifically notes that AI features are actively developing and results may include errors. The tone should be informative." formatter_data="android_java">
     These features use AI, are in early development, and won’t always get it right

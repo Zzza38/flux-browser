@@ -192,31 +192,31 @@
         The account used with the widget was removed. To select a different account, tap Edit Widget.
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_GAME_A11Y_LABEL" desc="Accessibility label for the dino game widget" meaning="Accessibility label for the dino game widget [CHAR_LIMIT=40][iOS only]">
-        Jump into Chrome Dino Game
+        Jump into Flux Dino Game
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_GAME_DESCRIPTION" desc="Description for the dino game widget" meaning="String that appears as description in the installation window for the Dino widget. [CHAR_LIMIT=150][iOS only]">
-        Jump into the Chrome Dino game from your Home Screen.
+        Jump into the Flux Dino game from your Home Screen.
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_GAME_DISPLAY_NAME" desc="Display name for the dino game widget" meaning="String that appears as title in the installation window for the Dino widget. [CHAR_LIMIT=30][iOS only]">
-        Chrome Dino Game
+        Flux Dino Game
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_GAME_TITLE" desc="Title for the dino game widget" meaning="String that appears in the Dino widget. [CHAR_LIMIT=15][iOS only]">
-        Chrome Dino
+        Flux Dino
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_LOCKSCREEN_LAUNCHER_GAME_A11Y_LABEL" desc="Accessibility label for the lockscreen launcher game widget" meaning="Accessibility label for the lockscreen launcher Dino Game widget [CHAR_LIMIT=40][iOS only]">
-        Jump into Chrome Dino Game
+        Jump into Flux Dino Game
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_LOCKSCREEN_LAUNCHER_GAME_DESCRIPTION" desc="Description for the lockscreen launcher game widget" meaning="String that appears as description in the installation window for the lockscreen launcher Dino Game widget. [CHAR_LIMIT=150][iOS only]">
-        Jump into the Chrome Dino Game from your lock screen.
+        Jump into the Flux Dino Game from your lock screen.
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_LOCKSCREEN_LAUNCHER_GAME_DISPLAY_NAME" desc="Display name for the lockscreen launcher game widget" meaning="String that appears as title in the installation window for the lockscreen launcher Dino Game widget. [CHAR_LIMIT=30][iOS only]">
-        Chrome Dino Game
+        Flux Dino Game
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_LOCKSCREEN_LAUNCHER_INCOGNITO_A11Y_LABEL" desc="Accessibility label for the lockscreen launcher incognito widget" meaning="Accessibility label for the lockscreen launcher Incognito widget [CHAR_LIMIT=40][iOS only]">
         Incognito Search
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_LOCKSCREEN_LAUNCHER_INCOGNITO_DESCRIPTION" desc="Description for the lockscreen launcher incognito widget" meaning="String that appears as description in the installation window for the lockscreen launcher Incognito widget. [CHAR_LIMIT=150][iOS only]">
-        Search or navigate in a new Incognito tab in Chrome.
+        Search or navigate in a new Incognito tab in Flux.
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_LOCKSCREEN_LAUNCHER_INCOGNITO_DISPLAY_NAME" desc="Display name for the lockscreen launcher incognito widget" meaning="String that appears as title in the installation window for the lockscreen launcher Incognito widget. [CHAR_LIMIT=30][iOS only]">
         Incognito Search
@@ -225,7 +225,7 @@
         Search
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_LOCKSCREEN_LAUNCHER_SEARCH_DESCRIPTION" desc="Description for the lockscreen launcher search widget" meaning="String that appears as description in the installation window for the lockscreen launcher Search widget. [CHAR_LIMIT=150][iOS only]">
-        Search in Chrome with your favorite search engine.
+        Search in Flux with your favorite search engine.
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_LOCKSCREEN_LAUNCHER_SEARCH_DISPLAY_NAME" desc="Display name for the lockscreen launcher search widget" meaning="String that appears as title in the installation window for the lockscreen launcher Search widget. [CHAR_LIMIT=30][iOS only]">
         Search
@@ -234,7 +234,7 @@
         Voice Search
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_LOCKSCREEN_LAUNCHER_VOICESEARCH_DESCRIPTION" desc="Description for the lockscreen launcher voice search widget" meaning="String that appears as description in the installation window for the lockscreen launcher Voice Search widget. [CHAR_LIMIT=150][iOS only]">
-        Search in Chrome using your voice.
+        Search in Flux using your voice.
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_LOCKSCREEN_LAUNCHER_VOICESEARCH_DISPLAY_NAME" desc="Display name for the lockscreen launcher voice search widget" meaning="String that appears as title in the installation window for the lockscreen launcher Voice Search widget. [CHAR_LIMIT=30][iOS only]">
         Voice Search
@@ -273,7 +273,7 @@
         Search or type URL
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_SEARCH_DESCRIPTION" desc="Description for the search widget" meaning="String that appears as description in the installation window for the Search widget. [CHAR_LIMIT=150][iOS only]">
-        Search in Chrome with your favorite search engine.
+        Search in Flux with your favorite search engine.
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_SEARCH_DISPLAY_NAME" desc="Name for the search widget" meaning="String that appears as title in the installation window for the Search widget. [CHAR_LIMIT=30][iOS only]">
         Search
@@ -308,10 +308,10 @@ type URL
           Start a new search or open your most visited sites from your iPhone homepage.
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_SHORTCUTS_DISPLAY_NAME" desc="Name for the chrome shortcuts widget" meaning="String that appears as title in the installation window for the Chrome Shortcuts widget [iOS only]">
-        Chrome Shortcuts
+        Flux Shortcuts
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_SHORTCUTS_EXPIRED_OPEN_CHROME" desc="Message shown in the Shortcuts Widget if Chrome has not been opened for a long time. It invites the user to open Chrome so up-to-date information about most visited sites can be displayed in the widget." meaning="shortcuts expires after some time of not using chrome[iOS only]">
-          Open Chrome to see your most visited sites here.
+          Open Flux to see your most visited sites here.
       </message>
       <message name="IDS_IOS_WIDGET_KIT_EXTENSION_SHORTCUTS_NO_SHORTCUTS_AVAILABLE_LABEL" desc="No shortcuts available label for the shortcuts widget [CHAR_LIMIT=70]" meaning="No shortcuts available label for the shortcuts widget [CHAR_LIMIT=70][iOS only]">
           Your most visited sites will show up here.

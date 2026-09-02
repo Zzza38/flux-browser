@@ -186,10 +186,10 @@
         About Flux
       </message>
       <message name="IDS_IOS_ABOUT_VERSION_COMPANY_NAME" desc="Company name on the about pages">
-        The Chromium Authors
+        The Flux Authors
       </message>
       <message name="IDS_IOS_ABOUT_VERSION_COPYRIGHT" desc="Copyright information on the about pages">
-        Copyright <ph name="YEAR">$1</ph> The Chromium Authors. All rights reserved.
+        Copyright <ph name="YEAR">$1</ph> The Flux Authors. All rights reserved.
       </message>
       <message name="IDS_IOS_ACCOUNT_TABLE_ERROR_ENTER_PASSPHRASE_MESSAGE" desc="The error message to show in the account table when there is a passphrase error. [iOS only]">
         To use and save Flux data in your Google Account, enter your passphrase.
@@ -271,7 +271,7 @@
         From Flux
       </message>
     <message name="IDS_IOS_CONTEXTUAL_PANEL_BRANDING_TITLE" desc="Branded title on the Contextual Panel screen. The string is lowercase on purpose.">
-        chromium
+        flux
       </message>
       <message name="IDS_IOS_CREDENTIAL_BOTTOM_SHEET_TITLE" desc="Title of the credential bottom sheet. [iOS only]">
           Password Manager
