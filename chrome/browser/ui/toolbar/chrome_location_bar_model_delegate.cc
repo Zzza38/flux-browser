@@ -199,7 +199,7 @@ const gfx::VectorIcon* ChromeLocationBarModelDelegate::GetVectorIconOverride()
     return &vector_icons::kGoogleColorIcon;
   }
 
-  if (url.SchemeIs(content::kChromeUIScheme)) {
+  if (url.SchemeIs(chrome::kFluxUIScheme)) {
     return &(features::IsRoundedIconsEnabled()
                  ? omnibox::kChromeProductIcon
                  : omnibox::kProductChromeRefreshOldIcon);
