@@ -1236,6 +1236,9 @@ class ChromeContentBrowserClient : public content::ContentBrowserClient {
       const std::string& embedder_histogram_suffix) override;
 
  protected:
+  static bool HandleFluxUI(GURL* url, content::BrowserContext* browser_context);
+  static bool HandleFluxUIReverse(GURL* url,
+                                  content::BrowserContext* browser_context);
   static bool HandleWebUI(GURL* url, content::BrowserContext* browser_context);
   static bool HandleWebUIReverse(GURL* url,
                                  content::BrowserContext* browser_context);

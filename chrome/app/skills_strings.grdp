@@ -33,7 +33,7 @@
     Manage your custom workflows powered by
   </message>
   <message name="IDS_SKILLS_SIDEBAR_FOOTER_BRANDING" desc="The branding text 'Gemini in Chrome' displayed in the sidebar footer">
-    Gemini in Chrome
+    Gemini in Flux
   </message>
 
   <!-- chrome://skills error page -->
@@ -41,10 +41,10 @@
     Skills aren't available
   </message>
   <message name="IDS_SKILLS_ERROR_PAGE_DESCRIPTION" desc="Description of the error page that occurs when chrome://skills is not accessible because Glic is not enabled">
-    To use Skills, sign in to Chrome with a Google account that has Gemini in Chrome enabled
+    To use Skills, sign in to Flux with a Google account that has Gemini in Flux enabled
   </message>
   <message name="IDS_SKILLS_DISABLED_ERROR_PAGE_DESCRIPTION" desc="Description of the error page that occurs when chrome://skills is disabled by the settings toggle">
-    The Skills feature is currently disabled. Update your Chrome Settings to get started.
+    The Skills feature is currently disabled. Update your Flux Settings to get started.
   </message>
   <message name="IDS_SKILLS_REMOTE_AUTHORITY_UNREACHABLE_DESCRIPTION" desc="Description of the error page that occurs when the remote guest skills webview cannot load or be reached.">
     We're having trouble connecting to the server. Please try again later.

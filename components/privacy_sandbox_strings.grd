@@ -300,12 +300,12 @@
       <if expr="_google_chrome">
         <then>
           <message name="IDS_SETTINGS_COOKIES_BLOCK_THIRD_PARTY_SETTINGS_ALLOW_BULLET_THREE" desc="This text is for a bullet that provides detail about the first setting option. It describes the key new detail that now applies to this setting option." formatter_data="android_java">
-            When you're in Incognito mode, Chrome blocks sites from using third-party cookies
+            When you're in Incognito mode, Flux blocks sites from using third-party cookies
           </message>
         </then>
         <else>
           <message name="IDS_SETTINGS_COOKIES_BLOCK_THIRD_PARTY_SETTINGS_ALLOW_BULLET_THREE" desc="This text is for a bullet that provides detail about the first setting option. It describes the key new detail that now applies to this setting option." formatter_data="android_java">
-            When you're in Incognito mode, Chromium blocks sites from using third-party cookies
+            When you're in Incognito mode, Flux blocks sites from using third-party cookies
           </message>
         </else>
       </if>
@@ -338,12 +338,12 @@
       <if expr="_google_chrome">
         <then>
           <message name="IDS_PRIVACY_GUIDE_COOKIE_SETTINGS_ALLOW_THINGS_TO_CONSIDER_BULLET_TWO" desc="This text is for a bullet that provides key considerations about the first setting option. It describes the key new detail that now applies to this setting option.">
-            When you're in Incognito mode, Chrome blocks sites from using third-party cookies
+            When you're in Incognito mode, Flux blocks sites from using third-party cookies
           </message>
         </then>
         <else>
           <message name="IDS_PRIVACY_GUIDE_COOKIE_SETTINGS_ALLOW_THINGS_TO_CONSIDER_BULLET_TWO" desc="This text is for a bullet that provides key considerations about the first setting option. It describes the key new detail that now applies to this setting option.">
-            When you're in Incognito mode, Chromium blocks sites from using third-party cookies
+            When you're in Incognito mode, Flux blocks sites from using third-party cookies
           </message>
         </else>
       </if>

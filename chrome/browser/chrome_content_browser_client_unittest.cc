@@ -935,9 +935,31 @@ TEST_F(ChromeContentBrowserClientGetLoggingFileTest,
 
 class TestChromeContentBrowserClient : public ChromeContentBrowserClient {
  public:
+  using ChromeContentBrowserClient::HandleFluxUI;
+  using ChromeContentBrowserClient::HandleFluxUIReverse;
   using ChromeContentBrowserClient::HandleWebUI;
   using ChromeContentBrowserClient::HandleWebUIReverse;
 };
+
+TEST_F(ChromeContentBrowserClientTest, FluxUIRewriteAndReverse) {
+  TestChromeContentBrowserClient test_content_browser_client;
+  GURL flux_settings("flux://settings/privacy");
+  ASSERT_TRUE(flux_settings.is_valid());
+  EXPECT_EQ("settings", flux_settings.host());
+
+  EXPECT_TRUE(
+      test_content_browser_client.HandleFluxUI(&flux_settings, &profile_));
+  EXPECT_EQ(GURL("chrome://settings/privacy"), flux_settings);
+
+  EXPECT_TRUE(test_content_browser_client.HandleFluxUIReverse(&flux_settings,
+                                                              &profile_));
+  EXPECT_EQ(GURL("flux://settings/privacy"), flux_settings);
+
+  GURL regular_url("https://example.com/");
+  EXPECT_FALSE(
+      test_content_browser_client.HandleFluxUI(&regular_url, &profile_));
+  EXPECT_EQ(GURL("https://example.com/"), regular_url);
+}
 
 TEST_F(ChromeContentBrowserClientTest, HandleWebUI) {
   TestChromeContentBrowserClient test_content_browser_client;

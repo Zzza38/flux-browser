@@ -118,7 +118,7 @@
     Your organization has turned off this feature
   </message>
   <message name="IDS_GLIC_INELIGIBLE_ACCOUNT_NOTICE_HEADER" desc="This is the headline on the Gemini ineligible account notice.">
-    Your account doesn't have access to Gemini in Chrome
+    Your account doesn't have access to Gemini in Flux
   </message>
   <message name="IDS_GLIC_INELIGIBLE_ACCOUNT_NOTICE" desc="This is the text of the Gemini ineligible account notice.">
     Check that you're eligible and meet the requirements
@@ -151,7 +151,7 @@
     Preview
   </message>
   <message name="IDS_SETTINGS_GLIC_INLINE_CUE_MENU_PREVIEW_TEXT" desc="Text displayed in the preview box with highlighted words.">
-    Chrome is made possible by the Chromium open source project and other <ph name="BEGIN_HIGHLIGHT">&lt;span class="preview-highlight-box"&gt;&lt;span class="preview-highlight-text"&gt;</ph>open source<ph name="END_HIGHLIGHT">&lt;/span&gt;&lt;/span&gt;</ph> software.
+    Flux is made possible by the flux open source project and other <ph name="BEGIN_HIGHLIGHT">&lt;span class="preview-highlight-box"&gt;&lt;span class="preview-highlight-text"&gt;</ph>open source<ph name="END_HIGHLIGHT">&lt;/span&gt;&lt;/span&gt;</ph> software.
   </message>
   <message name="IDS_SETTINGS_GLIC_INLINE_CUE_MENU_PREVIEW_PILL" desc="Text inside the floating pill in the preview box.">
     Explain
@@ -325,22 +325,22 @@
        and will be finalized and replaced next week. This also includes finalizing the links for
        "Learn more about Gemini Spark" and "unexpected actions". -->
   <message name="IDS_GLIC_EXPERIMENTAL_OPT_IN_TITLE" desc="Title for the experimental opt-in dialog" is_accessibility_with_no_ui="true">
-    First, turn on Chrome auto browse for this device
+    First, turn on Flux auto browse for this device
   </message>
   <message name="IDS_SETTINGS_GLIC_EXPERIMENTAL_TRIGGERING_TOGGLE" desc="Label for the Gemini experimental triggering setting">
     Let Gemini Spark browse on this device
   </message>
   <message name="IDS_SETTINGS_GLIC_EXPERIMENTAL_TRIGGERING_SUB_LABEL" desc="Sublabel explaining Gemini Spark feature.">
-    Gemini Spark can use Chrome auto browse on this device to interact with sites and complete tasks on your behalf. <ph name="LINK_BEGIN">&lt;a href="#"&gt;</ph>Learn more<ph name="LINK_END">&lt;/a&gt;</ph>
+    Gemini Spark can use Flux auto browse on this device to interact with sites and complete tasks on your behalf. <ph name="LINK_BEGIN">&lt;a href="#"&gt;</ph>Learn more<ph name="LINK_END">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_SETTINGS_GLIC_EXPERIMENTAL_TRIGGERING_SUB_LABEL_V2" desc="Sublabel explaining Gemini Spark feature with accessible link attributes.">
-    Gemini Spark can use Chrome auto browse on this device to interact with sites and complete tasks on your behalf. <ph name="LINK_BEGIN">&lt;a href="$1" target="_blank" aria-label="$2" aria-description="$3"&gt;</ph>Learn more<ph name="LINK_END">&lt;/a&gt;</ph>
+    Gemini Spark can use Flux auto browse on this device to interact with sites and complete tasks on your behalf. <ph name="LINK_BEGIN">&lt;a href="$1" target="_blank" aria-label="$2" aria-description="$3"&gt;</ph>Learn more<ph name="LINK_END">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_SETTINGS_GLIC_EXPERIMENTAL_TRIGGERING_SUB_LABEL_LEARN_MORE_LINK_LABEL" desc="Accessible name for the 'Learn more' link in the Gemini Spark toggle sublabel." is_accessibility_with_no_ui="true">
     Learn more about Gemini Spark
   </message>
   <message name="IDS_SETTINGS_GLIC_EXPERIMENTAL_TRIGGERING_WHEN_ON_1" desc="Bullet point explaining what happens when Gemini Spark is enabled.">
-    Gemini Spark can only use auto browse on this device if the device is awake and Chrome is running.
+    Gemini Spark can only use auto browse on this device if the device is awake and Flux is running.
   </message>
   <message name="IDS_SETTINGS_GLIC_EXPERIMENTAL_TRIGGERING_WHEN_ON_2" desc="Bullet point explaining notifications when Gemini Spark is enabled.">
     Gemini Spark will decide which actions to take based on the tasks you start or update.
@@ -349,7 +349,7 @@
     Gemini Spark will have access to the same sites as you, including the sites you’re signed in to. It will share necessary info with third parties, which could include personal info you might find sensitive.
   </message>
   <message name="IDS_SETTINGS_GLIC_EXPERIMENTAL_TRIGGERING_CONSIDER_2" desc="Bullet point explaining access risk when enabling Gemini Spark.">
-    Anybody with access to your Gemini Spark agent could control your Chrome browser.
+    Anybody with access to your Gemini Spark agent could control your Flux browser.
   </message>
   <message name="IDS_SETTINGS_GLIC_EXPERIMENTAL_TRIGGERING_CONSIDER_3" desc="Bullet point explaining user responsibility and risks for Gemini Spark.">
     Gemini Spark is experimental and may do things like share your info or make purchases without asking. <ph name="LINK_BEGIN">&lt;a href="$1" target="_blank"&gt;</ph>Review the risks<ph name="LINK_END">&lt;/a&gt;</ph>.
@@ -361,16 +361,16 @@
     Review the risks of Gemini Spark
   </message>
   <message name="IDS_SETTINGS_GLIC_PERMISSIONS_CHROME_WEB_ACTUATION_TOGGLE" desc="Title for the Gemini feature introduction screen" formatter_data="android_java">
-    Let Chrome browse for you
+    Let Flux browse for you
   </message>
   <message name="IDS_SETTINGS_GLIC_PERMISSIONS_CHROME_WEB_ACTUATION_TOGGLE_SUBLABEL" desc="Subheader explaining what the Gemini feature does" formatter_data="android_java">
-    Gemini in Chrome uses auto browse to work in your tabs and complete tasks you give it. <ph name="LINK_BEGIN">&lt;a href="#"&gt;</ph>Learn more<ph name="LINK_END">&lt;/a&gt;</ph>
+    Gemini in Flux uses auto browse to work in your tabs and complete tasks you give it. <ph name="LINK_BEGIN">&lt;a href="#"&gt;</ph>Learn more<ph name="LINK_END">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_SETTINGS_GLIC_PERMISSIONS_CHROME_WEB_ACTUATION_TOGGLE_SUBLABEL_V2" desc="Subheader explaining what the Gemini feature does (WebUI version)">
-    Gemini in Chrome uses auto browse to work in your tabs and complete tasks you give it. <ph name="LINK_BEGIN">&lt;a href="#" target="_blank" aria-label="$1" aria-description="$2"&gt;</ph>Learn more<ph name="LINK_END">&lt;/a&gt;</ph>
+    Gemini in Flux uses auto browse to work in your tabs and complete tasks you give it. <ph name="LINK_BEGIN">&lt;a href="#" target="_blank" aria-label="$1" aria-description="$2"&gt;</ph>Learn more<ph name="LINK_END">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_SETTINGS_GLIC_PERMISSIONS_CHROME_WEB_ACTUATION_TOGGLE_LEARN_MORE_ARIA_LABEL" desc="Accessible label for the 'Learn more' link in the Gemini auto browse sublabel." is_accessibility_with_no_ui="true">
-    Learn more about Chrome auto browse
+    Learn more about Flux auto browse
   </message>
   <message name="IDS_SETTINGS_GLIC_PERMISSIONS_WEB_ACTUATION_TOGGLE_WHEN_ON_1" desc="First point in 'when on' column of the 'let Gemini browse for you' expands" formatter_data="android_java">
     Gemini can help you book appointments, create shopping carts, or do other tasks you give it.
@@ -508,7 +508,7 @@
 
   <!-- Gemini tab strip button label -->
   <message name="IDS_GLIC_SETTING_LABEL" desc="Label in setting list used to open Gemini in Chrome settings." formatter_data="android_java">
-    Gemini in Chrome
+    Gemini in Flux
   </message>
   <message name="IDS_GLIC_BUTTON_ENTRYPOINT_LABEL" desc="Label on the button used to open Gemini in Chrome." formatter_data="android_java">
     Gemini
@@ -564,15 +564,15 @@
     Get help with your tasks
   </message>
   <message name="IDS_GLIC_TRYIT_BODY" desc="Text for a promo pointing to the Gemini icon in Chrome, that opens Gemini in Chrome if selected.">
-    Chat with Gemini in Chrome to get answers, key takeaways, and more as you browse
+    Chat with Gemini in Flux to get answers, key takeaways, and more as you browse
   </message>
 
   <!-- Shortcut IPH -->
   <message name="IDS_GLIC_SHORTCUT_IPH_TEXT_TEMPLATE" desc="Placeholder for string to be shown for IPH informing users about Glic keyboard shortcut.">
-    <ph name="message">$1<ex>Use Ctrl+⌘+G to open Gemini in Chrome</ex></ph>
+    <ph name="message">$1<ex>Use Ctrl+⌘+G to open Gemini in Flux</ex></ph>
   </message>
   <message name="IDS_GLIC_SHORTCUT_IPH_TEXT" desc="Title for a promo pointing to the Gemini icon in Chrome. It informs the user about a keyboard shortcut for quicly opening Gemini in Chrome.">
-    Use <ph name="FOCUS_TOGGLE_HOTKEY">$1<ex>Ctrl+⌘+G</ex></ph> to open Gemini in Chrome
+    Use <ph name="FOCUS_TOGGLE_HOTKEY">$1<ex>Ctrl+⌘+G</ex></ph> to open Gemini in Flux
   </message>
 
   <!-- Selection Nudge -->
@@ -600,10 +600,10 @@
 
   <!-- Educational Tip -->
   <message name="IDS_EDUCATIONAL_TIP_GLIC_TITLE" desc="Title for the Glic educational tip card." formatter_data="android_java">
-    Meet Gemini on Chrome
+    Meet Gemini on Flux
   </message>
   <message name="IDS_EDUCATIONAL_TIP_GLIC_DESCRIPTION" desc="Description for the Glic educational tip card." formatter_data="android_java">
-    Get the best of Google AI. Pin Gemini to your toolbar for easy access, or open it anytime from the Chrome menu.
+    Get the best of Google AI. Pin Gemini to your toolbar for easy access, or open it anytime from the Flux menu.
   </message>
   <message name="IDS_EDUCATIONAL_TIP_GLIC_BUTTON" desc="Button text for the Glic educational tip card." formatter_data="android_java">
     Pin on toolbar
@@ -631,10 +631,10 @@
     Gemini
   </message>
   <message name="IDS_GLIC_LOCATION_MISMATCH_NOTICE_HEADER" desc="Headline on the notice when Gemini is unavailable in the current dynamic location.">
-    Gemini in Chrome isn't available
+    Gemini in Flux isn't available
   </message>
   <message name="IDS_GLIC_LOCATION_MISMATCH_NOTICE" desc="Text of the notice explaining location mismatch for travelers or VPN users.">
-    Gemini in Chrome is expanding to different locations but isn't available everywhere
+    Gemini in Flux is expanding to different locations but isn't available everywhere
   </message>
   <message name="IDS_GLIC_GET_HELP" desc="Link or button label text to open help documentation.">
     Get help

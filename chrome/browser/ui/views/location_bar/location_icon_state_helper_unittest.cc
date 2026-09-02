@@ -5,6 +5,7 @@
 #include "chrome/browser/ui/views/location_bar/location_icon_state_helper.h"
 
 #include "build/branding_buildflags.h"
+#include "chrome/common/url_constants.h"
 #include "chrome/grit/branded_strings.h"
 #include "chrome/grit/generated_resources.h"
 #include "components/omnibox/browser/test_location_bar_model.h"
@@ -60,8 +61,8 @@ TEST_F(SecurityChipStateHelperTest, ShowsFileScheme) {
                                          /*is_editing_or_empty=*/false));
 }
 
-TEST_F(SecurityChipStateHelperTest, ShowsChromeUIScheme) {
-  model()->set_url(GURL("chrome://settings"));
+TEST_F(SecurityChipStateHelperTest, ShowsFluxUIScheme) {
+  model()->set_url(GURL("flux://settings"));
 
   EXPECT_EQ(
       l10n_util::GetStringUTF16(IDS_SHORT_PRODUCT_NAME),

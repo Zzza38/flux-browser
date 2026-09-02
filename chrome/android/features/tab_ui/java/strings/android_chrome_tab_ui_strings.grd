@@ -277,8 +277,8 @@
       </message>
       <message name="IDS_TAB_SELECTION_EDITOR_SHARE_SHEET_PREVIEW_MESSAGE" desc="When users click the menu item 'Share tab(s)' in the Tab Selection Editor Toolbar, a share sheet will pop up and this text is the preview message of the share sheet. [CHAR_LIMIT=27]">
         {TABS_COUNT, plural,
-          =1 {<ph name="TABS_COUNT_ONE">%1$d<ex>1</ex></ph> link from Chrome}
-          other {<ph name="TABS_COUNT_MANY">%1$d<ex>8</ex></ph> links from Chrome}
+          =1 {<ph name="TABS_COUNT_ONE">%1$d<ex>1</ex></ph> link from Flux}
+          other {<ph name="TABS_COUNT_MANY">%1$d<ex>8</ex></ph> links from Flux}
         }
       </message>
       <message name="IDS_TAB_SELECTION_EDITOR_SHARE_SHEET_PREVIEW_THUMBNAIL" desc="When users click the menu item 'Share tab(s)' in the Tab SelectionEditor Toolbar, a share sheet will pop up and this text is the name for the thumbnail of the share sheet preview. [CHAR_LIMIT=27]">
@@ -915,7 +915,7 @@
         <ph name="BEGIN_LINK1">&lt;link&gt;</ph>Learn more<ph name="END_LINK1">&lt;/link&gt;</ph>
       </message>
       <message name="IDS_CHROME_SUGGESTIONS_IN_OTHER_APPS_TITLE" desc="Title for the switch in tabs settings to toggle sharing browsing data to get suggestions in other apps.">
-        Get Chrome suggestions in other apps
+        Get Flux suggestions in other apps
       </message>
       <message name="IDS_CHROME_SUGGESTIONS_IN_OTHER_APPS_SUMMARY" desc="Summary for the switch in tabs settings to toggle sharing browsing data to get suggestions in other apps.">
         Share browsing data, such as your recent browsing history, to get suggestions on selected apps. This data is processed securely on your device.
@@ -1035,8 +1035,8 @@
       </message>
       <message name="IDS_ARCHIVED_TABS_AUTO_DELETE_PROMO_DESCRIPTION" desc="Description text for the Auto Delete Decision Bottom Sheet.">
           {AUTO_DELETE_DELAY, plural,
-            =1 {Chrome automatically closes inactive tabs and tab groups after <ph name="AUTO_DELETE_DELAY_ONE">%1$d<ex>1</ex></ph> month. You can change this in settings.}
-            other {Chrome automatically closes inactive tabs and tab groups after <ph name="AUTO_DELETE_DELAY_MANY">%1$d<ex>3</ex></ph> months. You can change this in settings.}
+            =1 {Flux automatically closes inactive tabs and tab groups after <ph name="AUTO_DELETE_DELAY_ONE">%1$d<ex>1</ex></ph> month. You can change this in settings.}
+            other {Flux automatically closes inactive tabs and tab groups after <ph name="AUTO_DELETE_DELAY_MANY">%1$d<ex>3</ex></ph> months. You can change this in settings.}
           }
       </message>
       <message name="IDS_ARCHIVED_TABS_AUTO_DELETE_PROMO_CLOSED" desc="The announcement when the Tabs Auto Delete Promo bottom sheet is closed.">

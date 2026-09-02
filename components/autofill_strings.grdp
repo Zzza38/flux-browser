@@ -13,29 +13,29 @@
   </message>
   <if expr="is_ios">
     <message name="IDS_AUTOFILL_AI_FILLING_REAUTH" desc="Message shown to the user when they need to authenticate to fill an Autofill AI form.">
-      Chrome is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
+      Flux is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
     </message>
   </if>
   <if expr="is_chromeos">
     <message name="IDS_AUTOFILL_AI_FILLING_REAUTH" desc="Message shown to the user when they need to authenticate to fill an Autofill AI form.">
-      Chrome browser is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
+      Flux browser is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
     </message>
     <message name="IDS_AUTOFILL_AI_VIEWING_REAUTH" desc="Message shown to the user when they need to authenticate to view Autofill AI data.">
-      Chrome browser is trying to show sensitive info
+      Flux browser is trying to show sensitive info
     </message>
     <message name="IDS_AUTOFILL_AI_UPDATE_REAUTH_REQUIREMENT" desc="Message shown to the user when they need to authenticate to update whether reauth is required when filling or viewing Autofill AI sensitive data.">
-      Chrome browser wants to verify it's you before you change settings
+      Flux browser wants to verify it's you before you change settings
     </message>
   </if>
   <if expr="is_win">
     <message name="IDS_AUTOFILL_AI_FILLING_REAUTH" desc="Message shown to the user when they need to authenticate to fill an Autofill AI form.">
-      Google Chrome is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
+      Google flux is trying to fill your sensitive info on <ph name="APP_NAME">$1<ex>google.com</ex></ph>.
     </message>
     <message name="IDS_AUTOFILL_AI_VIEWING_REAUTH" desc="Message shown to the user when they need to authenticate to view Autofill AI data.">
-      Google Chrome is trying to show sensitive info
+      Google flux is trying to show sensitive info
     </message>
     <message name="IDS_AUTOFILL_AI_UPDATE_REAUTH_REQUIREMENT" desc="Message shown to the user when they need to authenticate to update whether reauth is required when filling or viewing Autofill AI sensitive data.">
-      Google Chrome wants to verify it's you before you change settings
+      Google flux wants to verify it's you before you change settings
     </message>
   </if>
   <if expr="is_macosx">
@@ -51,40 +51,40 @@
   </if>
   <if expr="_google_chrome">
     <message name="IDS_AUTOFILL_DELETE_AUTOCOMPLETE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an autocomplete form history suggestion.">
-      Remove form suggestion from Chrome?
+      Remove form suggestion from Flux?
     </message>
     <message name="IDS_AUTOFILL_DELETE_CREDIT_CARD_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete a credit card from Autofill.">
-      Remove credit card from Chrome?
+      Remove credit card from Flux?
     </message>
     <message name="IDS_AUTOFILL_DELETE_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an address from Autofill.">
-      Remove address from Chrome?
+      Remove address from Flux?
     </message>
   </if>
   <if expr="not _google_chrome">
     <message name="IDS_AUTOFILL_DELETE_AUTOCOMPLETE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an autocomplete form history suggestion.">
-      Remove form suggestion from Chromium?
+      Remove form suggestion from Flux?
     </message>
     <message name="IDS_AUTOFILL_DELETE_CREDIT_CARD_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete a credit card from Autofill.">
-      Remove credit card from Chromium?
+      Remove credit card from Flux?
     </message>
     <message name="IDS_AUTOFILL_DELETE_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete an address from Autofill.">
-      Remove address from Chromium?
+      Remove address from Flux?
     </message>
   </if>
   <message name="IDS_AUTOFILL_REMOVE_HOME_PROFILE_SUGGESTION_CONFIRMATION_TITLE" desc="Title in a dialog to confirm that the user wants to delete their Home address from Autofill." formatter_data="android_java">
-    Remove home address from Chrome autofill?
+    Remove home address from Flux autofill?
   </message>
   <message name="IDS_AUTOFILL_REMOVE_HOME_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Text in a dialog to confirm that the user wants to delete their Home address from Autofill." formatter_data="android_java">
     Your home address can help you get things done across Google services, like more relevant Search results and directions in Google Maps. You can edit or delete your address <ph name="BEGIN_LINK">&lt;link&gt;</ph>in your Google Account <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph><ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_AUTOFILL_REMOVE_WORK_PROFILE_SUGGESTION_CONFIRMATION_TITLE" desc="Title in a dialog to confirm that the user wants to delete their Work address from Autofill." formatter_data="android_java">
-    Remove work address from Chrome autofill?
+    Remove work address from Flux autofill?
   </message>
   <message name="IDS_AUTOFILL_REMOVE_WORK_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Title in a dialog to confirm that the user wants to delete their Work address from Autofill." formatter_data="android_java">
     Your work address can help you get things done across Google services, like more relevant Search results and directions in Google Maps. You can edit or delete your address <ph name="BEGIN_LINK">&lt;link&gt;</ph>in your Google Account <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph><ph name="END_LINK">&lt;/link&gt;</ph>.
   </message>
   <message name="IDS_AUTOFILL_REMOVE_ACCOUNT_NAME_AND_EMAIL_PROFILE_SUGGESTION_CONFIRMATION_TITLE" desc="Title in a dialog to confirm that the user wants to delete their account name and email from Autofill." formatter_data="android_java">
-    Remove this info from Chrome autofill?
+    Remove this info from Flux autofill?
   </message>
   <message name="IDS_AUTOFILL_REMOVE_ACCOUNT_NAME_AND_EMAIL_PROFILE_SUGGESTION_CONFIRMATION_BODY" desc="Title in a dialog to confirm that the user wants to delete their account name and email address from Autofill." formatter_data="android_java">
     You can edit your name in your <ph name="BEGIN_LINK">&lt;link&gt;</ph>Google Account<ph name="END_LINK">&lt;/link&gt;</ph> <ph name="ACCOUNT">$1<ex>example@gmail.com</ex></ph>
@@ -93,7 +93,7 @@
     Remove verified email?
   </message>
   <message name="IDS_AUTOFILL_REMOVE_VERIFIED_EMAIL_BODY" desc="Text in a dialog to confirm that the user wants to delete a verified email address." formatter_data="android_java">
-    Chrome will stop automatically confirming this email on supported sites.
+    Flux will stop automatically confirming this email on supported sites.
   </message>
 
   <message name="IDS_AUTOFILL_REMOVE_SUGGESTION_BUTTON" desc="Text in a remove button for Autofill suggestion." formatter_data="android_java">
@@ -384,7 +384,7 @@
     You can use saved addresses across Google products. This won’t change your existing work address. It’ll be saved in your Google Account, <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph>.
   </message>
   <message name="IDS_AUTOFILL_ADDRESS_HOME_AND_WORK_RECORD_TYPE_NOTICE" desc="The footer message used to notify user that their Home/Work address is used to fill forms faster in Chrome." formatter_data="android_java">
-    Info from your Google Account <ph name="ACCOUNT">$1<ex>elisa.beckett@gmail.com</ex></ph> can help you fill forms faster in Chrome
+    Info from your Google Account <ph name="ACCOUNT">$1<ex>elisa.beckett@gmail.com</ex></ph> can help you fill forms faster in Flux
   </message>
   <message name="IDS_AUTOFILL_EDIT_ADDRESS_REQUIRED_FIELD_FORM_ERROR" desc="The form error message shown to the user in case of a single required field missing.">
     A required field is empty. Fill it before saving.
@@ -436,7 +436,7 @@
     Autofill verification codes from Gmail
   </message>
   <message name="IDS_AUTOFILL_GMAIL_OTP_FILLING_TOGGLE_DESCRIPTION" desc="Description for the toggle that enables autofilling verification codes from Gmail.">
-    Autofill verification codes sites use to improve your security. Chrome can get these codes from your Gmail. <ph name="BEGIN_LINK">&lt;a href="$1" tabindex="0" aria-description="$2" target="_blank"&gt;</ph>Learn more about this feature<ph name="LINK_END">&lt;/a&gt;</ph>
+    Autofill verification codes sites use to improve your security. Flux can get these codes from your Gmail. <ph name="BEGIN_LINK">&lt;a href="$1" tabindex="0" aria-description="$2" target="_blank"&gt;</ph>Learn more about this feature<ph name="LINK_END">&lt;/a&gt;</ph>
   </message>
   <message name="IDS_AUTOFILL_GMAIL_OTP_REQUIRED_TITLE" desc="Title of the dialog informing the user that smart features must be turned on in Gmail to use autofill for verification codes from Gmail.">
     To use this feature, first turn on smart features in Gmail
@@ -485,10 +485,10 @@
       Use info saved in your Google Account to autofill passwords, passkeys, addresses, payment methods, and other info
     </message>
     <message name="IDS_AUTOFILL_THIRD_PARTY_FILLING_OPT_IN_DESCRIPTION" desc="Description shown on the option enabling the use of third-party autofill in Chrome." formatter_data="android_java">
-      To use another autofill service in Chrome, choose your autofill provider in Android settings
+      To use another autofill service in Flux, choose your autofill provider in Android settings
     </message>
     <message name="IDS_AUTOFILL_THIRD_PARTY_FILLING_OPT_IN_DESCRIPTION_V2" desc="The description text below the Autofill using another service radio button. It provides instructions on how to enable third-party services, noting the dependency on system-level Android settings." formatter_data="android_java">
-      To use another autofill service in Chrome, turn it on in Android settings and here
+      To use another autofill service in Flux, turn it on in Android settings and here
     </message>
     <message name="IDS_PAYMENT_METHODS_SETTINGS_LOYALTY_CARDS_TITLE" desc="Title for the payment methods settings page row that links the user to the Google Wallet app." formatter_data="android_java">
       Loyalty cards
@@ -533,7 +533,7 @@
 
   <!-- Wallet Reminder Notice strings -->
   <message name="IDS_AUTOFILL_WALLET_REMINDER_NOTICE_TITLE" desc="Title for the Wallet Reminder Notice prompt explaining that Google Wallet settings apply to info saved from Chrome." formatter_data="android_java">
-    Your Google Wallet settings apply to info saved from Chrome
+    Your Google Wallet settings apply to info saved from Flux
   </message>
   <message name="IDS_AUTOFILL_WALLET_REMINDER_NOTICE_CONFIRM_BUTTON_LABEL" desc="Button label to acknowledge and dismiss the Wallet Reminder Notice prompt." formatter_data="android_java">
     Got it
@@ -592,7 +592,7 @@
     You can use saved addresses across Google products. This address is saved in your Google Account, <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph>.
   </message>
   <message name="IDS_AUTOFILL_SYNCABLE_PROFILE_MIGRATION_PROMPT_NOTICE" desc="The syncable profile prompt body text.">
-    This address is currently saved to Chrome. To use it across Google products, save it in your Google Account, <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph>.
+    This address is currently saved to Flux. To use it across Google products, save it in your Google Account, <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph>.
   </message>
   <message name="IDS_AUTOFILL_LOCAL_PROFILE_MIGRATION_PROMPT_NOTICE" desc="The local profile prompt body text.">
     This address is currently saved to this device. To use it across Google products, save it in your Google Account, <ph name="ACCOUNT">$1<ex>alexpark@gmail.com</ex></ph>.
@@ -669,7 +669,7 @@
       You can use saved addresses across Google products. This address will be saved in your Google Account, <ph name="USER_EMAIL">$1<ex>janedoe@google.com</ex></ph>.
     </message>
     <message name="IDS_IOS_AUTOFILL_HOME_WORK_PROFILE_FOOTER" desc="Footer text shown in the settings when home and work profile details are shown">
-      Info from your Google Account <ph name="USER_EMAIL">$1<ex>janedoe@google.com</ex></ph> can help you fill forms faster in Chrome
+      Info from your Google Account <ph name="USER_EMAIL">$1<ex>janedoe@google.com</ex></ph> can help you fill forms faster in Flux
     </message>
   </if>
   <!-- Autofill Settings Pages -->
@@ -863,7 +863,7 @@
     Another verification is in progress. Try again later.
   </message>
   <message name="IDS_AUTOFILL_AT_MEMORY_SEARCH_AFFORDANCE_TITLE" desc="Title of the AtMemory search trigger affordance." translateable="false">
-    Try searching in Chrome Memory
+    Try searching in Flux Memory
   </message>
   <message name="IDS_AUTOFILL_AT_MEMORY_SEARCH_AFFORDANCE_SUBTITLE" desc="Descriptor under the query for enhanced autofill. 'Gemini' is a brand name and should match standard branding guidelines across languages.">
     Find and fill with Gemini
@@ -884,7 +884,7 @@
     Couldn't find this info
   </message>
   <message name="IDS_AUTOFILL_AT_MEMORY_UNSUPPORTED_QUERY_DESCRIPTION" desc="A linkout that suggests using Gemini for a broader search or query, as the current recall feature could not handle the request. This text is a verb phrase short for the longer phrase: 'Try submitting your query to the Gemini in Chrome side panel'.">
-    Ask Gemini in Chrome instead
+    Ask Gemini in Flux instead
   </message>
   <message name="IDS_AUTOFILL_AT_MEMORY_PREVIOUSLY_FILLED" desc="Title shown in the AtMemory suggestions above suggestions that was previously filled on this page." translateable="false">
     Previously filled
@@ -1582,7 +1582,7 @@
       Info saved to device only
     </message>
     <message name="IDS_AUTOFILL_AI_LOCAL_SAVE_NOTIFICATION_DESCRIPTION" desc="The body text of an informational dialog. The user sees this after a failed attempt to save to Google Wallet. 'Couldn't save...' acknowledges the server failure. 'Saved to Chrome...' confirms the safety of the data (local fallback). 'Chrome will offer...' sets expectations that the system will retry the cloud save the next time this data is accessed.">
-      Couldn't save this info to your Google Wallet. It's saved to Chrome on this device instead. Chrome will offer to save it to Wallet next time you use it.
+      Couldn't save this info to your Google Wallet. It's saved to Flux on this device instead. Flux will offer to save it to Wallet next time you use it.
     </message>
     <message name="IDS_AUTOFILL_AI_LOCAL_SAVE_NOTIFICATION_DISMISS_BUTTON_LABEL" desc="A button on an informational dialog. Clicking this button dismisses the dialog. The user accepts that the data is saved locally for now.">
       Got it
@@ -1793,7 +1793,7 @@
       Info saved to device only
     </message>
     <message name="IDS_AUTOFILL_AI_SAVE_OR_UPDATE_ENTITY_FAILED_WALLET_SAVE_DIALOG_DESCRIPTION" desc="The description text of the dialog shown when an entity (like passport, driver's license, etc) fails to be saved to Google Wallet." formatter_data="android_java">
-      Chrome will offer to save it to <ph name="IDS_AUTOFILL_GOOGLE_WALLET_TITLE">$1<ex>Google Wallet</ex></ph> next time you use it
+      Flux will offer to save it to <ph name="IDS_AUTOFILL_GOOGLE_WALLET_TITLE">$1<ex>Google Wallet</ex></ph> next time you use it
     </message>
     <message name="IDS_AUTOFILL_AI_SNACK_BAR_CONFIRMATION_BUTTON_LABEL" desc="The confirmation button text of the dialog shown when an entity (like passport, driver's license, etc) fails to be saved to Google Wallet." formatter_data="android_java">
       Got it
@@ -1903,24 +1903,24 @@
   </message>
   <if expr="_google_chrome">
     <message name="IDS_SETTINGS_AUTOFILL_AI_TOGGLE_SUB_LABEL" desc="The description of the setting. By 'understand forms better', we mean that when a user submits a form on a website, and if they're using smarter form understanding, this feature can offer to save the user's submitted info. When Chrome saves that info, we save the submitted values and consider the page context." formatter_data="android_java">
-      Chrome understands forms better and can autofill them faster for you
+      Flux understands forms better and can autofill them faster for you
     </message>
     <message name="IDS_SETTINGS_AUTOFILL_AI_TOGGLE_SUB_LABEL_V2" desc="The description of the setting. This explains to users that Google can process page data in Google servers as a way to provide a better experience. Importantly, it mentions that this is done safely and cannot be viewed by anyone." formatter_data="android_java">
-      Help Chrome better understand and fill complex forms by securely processing data on Google's servers. Your info remains private and isn't reviewed by anyone.
+      Help Flux better understand and fill complex forms by securely processing data on Google's servers. Your info remains private and isn't reviewed by anyone.
     </message>
     <message name="IDS_SETTINGS_AUTOFILL_AI_WHEN_ON_CAN_FILL_DIFFICULT_FIELDS" desc="Bullet point that appears beneath appears beneath the 'When on' title when seeing the Smarter Form Understanding description page. This string explains one of the advantages users will get from enabling the feature and serves as a way to incentivize the user to do so." formatter_data="android_java">
-      Chrome can autofill difficult fields that standard autofill might miss
+      Flux can autofill difficult fields that standard autofill might miss
     </message>
   </if>
   <if expr="not _google_chrome">
     <message name="IDS_SETTINGS_AUTOFILL_AI_TOGGLE_SUB_LABEL" desc="The description of the setting. By 'understand forms better', we mean that when a user submits a form on a website, and if they're using smarter form understanding, this feature can offer to save the user's submitted info. When Chromium saves that info, we save the submitted values and consider the page context." formatter_data="android_java">
-      Chromium understands forms better and can autofill them faster for you
+      Flux understands forms better and can autofill them faster for you
     </message>
     <message name="IDS_SETTINGS_AUTOFILL_AI_TOGGLE_SUB_LABEL_V2" desc="The description of the setting. This explains to users that Google can process page data in Google servers as a way to provide a better experience. Importantly, it mentions that this is done safely and cannot be viewed by anyone." formatter_data="android_java">
-      Help Chromium better understand and fill complex forms by securely processing data on Google's servers. Your info remains private and isn't reviewed by anyone.
+      Help Flux better understand and fill complex forms by securely processing data on Google's servers. Your info remains private and isn't reviewed by anyone.
     </message>
     <message name="IDS_SETTINGS_AUTOFILL_AI_WHEN_ON_CAN_FILL_DIFFICULT_FIELDS" desc="Bullet point that appears beneath the 'When on' title when seeing the Smarter Form Understanding description page. This string explains one of the advantages users will get from enabling the feature and serves as a way to incentivize the user to do so." formatter_data="android_java">
-      Chromium can autofill difficult fields that standard autofill might miss
+      Flux can autofill difficult fields that standard autofill might miss
     </message>
   </if>
 
@@ -1940,7 +1940,7 @@
     When you make a request for enhanced autofill, your usage data, requests, and page details are shared with Google to improve the autofill experience
   </message>
   <message name="IDS_SETTINGS_SUGGESTIONS_FROM_GEMINI_WHEN_USED_1" desc="Bullet point 1 under When used in the quality logging section.">
-    Chrome logs how you use the feature, such as your requests and behavior when you accept or ignore suggestions
+    Flux logs how you use the feature, such as your requests and behavior when you accept or ignore suggestions
   </message>
   <message name="IDS_SETTINGS_SUGGESTIONS_FROM_GEMINI_WHEN_USED_2" desc="Bullet point 2 under When used in the quality logging section.">
     System data, including form fields and feature performance, is analyzed to improve future suggestions

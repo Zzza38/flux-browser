@@ -184,6 +184,7 @@ void ChromeContentClient::AddContentDecryptionModules(
 // details). If you add a new scheme, please also add WPT tests for it like
 // https://crrev.com/c/5790445.
 static const char* const kChromeStandardURLSchemes[] = {
+    chrome::kFluxUIScheme,
 #if BUILDFLAG(ENABLE_EXTENSIONS_CORE)
     extensions::kExtensionScheme,
 #endif
@@ -192,7 +193,8 @@ static const char* const kChromeStandardURLSchemes[] = {
     webapps::kIsolatedAppScheme,
 #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
         // BUILDFLAG(IS_CHROMEOS)
-    chrome::kChromeNativeScheme,        chrome::kChromeSearchScheme,
+    chrome::kChromeNativeScheme,
+    chrome::kChromeSearchScheme,
     dom_distiller::kDomDistillerScheme,
 #if BUILDFLAG(IS_ANDROID)
     content::kAndroidAppScheme,
@@ -202,6 +204,10 @@ static const char* const kChromeStandardURLSchemes[] = {
 void ChromeContentClient::AddAdditionalSchemes(Schemes* schemes) {
   for (auto* standard_scheme : kChromeStandardURLSchemes)
     schemes->standard_schemes.push_back(standard_scheme);
+
+  // flux:// is the user-facing alias for trusted chrome:// WebUI pages.
+  schemes->secure_schemes.push_back(chrome::kFluxUIScheme);
+  schemes->local_schemes.push_back(chrome::kFluxUIScheme);
 
 #if BUILDFLAG(IS_ANDROID)
   schemes->referrer_schemes.push_back(content::kAndroidAppScheme);

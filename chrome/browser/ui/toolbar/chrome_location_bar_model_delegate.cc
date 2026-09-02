@@ -77,6 +77,11 @@ bool ChromeLocationBarModelDelegate::GetURL(GURL* url) const {
   }
 
   *url = entry->GetVirtualURL();
+  if (url->SchemeIs(content::kChromeUIScheme)) {
+    GURL::Replacements replacements;
+    replacements.SetSchemeStr(chrome::kFluxUIScheme);
+    *url = url->ReplaceComponents(replacements);
+  }
   return true;
 }
 
@@ -194,7 +199,7 @@ const gfx::VectorIcon* ChromeLocationBarModelDelegate::GetVectorIconOverride()
     return &vector_icons::kGoogleColorIcon;
   }
 
-  if (url.SchemeIs(content::kChromeUIScheme)) {
+  if (url.SchemeIs(chrome::kFluxUIScheme)) {
     return &(features::IsRoundedIconsEnabled()
                  ? omnibox::kChromeProductIcon
                  : omnibox::kProductChromeRefreshOldIcon);

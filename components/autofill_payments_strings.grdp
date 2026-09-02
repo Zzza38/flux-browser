@@ -62,7 +62,7 @@
     Google Wallet logo
   </message>
   <message name="IDS_AUTOFILL_CHROME_LOGO_ACCESSIBLE_NAME" desc="The accessible name for the Chrome logo.">
-    Chrome logo
+    Flux logo
   </message>
 
   <if expr="not is_android">
@@ -115,7 +115,7 @@
   <if expr="is_ios">
     <then>
       <message name="IDS_AUTOFILL_SAVE_CARD_ONLY_PROMPT_EXPLANATION_LOCAL" desc="Explanation text for the Autofill save card prompt to save a card locally. It is shown when a new card is used during checkout, and sync is not enabled. This prompt description is shown on iOS bottomsheet.">
-        Pay faster when your card is saved. Card details are saved to Chrome on your device.
+        Pay faster when your card is saved. Card details are saved to Flux on your device.
       </message>
     </then>
     <else>
@@ -257,10 +257,10 @@
     </message>
   </if>
   <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_UPLOAD_EXPLANATION_TOOLTIP" desc="The tooltip hover text that explains why credit card upload to Google Payments is being offered.">
-    Chrome is offering to save your cards in your Google Account because you are signed in. You can change this behavior in settings.
+    Flux is offering to save your cards in your Google Account because you are signed in. You can change this behavior in settings.
   </message>
   <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_UPLOAD_EXPLANATION_AND_CARDHOLDER_NAME_TOOLTIP" desc="The tooltip hover text that explains why credit card upload to Google Account is being offered and where the suggested cardholder name came from.">
-    Chrome is offering to save your cards in your Google Account because you are signed in. You can change this behavior in settings. The cardholder name comes from your account.
+    Flux is offering to save your cards in your Google Account because you are signed in. You can change this behavior in settings. The cardholder name comes from your account.
   </message>
   <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_LOADING_THROBBER_ACCESSIBLE_NAME" desc="Accessible name announced by the screenreader for save card bubble in loading state showing a throbber.">
     Saving card info
@@ -276,24 +276,24 @@
     </message>
     <if expr="_google_chrome">
       <message name="IDS_AUTOFILL_SAVE_AND_FILL_DIALOG_EXPLANATION_LOCAL" desc="Explanation text for the Autofill Save and Fill dialog for cards that will be saved locally.">
-        Autofill this card for purchases made in Chrome when it's saved on this device
+        Autofill this card for purchases made in Flux when it's saved on this device
       </message>
       <message name="IDS_AUTOFILL_SAVE_AND_FILL_DIALOG_EXPLANATION_UPLOAD" desc="Explanation text for the Autofill Save and Fill dialog for cards that will be saved to the GPay server.">
-        Autofill this card for purchases made in Chrome when it's saved to use with Google Pay
+        Autofill this card for purchases made in Flux when it's saved to use with Google Pay
       </message>
       <message name="IDS_AUTOFILL_SAVE_AND_FILL_TO_WALLET_DIALOG_EXPLANATION_UPLOAD" desc="Explanation text for the Autofill Save and Fill dialog for cards that will be saved to Google Wallet.">
-        Autofill this card for purchases made in Chrome when it's saved in Google Wallet
+        Autofill this card for purchases made in Flux when it's saved in Google Wallet
       </message>
     </if>
     <if expr="not _google_chrome">
       <message name="IDS_AUTOFILL_SAVE_AND_FILL_DIALOG_EXPLANATION_LOCAL" desc="Explanation text for the Autofill Save and Fill dialog for cards that will be saved locally.">
-        Autofill this card for purchases made in Chromium when it's saved on this device
+        Autofill this card for purchases made in Flux when it's saved on this device
       </message>
       <message name="IDS_AUTOFILL_SAVE_AND_FILL_DIALOG_EXPLANATION_UPLOAD" desc="Explanation text for the Autofill Save and Fill dialog for cards that will be saved to the GPay server.">
-        Autofill this card for purchases made in Chromium when it's saved to use with Google Pay
+        Autofill this card for purchases made in Flux when it's saved to use with Google Pay
       </message>
       <message name="IDS_AUTOFILL_SAVE_AND_FILL_TO_WALLET_DIALOG_EXPLANATION_UPLOAD" desc="Explanation text for the Autofill Save and Fill dialog for cards that will be saved to Google Wallet.">
-        Autofill this card for purchases made in Chromium when it's saved in Google Wallet
+        Autofill this card for purchases made in Flux when it's saved in Google Wallet
       </message>
     </if>
     <message name="IDS_AUTOFILL_SAVE_AND_FILL_DIALOG_CARD_NUMBER_LABEL" desc="The label text for the card number textfield.">
@@ -580,7 +580,7 @@
   </if>
   <if expr="is_win">
     <message name="IDS_PAYMENTS_AUTOFILL_FILLING_MANDATORY_REAUTH" desc="Text that appears in the payments autofill mandatory re-authentication popup, asking the user to authenticate using biometric or device unlock before filling.">
-      Google Chrome is trying to verify it's you so it can fill in your payment info.
+      Google flux is trying to verify it's you so it can fill in your payment info.
     </message>
   </if>
   <if expr="is_ios">
@@ -598,24 +598,24 @@
     </message>
     <if expr="_google_chrome">
       <message name="IDS_PAYMENTS_AUTOFILL_FILLING_MANDATORY_REAUTH" desc="Text that appears in the payments autofill mandatory re-authentication popup as the sublabel, asking the user to authenticate using biometric or device unlock before filling.">
-        Verify it's you so Chrome can fill in your payment info.
+        Verify it's you so Flux can fill in your payment info.
       </message>
       <message name="IDS_PAYMENTS_AUTOFILL_SETTINGS_TOGGLE_MANDATORY_REAUTH" desc="Text that appears in the payments autofill mandatory re-authentication popup as the sublabel when users try to switch the mandatory reauth settings page toggle, asking the user to authenticate using biometric or device unlock before the toggle is switched.">
-        Google Chrome is trying to modify settings for filling payment methods.
+        Google flux is trying to modify settings for filling payment methods.
       </message>
       <message name="IDS_PAYMENTS_AUTOFILL_SETTINGS_EDIT_MANDATORY_REAUTH" desc="Text that appears in the payments autofill mandatory re-authentication popup as the sublabel when users try to edit cards in the settings page, asking the user to authenticate using biometric or device unlock first.">
-        Google Chrome is trying to edit payment methods.
+        Google flux is trying to edit payment methods.
       </message>
     </if>
     <if expr="not _google_chrome">
       <message name="IDS_PAYMENTS_AUTOFILL_FILLING_MANDATORY_REAUTH" desc="Text that appears in the payments autofill mandatory re-authentication popup as the sublabel, asking the user to authenticate using biometric or device unlock before filling.">
-        Verify it's you so Chromium can fill in your payment info.
+        Verify it's you so Flux can fill in your payment info.
       </message>
       <message name="IDS_PAYMENTS_AUTOFILL_SETTINGS_TOGGLE_MANDATORY_REAUTH" desc="Text that appears in the payments autofill mandatory re-authentication popup as the sublabel when users try to switch the mandatory reauth settings page toggle, asking the user to authenticate using biometric or device unlock before the toggle is switched.">
-        Chromium is trying to modify settings for filling payment methods.
+        Flux is trying to modify settings for filling payment methods.
       </message>
       <message name="IDS_PAYMENTS_AUTOFILL_SETTINGS_EDIT_MANDATORY_REAUTH" desc="Text that appears in the payments autofill mandatory re-authentication popup as the sublabel when users try to edit cards in the settings page, asking the user to authenticate using biometric or device unlock first.">
-        Chromium is trying to edit payment methods.
+        Flux is trying to edit payment methods.
       </message>
     </if>
   </if>
@@ -774,7 +774,7 @@
     You're all set
   </message>
   <message name="IDS_AUTOFILL_MANDATORY_REAUTH_CONFIRMATION_EXPLANATION" desc="Explanation text for the mandatory reauth confirmation prompt that is displayed to the user after opting into mandatory reauth. Mandatory reauth requires the user to unlock their device or pass a biometric auth when autofilling payment method information.">
-    Chrome will now verify it's you before filling in payment methods. You can update this at any time in <ph name="IDS_AUTOFILL_MANDATORY_REAUTH_CONFIRMATION_SETTINGS_LINK">$1<ex>settings</ex></ph>.
+    Flux will now verify it's you before filling in payment methods. You can update this at any time in <ph name="IDS_AUTOFILL_MANDATORY_REAUTH_CONFIRMATION_SETTINGS_LINK">$1<ex>settings</ex></ph>.
   </message>
   <message name="IDS_AUTOFILL_MANDATORY_REAUTH_CONFIRMATION_SETTINGS_LINK" desc="A link to the settings page for the mandatory reauth confirmation prompt that is displayed to the user after opting into mandatory reauth. Mandatory reauth requires the user to unlock their device or pass a biometric auth when autofilling payment method information.">
     settings
@@ -1447,7 +1447,7 @@
       Check out faster with autofill
     </message>
     <message name="IDS_AUTOFILL_CREATE_FIRST_CREDIT_CARD_SUMMARY" desc="Summary for a call to action settings preference to add a new autofill credit card when the user does not have any cards added." formatter_data="android_java">
-      Save a payment method in your Google Account to autofill it for purchases made in Chrome
+      Save a payment method in your Google Account to autofill it for purchases made in Flux
     </message>
     <message name="IDS_AUTOFILL_CREATE_FIRST_CREDIT_CARD_BUTTON_TEXT" desc="Button text for a call to action settings preference to add a new autofill credit card when the user does not have any cards added." formatter_data="android_java">
       Add payment method
@@ -1480,7 +1480,7 @@
     View autofill settings
   </message>
   <message name="IDS_AUTOFILL_CHURNED_USERS_CONFIRMATION_BUBBLE_DESCRIPTION" desc="Description for the churned users confirmation bubble, which comes after the user has accepted the churned users bubble, letting the user know that autofill is turned on.">
-    Now you can save payment methods to autofill at checkout in Chrome. <ph name="LINK_TEXT">$1<ex>View autofill settings</ex></ph>
+    Now you can save payment methods to autofill at checkout in Flux. <ph name="LINK_TEXT">$1<ex>View autofill settings</ex></ph>
   </message>
   <if expr="not is_android">
     <message name="IDS_AUTOFILL_CHURNED_USERS_CONFIRMATION_BUBBLE_LOADING_THROBBER_ACCESSIBLE_NAME" desc="Accessible name announced by the screenreader for virtual card prompt in loading state showing a throbber." is_accessibility_with_no_ui="true" formatter_data="android_java">
@@ -1753,10 +1753,10 @@
     This card is saved in Google Wallet so you can use it across Google services
   </message>
   <message name="IDS_AUTOFILL_SAVE_CARD_CONFIRMATION_FAILURE_DESCRIPTION_TEXT" desc="Description text for confirmation shown after save card upload to the server was unsuccessful.">
-    This card couldn't be saved in your Google Account. It's saved to Chrome on this device instead.
+    This card couldn't be saved in your Google Account. It's saved to Flux on this device instead.
   </message>
   <message name="IDS_AUTOFILL_SAVE_CARD_TO_WALLET_CONFIRMATION_FAILURE_DESCRIPTION_TEXT" desc="Description text for confirmation shown after Google Wallet save card upload to the server was unsuccessful.">
-    This card couldn't be saved in Google Wallet. It's saved to Chrome on this device instead.
+    This card couldn't be saved in Google Wallet. It's saved to Flux on this device instead.
   </message>
   <message name="IDS_AUTOFILL_SAVE_IBAN_CONFIRMATION_SUCCESS_DESCRIPTION_TEXT" desc="Description text for confirmation shown after upload save IBAN attempt was successful and it was uploaded to the server.">
     This IBAN is saved in your Google Account so you can use it across Google services.
@@ -1765,16 +1765,16 @@
     This IBAN is saved in Google Wallet so you can use it across Google services.
   </message>
   <message name="IDS_AUTOFILL_SAVE_IBAN_CONFIRMATION_FAILURE_DESCRIPTION_TEXT" desc="Description text for confirmation shown after upload save IBAN attempt was failed and and it was not uploaded to the server.">
-    This IBAN couldn't be saved in your Google Account. It's saved to Chrome on this device instead. Chrome will ask you again the next time you use this IBAN.
+    This IBAN couldn't be saved in your Google Account. It's saved to Flux on this device instead. Flux will ask you again the next time you use this IBAN.
   </message>
   <message name="IDS_AUTOFILL_SAVE_IBAN_TO_WALLET_CONFIRMATION_FAILURE_DESCRIPTION_TEXT" desc="Description text for confirmation shown after upload save IBAN to Google Wallet attempt was failed and and it was not uploaded to the server.">
-     This IBAN couldn't be saved in Google Wallet. It's saved to Chrome on this device instead. Chrome will ask you again the next time you use this IBAN.
+     This IBAN couldn't be saved in Google Wallet. It's saved to Flux on this device instead. Flux will ask you again the next time you use this IBAN.
   </message>
   <message name="IDS_AUTOFILL_SAVE_IBAN_CONFIRMATION_FAILURE_HIT_MAX_STRIKE_DESCRIPTION_TEXT" desc="Description text for confirmation shown after upload save IBAN attempt was failed and and it was not uploaded to the server. Other than that, the number of offer-to-upload has hit the max strike.">
-    This IBAN couldn't be saved in your Google Account. It's saved to Chrome on this device instead.
+    This IBAN couldn't be saved in your Google Account. It's saved to Flux on this device instead.
   </message>
   <message name="IDS_AUTOFILL_SAVE_IBAN_TO_WALLET_CONFIRMATION_FAILURE_HIT_MAX_STRIKE_DESCRIPTION_TEXT" desc="Description text for confirmation shown after upload save IBAN to Google Wallet attempt was failed and and it was not uploaded to the server. Other than that, the number of offer-to-upload has hit the max strike.">
-    This IBAN couldn't be saved in Google Wallet. It's saved to Chrome on this device instead.
+    This IBAN couldn't be saved in Google Wallet. It's saved to Flux on this device instead.
   </message>
   <message name="IDS_AUTOFILL_VIRTUAL_CARD_ENROLL_CONFIRMATION_SUCCESS_DESCRIPTION_TEXT" desc="Description text for confirmation shown after virtual card enrollment is successful.">
     You can now use a virtual card to check out more securely with autofill.

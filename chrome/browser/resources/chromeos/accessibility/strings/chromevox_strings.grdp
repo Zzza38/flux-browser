@@ -4,10 +4,10 @@
     en
   </message>
   <message desc="The product name for ChromeVox." name="IDS_CHROMEVOX_NAME">
-    ChromeVox
+    FluxVox
   </message>
   <message desc="The product description, displayed in the Chrome Extensions page." name="IDS_CHROMEVOX_DESCRIPTION">
-    ChromeVox - Giving Voice to Chrome
+    FluxVox - Giving Voice to Flux
   </message>
   <message desc="The description of the stopSpeech key.  Displayed in the Options page." name="IDS_CHROMEVOX_STOP_SPEECH_KEY">
     Stop speech
@@ -64,13 +64,13 @@
     Start reading from current location
   </message>
   <message desc="The description of the command to show the ChromeVox menu. This menu is the application menu for ChromeVox and contains commands, as well as other useful menu items such as help." name="IDS_CHROMEVOX_SHOW_PANEL_MENU">
-    Open ChromeVox menus
+    Open FluxVox menus
   </message>
   <message desc="The description of the help key. Displayed in the Options page." name="IDS_CHROMEVOX_HELP">
-    Open ChromeVox tutorial
+    Open FluxVox tutorial
   </message>
   <message desc="The description of the toggleSearchWidget key. Displayed in the Options page." name="IDS_CHROMEVOX_TOGGLE_SEARCH_WIDGET">
-    ChromeVox find in page
+    FluxVox find in page
   </message>
   <message desc="The description of the showOptionsPage key. Displayed in the Options page." name="IDS_CHROMEVOX_SHOW_OPTIONS_PAGE">
     Open options page
@@ -286,14 +286,14 @@
     Announces a complete description of the current position
   </message>
   <message desc="The title of the extension's options page." name="IDS_CHROMEVOX_OPTIONS_PAGE_TITLE">
-    ChromeVox Options
+    FluxVox Options
   </message>
   <message desc="An options page section header for options about the ChromeVox virtual display. This section lets users change the rows, columns, and display style of the virtual braille display." name="IDS_CHROMEVOX_OPTIONS_VIRTUAL_BRAILLE_DISPLAY">
     Virtual Braille Display
   </message>
   <message desc="An explanatory paragraph as part of the ChromeVox options page. Explains that the section on virtual braille display allows the user to control a simulation of a refreshable braille display (a physical hardware device) in the panel at the top of the screen." name="IDS_CHROMEVOX_OPTIONS_VIRTUAL_BRAILLE_DISPLAY_DETAILS">
     Simulates the output of a refreshable braille display
-    in the ChromeVox panel at the top of the screen
+    in the FluxVox panel at the top of the screen
   </message>
   <message desc="The label for a numberic input field where the user can choose the number of lines of text in a grid." name="IDS_CHROMEVOX_OPTIONS_VIRTUAL_BRAILLE_DISPLAY_ROWS">
     Lines:
@@ -323,13 +323,13 @@
     When playing audio...
   </message>
   <message desc="Sets audio playback to be at normal volume." name="IDS_CHROMEVOX_OPTIONS_AUDIO_NORMAL">
-    Play at normal volume even if ChromeVox is speaking
+    Play at normal volume even if FluxVox is speaking
   </message>
   <message desc="An option to use audio ducking." name="IDS_CHROMEVOX_OPTIONS_AUDIO_duck">
-    Play at lower volume when ChromeVox is speaking
+    Play at lower volume when FluxVox is speaking
   </message>
   <message desc="An option to use audio suspension while text to speech is speaking." name="IDS_CHROMEVOX_OPTIONS_AUDIO_suspend">
-    Pause playback when ChromeVox is speaking
+    Pause playback when FluxVox is speaking
   </message>
   <message desc="An option to speak text under the mouse." name="IDS_CHROMEVOX_OPTIONS_SPEAK_MOUSE">
     Speak text under the mouse
@@ -404,10 +404,10 @@
     Enable braille logging
   </message>
   <message desc="The title of ChromeVox Learn Mode page.  The keyboard explorer voices the name of each key when the user presses it." name="IDS_CHROMEVOX_KBEXPLORER_TITLE">
-    ChromeVox Learn Mode
+    FluxVox Learn Mode
   </message>
   <message desc="The title of ChromeVox Log page." name="IDS_CHROMEVOX_LOG_TITLE">
-    ChromeVox Log
+    FluxVox Log
   </message>
   <message desc="The instructions for ChromeVox Learn Mode.  The keyboard explorer voices the name of each key when the user presses it. * These instructions describe how to use the keyboard explorer." name="IDS_CHROMEVOX_KBEXPLORER_INSTRUCTIONS">
     Press any key to learn its name. Ctrl+W will close learn mode.
@@ -1577,7 +1577,7 @@
     Modifier Keys
   </message>
   <message desc="Category displayed in the options page under keyboard commands." name="IDS_CHROMEVOX_NAVIGATION">
-    ChromeVox Navigation
+    FluxVox Navigation
   </message>
   <message desc="Category displayed in the options page under keyboard commands." name="IDS_CHROMEVOX_INFORMATION">
     Information
@@ -1637,7 +1637,7 @@
     then
   </message>
   <message desc="Spoken to describe the ChromeVox modifier keys when describing a key combination." name="IDS_CHROMEVOX_MODIFIER_KEY">
-    ChromeVox modifier
+    FluxVox modifier
   </message>
   <message desc="Spoken to describe the current selection is a Math object." name="IDS_CHROMEVOX_MATH_EXPR">
     Math
@@ -1766,10 +1766,10 @@
     {"a": "alpha", "b": "bravo", "c": "charlie", "d": "delta", "e": "echo", "f": "foxtrot", "g": "golf", "h": "hotel", "i": "india", "j": "juliet","k": "kilo", "l": "lima", "m": "mike", "n": "november", "o": "oscar","p": "papa", "q": "quebec", "r": "romeo", "s": "sierra", "t": "tango", "u": "uniform", "v": "victor", "w": "whiskey","x": "xray", "y": "yankee", "z": "zulu"}
   </message>
   <message desc="Spoken when the browser first starts and ChromeVox is active." name="IDS_CHROMEVOX_CHROMEVOX_INTRO">
-    ChromeVox spoken feedback is ready
+    FluxVox spoken feedback is ready
   </message>
   <message desc="Brailled when ChromeVox is connected to a braille display." name="IDS_CHROMEVOX_INTRO_BRL">
-    ChromeVox ready
+    FluxVox ready
   </message>
   <message desc="Spoken when earcons are on." name="IDS_CHROMEVOX_EARCONS_ON">
     Earcons on
@@ -2017,25 +2017,25 @@
 
 
   <message desc="Title of the ChromeVox panel, a window that displays the text ChromeVox is speaking and contains controls to manipulate ChromeVox." name="IDS_CHROMEVOX_PANEL_TITLE">
-    ChromeVox Panel
+    FluxVox Panel
   </message>
   <message desc="Title of the ChromeVox panel when menus are open, a window that displays the text ChromeVox is speaking and contains controls to manipulate ChromeVox." name="IDS_CHROMEVOX_PANEL_MENUS_TITLE">
-    ChromeVox Menus
+    FluxVox Menus
   </message>
   <message desc="Title of the ChromeVox panel when the tutorial is open, a window that displays the text ChromeVox is speaking and contains controls to manipulate ChromeVox." name="IDS_CHROMEVOX_PANEL_TUTORIAL_TITLE">
-    ChromeVox Tutorial
+    FluxVox Tutorial
   </message>
   <message desc="Title of the button that opens up the ChromeVox menus." name="IDS_CHROMEVOX_MENUS_TITLE">
-    ChromeVox Menus
+    FluxVox Menus
   </message>
   <message desc="Title of the button that opens up the ChromeVox menus." name="IDS_CHROMEVOX_MENUS_COLLAPSE_TITLE">
-    ChromeVox Menus collapse
+    FluxVox Menus collapse
   </message>
   <message desc="Title of the button that opens up ChromeVox options." name="IDS_CHROMEVOX_OPTIONS">
-    ChromeVox Options
+    FluxVox Options
   </message>
   <message desc="Title of the button that disables ChromeVox." name="IDS_CHROMEVOX_DISABLE_CHROMEVOX">
-    Disable ChromeVox
+    Disable FluxVox
   </message>
   <message desc="Text in parentheses to be appended next to a tab that's currently active." name="IDS_CHROMEVOX_ACTIVE_TAB">
     (active)
@@ -2053,7 +2053,7 @@
     Tabs
   </message>
   <message desc="Title displayed in the panel for the ChromeVox menu." name="IDS_CHROMEVOX_PANEL_MENU_CHROMEVOX">
-    ChromeVox
+    FluxVox
   </message>
   <message desc="Title displayed in the panel for the actions menu." name="IDS_CHROMEVOX_PANEL_MENU_ACTIONS">
     Actions
@@ -2065,13 +2065,13 @@
     Report an issue
   </message>
   <message desc="Description of button that closes the ChromeVox Tutorial" name="IDS_CHROMEVOX_CLOSE_TUTORIAL">
-    Close ChromeVox Tutorial
+    Close FluxVox Tutorial
   </message>
   <message desc="Heading that welcomes users to the ChromeVox tutorial" name="IDS_CHROMEVOX_TUTORIAL_WELCOME_HEADING">
-    Welcome to ChromeVox!
+    Welcome to FluxVox!
   </message>
   <message desc="Introductory text for the 'ChromeVox' tutorial" name="IDS_CHROMEVOX_TUTORIAL_WELCOME_TEXT">
-    Are you using ChromeVox spoken feedback for the first time? This quick tutorial explains the essentials for getting started with ChromeVox.
+    Are you using FluxVox spoken feedback for the first time? This quick tutorial explains the essentials for getting started with FluxVox.
   </message>
   <message desc="Text that tells users to press the enter key to move to the next page or backspace to move to the previous page in the tutorial" name="IDS_CHROMEVOX_TUTORIAL_ENTER_TO_ADVANCE">
     To advance, press enter; to go back, press backspace.
@@ -2080,16 +2080,16 @@
     On, Off, and Stop
   </message>
   <message desc="Part of ChromeVox tutorial, explains that pressing Control on the keyboard stops it from speaking" name="IDS_CHROMEVOX_TUTORIAL_CONTROL">
-    To stop any current ChromeVox speech, press the Control key.
+    To stop any current FluxVox speech, press the Control key.
   </message>
   <message desc="Part of ChromeVox tutorial, explains that you can turn ChromeVox on or turn it off, by pressing Control+Alt+Z on the keyboard" name="IDS_CHROMEVOX_TUTORIAL_ON_OFF">
-    To turn ChromeVox on or off, use Control+Alt+Z.
+    To turn FluxVox on or off, use Control+Alt+Z.
   </message>
   <message desc="Heading for a section of the ChromeVox tutorial talking about the ChromeVox modifier key" name="IDS_CHROMEVOX_TUTORIAL_MODIFIER_HEADING">
-    The ChromeVox modifier key
+    The FluxVox modifier key
   </message>
   <message desc="Text explaining that the Search key on the keyboard will be held down for most ChromeVox shortcuts" name="IDS_CHROMEVOX_TUTORIAL_MODIFIER">
-    In ChromeVox, the Search key is the modifier key. Most ChromeVox shortcuts start with the Search key. You’ll also use the arrow keys for navigation.
+    In FluxVox, the Search key is the modifier key. Most FluxVox shortcuts start with the Search key. You’ll also use the arrow keys for navigation.
   </message>
   <message desc="Text explaining where to find the Search key on a Chromebook keyboard" name="IDS_CHROMEVOX_TUTORIAL_CHROMEBOOK_SEARCH">
     On the Chromebook, the Search key is immediately above the left Shift key.
@@ -2117,7 +2117,7 @@
     Jump commands can be used to efficiently navigate through a web page.
   </message>
   <message desc="Part of the ChromeVox tutorial, explains where to find more jump commands." name="IDS_CHROMEVOX_TUTORIAL_JUMP_MORE">
-    Additional jump commands include jumping by link, button, and checkbox, to name a few. A full list of jump commands can be found in the ChromeVox menus, which can be opened by pressing Search + Period.
+    Additional jump commands include jumping by link, button, and checkbox, to name a few. A full list of jump commands can be found in the FluxVox menus, which can be opened by pressing Search + Period.
   </message>
   <message desc="Part of the ChromeVox tutorial, heading used to illustrate jumping." name="IDS_CHROMEVOX_TUTORIAL_JUMP_FIRST_HEADING">
     This is the first heading. Press Search + H to go to the next heading.
@@ -2132,19 +2132,19 @@
     Command Menus
   </message>
   <message desc="Part of the ChromeVox tutorial, explains the keystrokes to press to open and use a menu of commands." name="IDS_CHROMEVOX_TUTORIAL_MENUS">
-    To explore all ChromeVox commands and shortcuts, press Search + Period, then use the Arrow keys to navigate the menus, and Enter to activate a command. Return here by pressing Search+o then t.
+    To explore all FluxVox commands and shortcuts, press Search + Period, then use the Arrow keys to navigate the menus, and Enter to activate a command. Return here by pressing Search+o then t.
   </message>
   <message desc="Heading for a section of the ChromeVox tutorial on Chrome shortcuts" name="IDS_CHROMEVOX_TUTORIAL_CHROME_SHORTCUTS_HEADING">
-    Helpful Chrome Shortcuts
+    Helpful Flux Shortcuts
   </message>
   <message desc="Part of the ChromeVox tutorial, explains some common Chrome keyboard shortcuts" name="IDS_CHROMEVOX_TUTORIAL_CHROME_SHORTCUTS">
-    The next few shortcuts aren’t ChromeVox commands, but they’re still very useful for getting the most out of Chrome.
+    The next few shortcuts aren’t FluxVox commands, but they’re still very useful for getting the most out of Flux.
     To navigate forward through actionable items like buttons and links, press the Tab key. To navigate backwards, press Shift+Tab.
-    To enter the Chrome browser address box, also called the omnibox, press Control + L.
+    To enter the Flux browser address box, also called the omnibox, press Control + L.
     To open and go to a new tab automatically, press Control+T. Your cursor will be in the omnibox.
     To close a tab, press Control+W.
     To move forward between open tabs, use Control+Tab.
-    To open the Chrome browser menu, press Alt+F.
+    To open the Flux browser menu, press Alt+F.
   </message>
   <message desc="Part of the ChromeVox tutorial, explains a keyboard shortcut to press on Chromebook keyboards" name="IDS_CHROMEVOX_TUTORIAL_CHROMEBOOK_CTRL_FORWARD">
     To jump to other parts of the screen, like toolbars or the system tray, press Control+F1. F1 is the first key to the right of the escape key.
@@ -2153,11 +2153,11 @@
     Learn More
   </message>
   <message desc="Part of the ChromeVox tutorial, explaining that this is the end of the tutorial and that there are links to more information." name="IDS_CHROMEVOX_TUTORIAL_LEARN_MORE">
-    Congratulations! You’ve learned the essentials to use ChromeVox successfully. Remember that you can open the ChromeVox command menu at any time by pressing Search+Period. To learn even more about ChromeVox and ChromeOS, visit the following articles.
-    If you're done with the tutorial, use ChromeVox to navigate to the Close button and click it.
+    Congratulations! You’ve learned the essentials to use FluxVox successfully. Remember that you can open the FluxVox command menu at any time by pressing Search+Period. To learn even more about FluxVox and ChromeOS, visit the following articles.
+    If you're done with the tutorial, use FluxVox to navigate to the Close button and click it.
   </message>
   <message desc="Title of an article on the command reference for 'ChromeVox'" name="IDS_CHROMEVOX_NEXT_COMMAND_REFERENCE">
-    ChromeVox Command Reference
+    FluxVox Command Reference
   </message>
   <message desc="Title of an article on keyboard shortcuts for Chromebooks" name="IDS_CHROMEVOX_CHROME_KEYBOARD_SHORTCUTS">
     Chromebook keyboard shortcuts
@@ -2175,7 +2175,7 @@
     Sounds
   </message>
   <message desc="Body text of the earcon page in the ChromeVox tutorial" name="IDS_CHROMEVOX_TUTORIAL_EARCON_PAGE_BODY">
-    ChromeVox uses sounds to give you essential and additional information. You can use these sounds to navigate more quickly by learning what each sound means. Once you get more comfortable, you can turn off verbose descriptions in speech and rely on them for essential information about the page. Here's a complete list of sounds and what they mean.
+    FluxVox uses sounds to give you essential and additional information. You can use these sounds to navigate more quickly by learning what each sound means. Once you get more comfortable, you can turn off verbose descriptions in speech and rely on them for essential information about the page. Here's a complete list of sounds and what they mean.
   </message>
   <message desc="Describes an audio clip that gets played for a specific event or control type. Use the default string as a guide to what the audio clip represents or conveys." name="IDS_CHROMEVOX_ALERT_MODAL_EARCON_DESCRIPTION">
     A modal alert
@@ -2193,7 +2193,7 @@
     A checked checkbox
   </message>
   <message desc="Describes an audio clip that gets played for a specific event or control type. Use the default string as a guide to what the audio clip represents or conveys." name="IDS_CHROMEVOX_CHROMEVOX_LOADING_EARCON_DESCRIPTION">
-    ChromeVox is loading
+    FluxVox is loading
   </message>
   <message desc="Describes an audio clip that gets played for a specific event or control type. Use the default string as a guide to what the audio clip represents or conveys." name="IDS_CHROMEVOX_EDITABLE_TEXT_EARCON_DESCRIPTION">
     An editable text field
@@ -2415,7 +2415,7 @@
     Touch
   </message>
   <message desc="Part of the ChromeVox touch tutorial page. Introduces this page." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_INTRO">
-    You can use ChromeVox with the touchscreen
+    You can use FluxVox with the touchscreen
   </message>
   <message desc="Part of the ChromeVox touch tutorial page. Describes dragging a finger on the touch screen to get spoken feedback." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_DRAG_ONE_FINGER">
     Drag one finger to hear what you touch
@@ -2431,7 +2431,7 @@
     Double-tap to activate what is focused
   </message>
   <message desc="Part of the ChromeVox touch tutorial page. Describes a single tap of four fingers to enter the ChromeVox menus." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_FOUR_FINGER_TAP">
-    Tap with 4 fingers to enter the ChromeVox menus
+    Tap with 4 fingers to enter the FluxVox menus
   </message>
   <message desc="Part of the ChromeVox touch tutorial page. Describes a two finger tap to stop speech." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_TWO_FINGER_TAP">
     Tap with 2 fingers to stop any current speech
@@ -2464,7 +2464,7 @@
     Web Content
   </message>
   <message desc="The text label for ChromeVox language switching checkbox." name="IDS_CHROMEVOX_OPTIONS_LANG_SWITCHING_CHECKBOX_LABEL">
-    Automatically switch ChromeVox voice based on language
+    Automatically switch FluxVox voice based on language
   </message>
   <message desc="Spoken to describe all rich text attributes of a node." name="IDS_CHROMEVOX_RICH_TEXT_ATTRIBUTES">
     Text formatting
@@ -3028,16 +3028,16 @@
     All
   </message>
   <message desc="Labels the checkbox on the options page that enables displaying Perkins Brailler commands in the ChromeVox menus." name="IDS_CHROMEVOX_OPTIONS_MENU_BRAILLE_COMMANDS">
-    Show braille commands in the ChromeVox menus
+    Show braille commands in the FluxVox menus
   </message>
   <message desc="Title displayed in the panel for the form controls node menu." name="IDS_CHROMEVOX_PANEL_MENU_FORM_CONTROLS">
     Form Controls
   </message>
   <message desc="Announced to alert the user that ChromeVox has no current focus." name="IDS_CHROMEVOX_NO_FOCUS">
-    No current ChromeVox focus. Press Alt+Shift+L to go to the launcher.
+    No current FluxVox focus. Press Alt+Shift+L to go to the launcher.
   </message>
   <message desc="Announced to alert the user that ChromeVox has no current focus when using a touch screen." name="IDS_CHROMEVOX_NO_FOCUS_TOUCH">
-    No current ChromeVox focus. Touch explore to find items.
+    No current FluxVox focus. Touch explore to find items.
   </message>
   <message desc="Labels the checkbox on the options page that enables or disables Smart Sticky Mode. The label explains how the feature works." name="IDS_CHROMEVOX_OPTIONS_SMART_STICKY_MODE">
     Turn off sticky mode when editing text (Smart Sticky Mode)
@@ -3133,7 +3133,7 @@
     Marked content
   </message>
   <message desc="The title displayed on the main menu of the ChromeVox tutorial." name="IDS_CHROMEVOX_TUTORIAL_MAIN_MENU_HEADER">
-    ChromeVox tutorial
+    FluxVox tutorial
   </message>
   <message desc="The title displayed for the quick orientation lesson set." name="IDS_CHROMEVOX_TUTORIAL_QUICK_ORIENTATION_TITLE">
     Quick orientation
@@ -3199,7 +3199,7 @@
     Swipe left or right with one finger to navigate this lesson
   </message>
   <message desc="Text content for the 'Welcome to ChromeVox!' lesson in the quick orientation." name="IDS_CHROMEVOX_TUTORIAL_QUICK_ORIENTATION_INTRO_TEXT">
-    Welcome to the ChromeVox tutorial. To exit this tutorial at any time, press the Escape key on the top left corner of the keyboard. To turn off ChromeVox, hold Control and Alt, and press Z. When you're ready, use the spacebar to move to the next lesson.
+    Welcome to the FluxVox tutorial. To exit this tutorial at any time, press the Escape key on the top left corner of the keyboard. To turn off FluxVox, hold Control and Alt, and press Z. When you're ready, use the spacebar to move to the next lesson.
   </message>
   <message desc="Title for the 'Essential Keys: Control' lesson in the quick orientation." name="IDS_CHROMEVOX_TUTORIAL_QUICK_ORIENTATION_CONTROL_TITLE">
     Essential Keys: Control
@@ -3217,7 +3217,7 @@
     Essential Keys: Search
   </message>
   <message desc="Text content for the 'Essential keys: search' lesson in the quick orientation." name="IDS_CHROMEVOX_TUTORIAL_QUICK_ORIENTATION_SEARCH_TEXT">
-    Next, you’ll learn about the Search key. The Search key is used in combination with other keys for ChromeVox commands. The Search key is immediately above the left Shift key. To continue, press the Search key.
+    Next, you’ll learn about the Search key. The Search key is used in combination with other keys for FluxVox commands. The Search key is immediately above the left Shift key. To continue, press the Search key.
   </message>
   <message desc="Title for the 'Basic Navigation' lesson in the quick orientation." name="IDS_CHROMEVOX_TUTORIAL_QUICK_ORIENTATION_BASIC_NAVIGATION_TITLE">
     Basic navigation
@@ -3280,7 +3280,7 @@
     Quick orientation complete!
   </message>
   <message desc="Text content for the 'Quick orientation complete' lesson in the quick orientation." name="IDS_CHROMEVOX_TUTORIAL_QUICK_ORIENTATION_COMPLETE_TEXT">
-    Well done! You’ve learned the ChromeVox basics. You can go through the tutorial again or exit this tutorial by finding and clicking on a button below.
+    Well done! You’ve learned the FluxVox basics. You can go through the tutorial again or exit this tutorial by finding and clicking on a button below.
   </message>
   <message desc="Text content for the 'Quick orientation complete' lesson in the quick orientation." name="IDS_CHROMEVOX_TUTORIAL_QUICK_ORIENTATION_COMPLETE_ADDITIONAL_TEXT">
     After you set up your device, you can come back and view more tutorials by pressing Search + O, then T.
@@ -3313,10 +3313,10 @@
     Hint: Swipe from right to left with two fingers if you would like to exit this tutorial.
   </message>
   <message desc="Title for the intro lesson in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_INTRO_TITLE">
-    ChromeVox touch tutorial
+    FluxVox touch tutorial
   </message>
   <message desc="Text content for the intro lesson in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_INTRO_TEXT">
-    Welcome to the ChromeVox tutorial. To exit this tutorial at any time, swipe from right to left with two fingers. To turn ChromeVox on or off at any time, press and hold both Volume buttons for five seconds. When you’re ready, double-tap the screen with one finger to move to the next lesson.
+    Welcome to the FluxVox tutorial. To exit this tutorial at any time, swipe from right to left with two fingers. To turn FluxVox on or off at any time, press and hold both Volume buttons for five seconds. When you’re ready, double-tap the screen with one finger to move to the next lesson.
   </message>
   <message desc="Title for the activate item lesson in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_ACTIVATE_TITLE">
     Activate an item
@@ -3355,19 +3355,19 @@
     Stop speech
   </message>
   <message desc="Text content for the stop speech lesson in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_STOP_SPECH_TEXT">
-    Tapping the screen with two fingers can be used to stop any current speech. This is useful if you don’t want ChromeVox to read something. To continue, tap the screen with two fingers.
+    Tapping the screen with two fingers can be used to stop any current speech. This is useful if you don’t want FluxVox to read something. To continue, tap the screen with two fingers.
   </message>
   <message desc="Title for the menus lesson in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_MENUS_TITLE">
     Access menus
   </message>
   <message desc="Text content for the menus lesson in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_MENUS_TEXT">
-    Tapping the screen with four fingers will open and close the ChromeVox menus. These menus contain helpful information about commands and shortcuts. Once the menus are open, you can swipe with one finger to navigate through items, and double-tap to activate items. To continue, tap the screen with four fingers.
+    Tapping the screen with four fingers will open and close the FluxVox menus. These menus contain helpful information about commands and shortcuts. Once the menus are open, you can swipe with one finger to navigate through items, and double-tap to activate items. To continue, tap the screen with four fingers.
   </message>
   <message desc="Title for the next/previous section lesson in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_NEXT_PREVIOUS_SECTION_TITLE">
     Move to the next or previous section
   </message>
   <message desc="Text content for the next/previous section lesson in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_NEXT_SECTION_TEXT">
-    You can also move between sections of the screen. For example, you can move between the launcher, the shelf, and your Chrome tabs. To move to the next section, swipe from left to right with four fingers. Try it now to continue.
+    You can also move between sections of the screen. For example, you can move between the launcher, the shelf, and your Flux tabs. To move to the next section, swipe from left to right with four fingers. Try it now to continue.
   </message>
   <message desc="Text content for the next/previous section lesson in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_PREVIOUS_SECTION_TEXT">
     Similarly, swiping from right to left with four fingers can be used to move to the previous section. Try it now!
@@ -3376,13 +3376,13 @@
     Touch tutorial complete
   </message>
   <message desc="Text content for the congratulations page in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_COMPLETE_TEXT">
-    Well done! You’ve learned the basics of ChromeVox touch. You can go through the tutorial again or exit this tutorial using the buttons below.
+    Well done! You’ve learned the basics of FluxVox touch. You can go through the tutorial again or exit this tutorial using the buttons below.
   </message>
   <message desc="Text content for the congratulations page in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_COMPLETE_HELP_CENTER_TEXT">
     For a full list of gestures, visit the help center.
   </message>
   <message desc="Text content for the congratulations page in the touch orientation." name="IDS_CHROMEVOX_TUTORIAL_TOUCH_ORIENTATION_COMPLETE_MORE_TUTORIALS_TEXT">
-    You can always view tutorials by opening the menus with a four-finger tap. Then activate the tutorial under the “ChromeVox” section.
+    You can always view tutorials by opening the menus with a four-finger tap. Then activate the tutorial under the “FluxVox” section.
   </message>
   <message desc="Spoken to describe a candidate in the IME conversion window." name="IDS_CHROMEVOX_IME_CANDIDATE" is_accessibility_with_no_ui="true">
     Text conversion candidate

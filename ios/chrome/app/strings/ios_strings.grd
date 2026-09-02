@@ -189,7 +189,7 @@
         Scan and autofill
       </message>
       <message name="IDS_AUTOFILL_SCAN_SAVE_AND_FILL_BOTTOM_SHEET_DESCRIPTION" desc="Description for the `Scan, Save and Fill` suggestion shown in the Autofill bottom sheet for users who don't have any cards saved in Autofill. When the suggestion is clicked, users are offered to scan, save and fill a credit card with a single click.">
-        Save your card in your Google Account to autofill it for this purchase and future purchases made on Chrome.
+        Save your card in your Google Account to autofill it for this purchase and future purchases made on Flux.
       </message>
       <message name="IDS_AUTOFILL_SCAN_SAVE_AND_FILL_BOTTOM_SHEET_TITLE" desc="Title for the `Scan, Save and Fill` suggestion shown in the Autofill bottom sheet for users who don't have any cards saved in Autofill. When the suggestion is clicked, users are offered to scan, save and fill a credit card with a single click.">
         Check out faster with autofill across your devices
@@ -630,7 +630,7 @@
         Gemini is AI and can make mistakes. <ph name="BEGIN_LINK">BEGIN_LINK</ph>More about relevant data sent to Google<ph name="END_LINK">END_LINK</ph>
       </message>
       <message name="IDS_IOS_AUTH_REASON" desc="A description that appears when the user needs to authenticate to use a suggestion.">
-      Chrome keeps your sensitive data secure with Face ID
+      Flux keeps your sensitive data secure with Face ID
       </message>
       <message name="IDS_IOS_AUTOFILL_ACCNAME_ALL_AUTOFILL_DATA" desc="Title of the the button in the keyboard accessory shown when filling out forms used to open the expanded view to see all autofill data when on iPad. [Length: unlimited] [iOS only]">
         All Autofill
@@ -705,7 +705,7 @@
         Settings
       </message>
       <message name="IDS_IOS_AUTOFILL_AI_PRIVATE_INFERENCE_NOTICE_SUBTITLE" desc="Subtitle of the bottom sheet notice for Autofill AI Private Inference. [iOS only]">
-        Chrome can now detect and fill more forms with smarter form understanding. To do this, page content and URLs can be processed in a private space in the cloud. Manage in settings.
+        Flux can now detect and fill more forms with smarter form understanding. To do this, page content and URLs can be processed in a private space in the cloud. Manage in settings.
       </message>
       <message name="IDS_IOS_AUTOFILL_AI_PRIVATE_INFERENCE_NOTICE_TITLE" desc="Title of the bottom sheet notice for Autofill AI Private Inference. [iOS only]">
         Smarter autofill, kept private
@@ -732,7 +732,7 @@
       Save identity card
       </message>
       <message name="IDS_IOS_AUTOFILL_AI_SAVE_OR_UPDATE_ENTITY_FAILED_WALLET_SAVE_DIALOG_DESCRIPTION" desc="The description text of the dialog shown when an entity (like passport, driver's license, etc) fails to be saved to Google Wallet.">
-      Chrome will offer to save it in Google Wallet next time you use it
+      Flux will offer to save it in Google Wallet next time you use it
       </message>
       <message name="IDS_IOS_AUTOFILL_AI_SAVE_PASSPORT_ENTITY_DIALOG_TITLE" desc="The title of a dialog that prompts the user to save information they just filled in on a form. For example, the user is booking a flight and filled in their passport info in a form. When they click Submit, we offer to save the data in Chrome. Depending on the form and what Chrome recognizes, there might be just one or several pieces of data saved at this moment. This is a similar moment to saving a password or credit card with Chrome.">
       Save passport
@@ -1519,13 +1519,13 @@
           You can open Gemini here
       </message>
       <message name="IDS_IOS_BWG_LIGHTWEIGHT_PROMO_CONVENIENCE_TITLE" desc="Convenience variant main title text for the Lightweight Gemini First Run Experience.">
-          Ask anything, right where you are, with Gemini in Chrome
+          Ask anything, right where you are, with Gemini in Flux
       </message>
       <message name="IDS_IOS_BWG_LIGHTWEIGHT_PROMO_DIVERSE_TITLE" desc="Diverse variant main title text for the Lightweight Gemini First Run Experience.">
-          Shop, plan and do more with Gemini in Chrome
+          Shop, plan and do more with Gemini in Flux
       </message>
       <message name="IDS_IOS_BWG_LIGHTWEIGHT_PROMO_PAGE_SHARING_TITLE" desc="Page sharing variant main title text for the Lightweight Gemini First Run Experience.">
-          Ask about anything on your page with Gemini in Chrome
+          Ask about anything on your page with Gemini in Flux
       </message>
       <message name="IDS_IOS_BWG_LOCATION_BACK_BUTTON_TITLE" desc="The back button text of BWG location settings page.">
         Gemini
@@ -1552,7 +1552,7 @@
           Turn on tab sharing
       </message>
       <message name="IDS_IOS_BWG_PROMO_CAROUSEL_GEMINI_IN_CHROME" desc="Product branding suffix text for the Gemini Promo carousel slide titles.">
-          Gemini in Chrome
+          Gemini in Flux
       </message>
       <message name="IDS_IOS_BWG_PROMO_CAROUSEL_PLANNING_ANIMATION_ACCESSIBILITY_LABEL" desc="Accessibility label for the third Gemini Promo carousel slide animation.">
           Prompt: Add this to my calendar, 3 of 3
@@ -1582,7 +1582,7 @@
           Gemini
       </message>
       <message name="IDS_IOS_BWG_PROMO_MAIN_TITLE" desc="Main title text for the Gemini Promo page.">
-          Do more with Gemini in Chrome
+          Do more with Gemini in Flux
       </message>
       <message name="IDS_IOS_BWG_PROMO_PRIMARY_BUTTON" desc="Primary button text for the Gemini Promo page.">
           Get started
@@ -2108,7 +2108,7 @@
         Content settings
       </message>
       <message name="IDS_IOS_CONTENT_SUGGESTIONS_ACCESSIBILITY_LABEL_SUGGESTION" desc="The accessibility label of a suggestion. Summarizes fields in the reading list entry (title, publisher informations, status and informations). Read by Text-to-Speech.">
-        <ph name="TITLE"><ex>Learn about the new Chromium projects</ex>$1</ph>, <ph name="PUBLISHER_INFORMATION"><ex>The Chromium organization</ex>$2</ph>, <ph name="PUBLICATION_DATE"><ex>January 1 2017</ex>$3</ph>
+        <ph name="TITLE"><ex>Learn about the new flux projects</ex>$1</ph>, <ph name="PUBLISHER_INFORMATION"><ex>The Flux organization</ex>$2</ph>, <ph name="PUBLICATION_DATE"><ex>January 1 2017</ex>$3</ph>
       </message>
       <message name="IDS_IOS_CONTENT_SUGGESTIONS_ADD_PINNED_SITE" desc="The title of the button to add a pinned site on the new tab page [Length: 10em]">
         Add Site
@@ -2363,10 +2363,10 @@
         Show details
       </message>
       <message name="IDS_IOS_CREDENTIAL_BOTTOM_SHEET_SUBTITLE" desc="Shown on the credential bottom sheet to inform users that, upon accepting the prompt, their username and password will be shared with the given website. [iOS only]" meaning="A string under the title logo of the credential bottom sheet.">
-        You'll sign in to <ph name="URL">$1<ex>chromium.org</ex></ph>
+        You'll sign in to <ph name="URL">$1<ex>flux.org</ex></ph>
       </message>
       <message name="IDS_IOS_CREDENTIAL_BOTTOM_SHEET_SUBTITLE_WITH_PASSKEYS" desc="Shown on the credential bottom sheet to inform users that, upon accepting the prompt, their username and password/passkey will be used to sign in to the given website. [iOS only]" meaning="A string under the title logo of the credential bottom sheet.">
-        Sign in to <ph name="URL">$1<ex>chromium.org</ex></ph>
+        Sign in to <ph name="URL">$1<ex>flux.org</ex></ph>
       </message>
       <message name="IDS_IOS_CREDENTIAL_BOTTOM_SHEET_USE_KEYBOARD" desc="The action button to dismiss the credential bottom sheet and revert to using the keyboard to fill in username and password information on the webpage.">
               Use keyboard
@@ -2452,7 +2452,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         You stayed signed in as <ph name="NAME_OR_EMAIL">$1<ex>john.doe@gmail.com</ex></ph>
       </message>
       <message name="IDS_IOS_DEEPLINK_SIGNIN_SUBTITLE" desc="Subtitle of the screen asking user confirmation for signing-in with the selected account. The user may see this after scanning the QR code in desktop Chrome to continue sign-in in iOS.">
-        You scanned a QR code to sign in to Chrome. You’ll get the passwords, bookmarks, and more from this account.
+        You scanned a QR code to sign in to Flux. You’ll get the passwords, bookmarks, and more from this account.
       </message>
       <message name="IDS_IOS_DEEPLINK_SIGNIN_TITLE" desc="Title of the screen asking user confirmation for signing-in with the selected account. The user may see this after scanning the QR code in desktop Chrome to continue sign-in in iOS.">
         Sign in as <ph name="FIRST_NAME">$1<ex>john</ex></ph>?
@@ -2545,7 +2545,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Cancel
       </message>
       <message name="IDS_IOS_DELETE_BROWSING_DATA_PAGE_FOOTER" desc="The text is displayed in a footer in the delete browsing data page which allows selection of data types to be deleted. The link ‘sign out of Chrome’ opens a dialog where the user can confirm if they want to sign out of Chrome.">
-        Deleting your browsing data doesn't sign you out of your Google Account. To do so, <ph name="BEGIN_LINK">BEGIN_LINK</ph>sign out of Chrome<ph name="END_LINK">END_LINK</ph>.
+        Deleting your browsing data doesn't sign you out of your Google Account. To do so, <ph name="BEGIN_LINK">BEGIN_LINK</ph>sign out of Flux<ph name="END_LINK">END_LINK</ph>.
       </message>
       <message name="IDS_IOS_DELETE_BROWSING_DATA_SUMMARY_ADRESSES" desc="Summary of the addresses to be deleted when deleting browsing data. [iOS only]">
        {COUNT, plural,
@@ -2834,7 +2834,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Open in Google Drive
       </message>
       <message name="IDS_IOS_DOWNLOAD_MANAGER_ORIGIN_HOST_LABEL" desc="String showing the host that triggered the download.">
-        From: <ph name="ORIGINATING_HOST">$1<ex>chromium.org</ex></ph>
+        From: <ph name="ORIGINATING_HOST">$1<ex>flux.org</ex></ph>
       </message>
       <message name="IDS_IOS_DOWNLOAD_MANAGER_ORIGIN_HOST_UNKNOWN_LABEL" desc="String showing that the host that triggered the download is unknown.">
         From an unknown source
@@ -3183,7 +3183,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
        A separate space for work
       </message>
       <message name="IDS_IOS_ENTERPRISE_PROFILE_MIGRATION_SUBTITLE" desc="Message displayed on a screen where the user is notified about the personal profile migration to a work profile.">
-        Using Chrome with your managed account helps you keep browsing related to your organization (including tabs, history, and passwords) separate from your other browsing
+        Using Flux with your managed account helps you keep browsing related to your organization (including tabs, history, and passwords) separate from your other browsing
       </message>
       <message name="IDS_IOS_ENTERPRISE_RESTRICTED_ACCOUNTS_TO_PATTERNS_MESSAGE" desc="Text displayed in the popover to inform the user that the browser is managed by Enterprise policies. (Restrict Accounts To Patterns) [iOS only]">
           Your organization allows you to sign in only with certain accounts. Accounts that aren't allowed are hidden.
@@ -3512,10 +3512,10 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Gemini Live
       </message>
       <message name="IDS_IOS_GEMINI_LIVE_BUTTON_ACCESSIBILITY_LABEL" desc="The accessibility label for the Gemini Live button.">
-        Go Live with Gemini in Chrome
+        Go Live with Gemini in Flux
       </message>
       <message name="IDS_IOS_GEMINI_LIVE_BUTTON_NEW_BADGE_ACCESSIBILITY_LABEL" desc="The accessibility label for the new badge next to the Gemini Live button.">
-        Live is a new feature on Gemini in Chrome
+        Live is a new feature on Gemini in Flux
       </message>
       <message name="IDS_IOS_GEMINI_LIVE_CONSENT_FIRST_BOX_BODY" desc="Body text for the first box of the Gemini Live Consent page.">
         Live will use your microphone. Tapping the Live button turns on the mic. To turn off the mic, tap the stop button or close Gemini.
@@ -3551,7 +3551,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Listening
       </message>
       <message name="IDS_IOS_GEMINI_LIVE_MICROPHONE_ALERT_DETAIL" desc="Detail message of modal dialog shown when the user tries to start Gemini Live but has not allowed microphone access. This body instructs the user to enable the microphone in Settings.">
-        To use Live, give Chrome access to your microphone in settings
+        To use Live, give Flux access to your microphone in settings
       </message>
       <message name="IDS_IOS_GEMINI_LIVE_MICROPHONE_ALERT_GO_TO_SETTINGS" desc="Title of the button to redirect the user to iOS Settings to allow microphone permission.">
         Go to Settings...
@@ -3593,7 +3593,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         This lets you search using your voice
       </message>
       <message name="IDS_IOS_GEMINI_PERMISSION_MICROPHONE_PROMPT_TITLE" desc="Title of the Gemini-specific microphone permission prompt.">
-        “Chrome” would like to access your microphone
+        “Flux” would like to access your microphone
       </message>
       <message name="IDS_IOS_GEMINI_PROMO_CAROUSEL_PLANNING_FLOATY_TEXT" desc="Text inside the floaty bubble in the Planning carousel slide animation.">
           Add this to my calendar
@@ -4297,7 +4297,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         What URL would you like to add to your reading list?
       </message>
       <message name="IDS_IOS_INTENTS_OPEN_IN_CHROME_DESCRIPTION" desc="Shortcut description to open URLs in Chrome [iOS only].">
-        Opens the inputted URLs in Google Chrome.
+        Opens the inputted URLs in Google flux.
       </message>
       <message name="IDS_IOS_INTENTS_OPEN_IN_CHROME_INCOGNITO_PARAMETER_COMBINATION_TITLE" desc="Apple Shortcuts.app format for displaying the URL input [iOS only].">
         Open ${url} in Incognito
@@ -4306,7 +4306,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Open ${url}
       </message>
       <message name="IDS_IOS_INTENTS_OPEN_IN_CHROME_TITLE" desc="Shortcut name to open URL in Chrome [iOS only].">
-        Open URLs in Chrome
+        Open URLs in Flux
       </message>
       <message name="IDS_IOS_INTENTS_URL_PARAMETER" desc="The URL the user would like to pass as input parameter to Shortcuts that require a URL as input [iOS only].">
         URL
@@ -4617,7 +4617,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Tab Groups
       </message>
       <message name="IDS_IOS_LEVEL_UP_HEADER_TITLE" desc="The header title displaying at the top of the Level Up task progress card. [iOS only]">
-        Current Chrome Level
+        Current Flux Level
       </message>
       <message name="IDS_IOS_LEVEL_UP_LEVEL_TITLE" desc="The text displaying the current user level. [iOS only]">
         Level <ph name="LEVEL_NUMBER">$1<ex>1</ex></ph>
@@ -4705,7 +4705,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Passwords and Autofill completed!
       </message>
       <message name="IDS_IOS_LEVEL_UP_TASK_COMPLETED_GEMINI" desc="Completion snackbar message for the Gemini task. [iOS only]">
-        Use Gemini in Chrome completed!
+        Use Gemini in Flux completed!
       </message>
       <message name="IDS_IOS_LEVEL_UP_TASK_COMPLETED_INCOGNITO" desc="Completion snackbar message for the Incognito task. [iOS only]">
         Go Incognito completed!
@@ -4750,7 +4750,7 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Open Autofill and passwords
       </message>
       <message name="IDS_IOS_LEVEL_UP_WALKTHROUGH_OPEN_CHROME_MENU" desc="Text of the bubble for the Level Up walkthrough prompting the user to open the Chrome menu. [iOS only]">
-        Open the Chrome menu
+        Open the Flux menu
       </message>
       <message name="IDS_IOS_LEVEL_UP_WALKTHROUGH_OPEN_PASSWORD_CHECKUP" desc="Text of the bubble for the Level Up walkthrough prompting the user to open Password Checkup. [iOS only]">
         Open Password Checkup
@@ -4837,10 +4837,10 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Tap "Use Password" to sign in securely.
       </message>
       <message name="IDS_IOS_MAGIC_STACK_TIP_CONTEXT_MENU_HIDE_CHROME_TIPS" desc="The description of the Hide Chrome Tips button located in the Chrome Tips Magic Stack context menu.">
-        Hide "<ph name="Module_Name"><ex>Chrome Tips</ex>$1</ph>"
+        Hide "<ph name="Module_Name"><ex>Flux Tips</ex>$1</ph>"
       </message>
       <message name="IDS_IOS_MAGIC_STACK_TIP_CONTEXT_MENU_TURN_ON_NOTIFICATIONS" desc="The description of the Turn On Chrome Tips button located in the Chrome Tips Magic Stack context menu.">
-        Turn on notifications for <ph name="Module_Name"><ex>Chrome Tips</ex>$1</ph>
+        Turn on notifications for <ph name="Module_Name"><ex>Flux Tips</ex>$1</ph>
       </message>
       <message name="IDS_IOS_MAGIC_STACK_TIP_GOT_IT" desc="Button label to dismiss a full-screen tip promo triggered via the Magic Stack.">
         Got It
@@ -4968,13 +4968,13 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Manage settings…
       </message>
       <message name="IDS_IOS_MANUAL_FALLBACK_NOT_SECURE_GENERIC_BODY" desc="The body of the alert informing a user the content they selected won't be filled on the form." meaning="The form is not secure [80em]">
-        To protect your privacy, Chrome will not autofill this field.
+        To protect your privacy, Flux will not autofill this field.
       </message>
       <message name="IDS_IOS_MANUAL_FALLBACK_NOT_SECURE_OK_BUTTON" desc="The title of the OK button of the 'Not Secure' alert in manual fallback." meaning="The user will dismiss the alert [20em]">
         OK
       </message>
       <message name="IDS_IOS_MANUAL_FALLBACK_NOT_SECURE_PASSWORD_BODY" desc="The body of the alert informing a user the password they selected won't be filled on the form." meaning="The field the user is trying to fill is not of password type  [80em]">
-        To protect your privacy, Chrome will not autofill your password in this field.
+        To protect your privacy, Flux will not autofill your password in this field.
       </message>
       <message name="IDS_IOS_MANUAL_FALLBACK_NOT_SECURE_TITLE" desc="The title of the alert informing a user the content they selected won't be filled on the form." meaning="The form is not secure [20em]">
         Not secure
@@ -5173,10 +5173,10 @@ To continue from your computer, switch to <ph name="OTHER_EMAIL">$2<ex>john.doe@
         Turn on notifications?
       </message>
       <message name="IDS_IOS_NOTIFICATIONS_CONFIRMATION_MESSAGE" desc="The snackbar message that confirms that notifications have been turned on.">
-        <ph name="FEATURE_NAME">$1<ex>Chromium Tips</ex></ph> notifications turned on
+        <ph name="FEATURE_NAME">$1<ex>Flux Tips</ex></ph> notifications turned on
       </message>
       <message name="IDS_IOS_NOTIFICATIONS_CONFIRMATION_MESSAGE_OFF" desc="The snackbar message that confirms that notifications have been turned off.">
-        <ph name="FEATURE_NAME">$1<ex>Chromium Tips</ex></ph> notifications turned off
+        <ph name="FEATURE_NAME">$1<ex>Flux Tips</ex></ph> notifications turned off
       </message>
       <message name="IDS_IOS_NOTIFICATIONS_MANAGE_SETTINGS" desc="The label for a button that takes the user to the app's Notifications Settings page.">
         Manage
@@ -6076,7 +6076,7 @@ Handoff must also be enabled in the General section of Settings, and your device
         Show details
       </message>
       <message name="IDS_IOS_PAYMENT_BOTTOM_SHEET_SUBTITLE" desc="Shown on the payment bottom sheet to inform users that, upon accepting the prompt, credit card informations will be shared with the given website. [iOS only]" meaning="A string under the title logo of the payment bottom sheet.">
-        Autofill payment info on <ph name="URL">$1<ex>chromium.org</ex></ph>
+        Autofill payment info on <ph name="URL">$1<ex>flux.org</ex></ph>
       </message>
       <message name="IDS_IOS_PAYMENT_BOTTOM_SHEET_USE_KEYBOARD" desc="The action button to dismiss the payment bottom sheet and revert to using the keyboard to fill in payment fields on the webpage.">
         Use keyboard
@@ -6566,10 +6566,10 @@ Handoff must also be enabled in the General section of Settings, and your device
         Done
       </message>
       <message name="IDS_IOS_READING_LIST_ENTRY_ACCESSIBILITY_LABEL" desc="Accessibility label for a reading list entry. Summarizes fields in the reading list entry (title, status and url). Read by Text To Speech. Similar to IDS_IOS_READING_LIST_ENTRY_WITH_UPLOAD_STATE_ACCESSIBILITY_LABEL">
-        <ph name="TITLE"><ex>Chromium - The Chromium projects</ex>$1</ph>, <ph name="STATE"><ex>available offline</ex>$2</ph>, <ph name="URL"><ex>http://www.chromium.org/Home</ex>$3</ph>
+        <ph name="TITLE"><ex>Flux - The flux projects</ex>$1</ph>, <ph name="STATE"><ex>available offline</ex>$2</ph>, <ph name="URL"><ex>http://www.chromium.org/Home</ex>$3</ph>
       </message>
       <message name="IDS_IOS_READING_LIST_ENTRY_WITH_UPLOAD_STATE_ACCESSIBILITY_LABEL" desc="Accessibility label for a reading list entry. Summarizes fields in the reading list entry (title, status, upload state and url). Read by Text To Speech. Similar to IDS_IOS_READING_LIST_ENTRY_ACCESSIBILITY_LABEL">
-        <ph name="TITLE"><ex>Chromium - The Chromium projects</ex>$1</ph>, <ph name="STATE"><ex>available offline</ex>$2</ph>, only on this device, <ph name="URL"><ex>http://www.chromium.org/Home</ex>$3</ph>
+        <ph name="TITLE"><ex>Flux - The flux projects</ex>$1</ph>, <ph name="STATE"><ex>available offline</ex>$2</ph>, only on this device, <ph name="URL"><ex>http://www.chromium.org/Home</ex>$3</ph>
       </message>
       <message name="IDS_IOS_READING_LIST_JUST_NOW" desc="String indicating that an event (adding item, distillation) happened less than one minute ago. [Length: 25em]">
         Just now
@@ -7420,7 +7420,7 @@ Handoff must also be enabled in the General section of Settings, and your device
           other {Delete addresses}}
       </message>
       <message name="IDS_IOS_SETTINGS_AUTOFILL_DELETE_HOME_WORK_ADDRESS_CONFIRMATION_TITLE" desc="Title for the sheet shown to the user for confirmation to delete home or work addresses. [iOS only]">
-          This removes selected info from Chrome, but it doesn’t delete this info from your Google Account.
+          This removes selected info from Flux, but it doesn’t delete this info from your Google Account.
       </message>
       <message name="IDS_IOS_SETTINGS_AUTOFILL_DELETE_LOCAL_ACCOUNT_ADDRESS_CONFIRMATION_TITLE" desc="Title for the sheet shown to the user for confirmation to delete local and account addresses. [iOS only]">
           This deletes addresses saved on this device. It also deletes addresses saved in your Google Account <ph name="USER_EMAIL">$1<ex>janedoe@google.com</ex></ph>.
@@ -7437,7 +7437,7 @@ Handoff must also be enabled in the General section of Settings, and your device
           other {These addresses will be deleted from this device.}}
       </message>
       <message name="IDS_IOS_SETTINGS_AUTOFILL_DELETE_LOCAL_HOME_WORK_ADDRESS_CONFIRMATION_TITLE" desc="Title for the sheet shown to the user for confirmation to delete local and home or work addresses. [iOS only]">
-          This deletes addresses saved on this device. It also removes selected info from Chrome, but it doesn’t delete this info from your Google Account.
+          This deletes addresses saved on this device. It also removes selected info from Flux, but it doesn’t delete this info from your Google Account.
       </message>
       <message name="IDS_IOS_SETTINGS_AUTOFILL_DELETE_TITLE_LOCAL" desc="Title for the sheet shown to the user for confirmation to delete mixed selection of addresses and entities. Locally saved only. [iOS only]">
           This deletes selected info saved on this device
@@ -7685,7 +7685,7 @@ Handoff must also be enabled in the General section of Settings, and your device
         Site address copied
       </message>
       <message name="IDS_IOS_SETTINGS_START_SURFACE_TITLE" desc="Title for the setting to show the start surface after period of inactivity. [iOS only]">
-        Open a new tab when you return to Chrome after 4 hours
+        Open a new tab when you return to Flux after 4 hours
       </message>
       <message name="IDS_IOS_SETTINGS_SWIPE_DOWN_DISCARD" desc="Button displayed along with a message alert whenever a user tries to dismiss a Settings screen which is being edited, or information is being added to it. Selecting this option will discard the current changes and dismiss the screen.">
         Discard changes
@@ -7757,7 +7757,7 @@ Handoff must also be enabled in the General section of Settings, and your device
         Expand list
       </message>
       <message name="IDS_IOS_SET_UP_LIST_HIDE_MODULE_CONTEXT_MENU_DESCRIPTION" desc="Description for the long-press context menu for the Set Up List module.">
-          Hide "<ph name="TITLE">$1<ex>Get the most out of Chromium</ex></ph>"
+          Hide "<ph name="TITLE">$1<ex>Get the most out of Flux</ex></ph>"
       </message>
       <message name="IDS_IOS_SET_UP_LIST_MENU" desc="Accessibility label for the Set Up List menu button.">
         Options
@@ -8050,7 +8050,7 @@ Handoff must also be enabled in the General section of Settings, and your device
         Sign-in in progress.
       </message>
       <message name="IDS_IOS_SIGNIN_PROMO_GEMINI" desc="This string is on a promo intended to promote signing in to Chrome with the user's Google Account. It appears when the user attempts to access Gemini features in the browser while signed out.">
-        To use Gemini in Chrome, sign in to Chrome with your Google Account
+        To use Gemini in Flux, sign in to Flux with your Google Account
       </message>
       <message name="IDS_IOS_SIGNIN_PROMO_READING_LIST" desc="This string is on a promo intended to promote signing in to Chrome with the user's Google Account. It appears on the Reading List page when the user is not signed in. We want users to read this promo and click 'Continue as {name}' to sign in to their Google Account. The tone should be informative and lightweight.">
         Sign in to get your reading list on all your devices.
@@ -8739,10 +8739,10 @@ Handoff must also be enabled in the General section of Settings, and your device
         Zoom out
       </message>
       <message name="IDS_IOS_TIPS_NOTIFICATIONS_CONTEXT_MENU_ITEM" desc="Title of context menu item for the Set Up List to enable notifications.">
-        Turn on notifications for <ph name="FEATURE_NAME">$1<ex>Chromium tips</ex></ph>
+        Turn on notifications for <ph name="FEATURE_NAME">$1<ex>Flux tips</ex></ph>
       </message>
       <message name="IDS_IOS_TIPS_NOTIFICATIONS_CONTEXT_MENU_ITEM_OFF" desc="Title of context menu item for the Set Up List to turn off notifications.">
-        Turn off notifications for <ph name="FEATURE_NAME">$1<ex>Chromium tips</ex></ph>
+        Turn off notifications for <ph name="FEATURE_NAME">$1<ex>Flux tips</ex></ph>
       </message>
       <message name="IDS_IOS_TOGGLE_SETTING_MANAGED_ACCESSIBILITY_HINT" desc="Action hint for any managed switch in settings. This is spoken by VoiceOver. [iOS only]">
         This setting is managed, double tap for more information
@@ -9374,10 +9374,10 @@ Handoff must also be enabled in the General section of Settings, and your device
         Summarize page
       </message>
       <message name="IDS_IOS_ZERO_STATE_SUGGESTIONS_WHAT_CAN_GEMINI_DO_QUERY" desc="The query sent when the 'What can Gemini do' zero state suggestion chip is tapped.">
-        What can I do with Gemini in Chrome?
+        What can I do with Gemini in Flux?
       </message>
       <message name="IDS_IOS_ZERO_STATE_SUGGESTIONS_WHAT_CAN_GEMINI_DO_TEXT" desc="The text for the 'What can Gemini do' zero state suggestion chip.">
-        What can Gemini do in Chrome?
+        What can Gemini do in Flux?
       </message>
       <message name="IDS_SAVE_PASSWORD_FOOTER" desc="The footer text of the infobar that offers user to save/update a password to Chrome.">
         Passwords are saved in your Google Account so you can use them on any device.

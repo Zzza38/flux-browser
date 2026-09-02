@@ -447,7 +447,7 @@
         Your Google Drive storage is full
       </message>
       <message name="IDS_SAVE_TO_DRIVE_DIALOG_SUCCESS_MESSAGE" desc="A message telling the user can find their newly uploaded file in the bolded folder name in Google Drive. 'Save from Chrome' is a folder name example.">
-        Saved to your <ph name="FOLDER_NAME">&lt;b&gt;$1<ex>Save from Chrome</ex>&lt;/b&gt;</ph> folder
+        Saved to your <ph name="FOLDER_NAME">&lt;b&gt;$1<ex>Save from Flux</ex>&lt;/b&gt;</ph> folder
       </message>
       <message name="IDS_SAVE_TO_DRIVE_DIALOG_SUCCESS_TITLE" desc="Title of the dialog that appears when a file is successfully uploaded to Google Drive.">
         Upload successful
