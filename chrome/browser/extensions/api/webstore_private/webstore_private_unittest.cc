@@ -890,7 +890,7 @@ TEST_F(WebstorePrivateManifestV2DeprecationUnitTest,
       api_test_utils::RunFunctionAndReturnSingleResult(
           function.get(), /*args*/ "[]", profile());
   ASSERT_TRUE(response);
-  EXPECT_EQ("hard_disable", *response);
+  EXPECT_EQ("inactive", *response);
 }
 #endif  // BUILDFLAG(ENABLE_EXTENSIONS)
 
