@@ -77,6 +77,11 @@ bool ChromeLocationBarModelDelegate::GetURL(GURL* url) const {
   }
 
   *url = entry->GetVirtualURL();
+  if (url->SchemeIs(content::kChromeUIScheme)) {
+    GURL::Replacements replacements;
+    replacements.SetSchemeStr(chrome::kFluxUIScheme);
+    *url = url->ReplaceComponents(replacements);
+  }
   return true;
 }
 

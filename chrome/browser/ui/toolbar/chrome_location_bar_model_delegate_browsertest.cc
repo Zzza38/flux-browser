@@ -17,6 +17,7 @@
 #include "chrome/common/url_constants.h"
 #include "chrome/test/base/in_process_browser_test.h"
 #include "chrome/test/base/search_test_utils.h"
+#include "chrome/test/base/ui_test_utils.h"
 #include "components/search_engines/template_url_service.h"
 #include "content/public/test/browser_test.h"
 
@@ -103,6 +104,13 @@ class ChromeLocationBarModelDelegateTest : public InProcessBrowserTest {
   base::test::ScopedFeatureList scoped_feature_list_;
   std::unique_ptr<TestChromeLocationBarModelDelegate> delegate_;
 };
+
+IN_PROC_BROWSER_TEST_F(ChromeLocationBarModelDelegateTest,
+                       DisplaysChromeWebUIUrlsAsFlux) {
+  ASSERT_TRUE(ui_test_utils::NavigateToURL(browser(),
+                                           GURL("chrome://settings/people")));
+  EXPECT_EQ("flux://settings/people", GetURL());
+}
 
 // Tests whether ChromeLocationBarModelDelegate::IsNewTabPage and
 // ChromeLocationBarModelDelegate::IsNewTabPageURL return the expected results

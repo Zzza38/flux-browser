@@ -205,6 +205,10 @@ void ChromeContentClient::AddAdditionalSchemes(Schemes* schemes) {
   for (auto* standard_scheme : kChromeStandardURLSchemes)
     schemes->standard_schemes.push_back(standard_scheme);
 
+  // flux:// is the user-facing alias for trusted chrome:// WebUI pages.
+  schemes->secure_schemes.push_back(chrome::kFluxUIScheme);
+  schemes->local_schemes.push_back(chrome::kFluxUIScheme);
+
 #if BUILDFLAG(IS_ANDROID)
   schemes->referrer_schemes.push_back(content::kAndroidAppScheme);
   schemes->referrer_schemes.push_back(dom_distiller::kDomDistillerScheme);
