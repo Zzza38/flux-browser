@@ -26,7 +26,6 @@
 #include "ui/gfx/geometry/insets.h"
 #include "ui/gfx/geometry/size.h"
 #include "ui/views/accessibility/view_accessibility.h"
-#include "ui/views/border.h"
 #include "ui/views/controls/button/label_button.h"
 #include "ui/views/controls/label.h"
 #include "ui/views/controls/webview/unhandled_keyboard_event_handler.h"
@@ -170,8 +169,6 @@ FluxSitePanel::FluxSitePanel(BrowserView* browser_view,
   if (content::WebContents* contents = web_contents()) {
     contents->SetAudioMuted(site.muted);
   }
-  SetBorder(views::CreateSolidSidedBorder(gfx::Insets().set_right(1),
-                                          ui::kColorSysDivider));
   // The role must be set before any name: AXNodeData::SetName() CHECKs for a
   // known role so it can pick the default NameFrom. UpdateTitle() then names
   // the panel after the live page title, falling back to `site.name`.

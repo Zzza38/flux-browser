@@ -59,6 +59,8 @@ class FluxSidebarView : public views::View,
 
  public:
   static constexpr int kRailWidth = 52;
+  // Unpainted hit target that hangs off the open panel into the browser.
+  static constexpr int kResizeHandleWidth = 20;
 
   explicit FluxSidebarView(BrowserView* browser_view);
   FluxSidebarView(const FluxSidebarView&) = delete;
@@ -66,6 +68,9 @@ class FluxSidebarView : public views::View,
   ~FluxSidebarView() override;
 
   int GetPreferredWidth(int available_width) const;
+  // Zero when the panel is closed, so the handle does not exist without a
+  // popout.
+  int GetResizeHandleWidth() const;
   bool IsPanelOpen() const { return !active_site_ids_.empty(); }
 
   // views::ResizeAreaDelegate:

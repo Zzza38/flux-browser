@@ -15,7 +15,6 @@
 #include "base/files/file_util.h"
 #include "base/functional/bind.h"
 #include "base/functional/callback_helpers.h"
-#include "base/i18n/rtl.h"
 #include "base/strings/strcat.h"
 #include "base/strings/string_util.h"
 #include "base/strings/utf_string_conversions.h"
@@ -48,6 +47,7 @@
 #include "ui/base/models/dialog_model.h"
 #include "ui/base/models/image_model.h"
 #include "ui/color/color_id.h"
+#include "ui/compositor/layer.h"
 #include "ui/gfx/codec/png_codec.h"
 #include "ui/gfx/color_utils.h"
 #include "ui/gfx/geometry/insets.h"
@@ -70,10 +70,6 @@ namespace {
 constexpr int kPanelDefaultWidthNumerator = 3;
 constexpr int kPanelDefaultWidthDenominator = 8;
 constexpr int kPanelMinimumPercent = 10;
-// Must sit in Views-only space, not over the hosted WebView. Native web
-// contents steal mouse hits, which is why a 1px panel border was the only
-// usable grab target. This strip is unpainted.
-constexpr int kResizeAreaWidth = 12;
 constexpr int kRailButtonSize = 40;
 constexpr int kRailButtonRadius = 9;
 constexpr int kLogoIconSize = 28;
@@ -237,7 +233,9 @@ FluxSidebarView::FluxSidebarView(BrowserView* browser_view)
   panel_host_->SetVisible(false);
 
   resize_area_ = AddChildView(std::make_unique<views::ResizeArea>(this));
-  resize_area_->SetPreferredSize(gfx::Size(kResizeAreaWidth, 0));
+  resize_area_->SetPreferredSize(gfx::Size(kResizeHandleWidth, 0));
+  resize_area_->SetPaintToLayer();
+  resize_area_->layer()->SetFillsBoundsOpaquely(false);
   resize_area_->SetVisible(false);
 
   model_subscription_ = model_.AddChangedCallback(base::BindRepeating(
@@ -272,9 +270,14 @@ int FluxSidebarView::GetPreferredWidth(int available_width) const {
   return kRailWidth + std::clamp(desired, minimum, maximum);
 }
 
+int FluxSidebarView::GetResizeHandleWidth() const {
+  return IsPanelOpen() ? kResizeHandleWidth : 0;
+}
+
 void FluxSidebarView::OnResize(int resize_amount, bool done_resizing) {
   if (starting_panel_width_ < 0) {
-    starting_panel_width_ = std::max(1, width() - kRailWidth);
+    starting_panel_width_ =
+        std::max(1, width() - kRailWidth - GetResizeHandleWidth());
   }
   const int available = parent() ? parent()->width() : width();
   const int minimum = std::max(1, available * kPanelMinimumPercent / 100);
@@ -583,19 +586,13 @@ void FluxSidebarView::InvalidateBrowserLayout() {
 }
 
 void FluxSidebarView::Layout(PassKey) {
-  const int resize_width =
-      resize_area_->GetVisible() ? kResizeAreaWidth : 0;
-  const int panel_width = std::max(0, width() - kRailWidth - resize_width);
-  if (base::i18n::IsRTL()) {
-    rail_->SetBounds(width() - kRailWidth, 0, kRailWidth, height());
-    panel_host_->SetBounds(resize_width, 0, panel_width, height());
-    resize_area_->SetBounds(0, 0, resize_width, height());
-  } else {
-    rail_->SetBounds(0, 0, kRailWidth, height());
-    panel_host_->SetBounds(kRailWidth, 0, panel_width, height());
-    resize_area_->SetBounds(kRailWidth + panel_width, 0, resize_width,
-                            height());
-  }
+  // The sidebar is docked on the left. Hang the handle off the popout's right
+  // edge into the browser; do not steal width from the popout itself.
+  const int handle_width = GetResizeHandleWidth();
+  const int panel_width = std::max(0, width() - kRailWidth - handle_width);
+  rail_->SetBounds(0, 0, kRailWidth, height());
+  panel_host_->SetBounds(kRailWidth, 0, panel_width, height());
+  resize_area_->SetBounds(kRailWidth + panel_width, 0, handle_width, height());
   rail_->DeprecatedLayoutImmediately();
   panel_host_->DeprecatedLayoutImmediately();
 }

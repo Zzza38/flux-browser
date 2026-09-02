@@ -759,16 +759,19 @@ BrowserViewTabbedLayoutImpl::CalculateProposedLayout(
   const bool flux_sidebar_visible = horizontal_layout.flux_sidebar_width > 0;
   if (IsParentedTo(views().flux_sidebar, views().browser_view)) {
     if (flux_sidebar_visible) {
-      flux_sidebar_bounds = gfx::Rect(params.visual_client_area.x(),
-                                      params.visual_client_area.y(),
-                                      horizontal_layout.flux_sidebar_width,
-                                      params.visual_client_area.height());
+      flux_sidebar_bounds = gfx::Rect(
+          params.visual_client_area.x(), params.visual_client_area.y(),
+          horizontal_layout.flux_sidebar_width +
+              views().flux_sidebar->GetResizeHandleWidth(),
+          params.visual_client_area.height());
       params.InsetHorizontal(horizontal_layout.flux_sidebar_width,
                              /*leading=*/true);
     }
     layout.AddChild(views().flux_sidebar, flux_sidebar_bounds,
                     flux_sidebar_visible);
   }
+  const int flux_sidebar_visual_right =
+      flux_sidebar_bounds.x() + horizontal_layout.flux_sidebar_width;
 
   // Lay out horizontal tab strip region if present.
   if (IsParentedTo(views().horizontal_tab_strip_region_view,
@@ -931,7 +934,9 @@ BrowserViewTabbedLayoutImpl::CalculateProposedLayout(
     if (flux_sidebar_visible) {
       const gfx::Size preferred =
           views().flux_sidebar_top_corner->GetPreferredSize();
-      corner_bounds = gfx::Rect(flux_sidebar_bounds.top_right(), preferred);
+      corner_bounds = gfx::Rect(
+          gfx::Point(flux_sidebar_visual_right, flux_sidebar_bounds.y()),
+          preferred);
       corner_bounds.Outset(
           gfx::Outsets::TLBR(0, views::Separator::kThickness, 0, 0));
     }
@@ -944,7 +949,7 @@ BrowserViewTabbedLayoutImpl::CalculateProposedLayout(
       const gfx::Size preferred =
           views().flux_sidebar_bottom_corner->GetPreferredSize();
       corner_bounds =
-          gfx::Rect(flux_sidebar_bounds.right(),
+          gfx::Rect(flux_sidebar_visual_right,
                     flux_sidebar_bounds.bottom() - preferred.height(),
                     preferred.width(), preferred.height());
       corner_bounds.Outset(
@@ -960,7 +965,7 @@ BrowserViewTabbedLayoutImpl::CalculateProposedLayout(
       const gfx::Size preferred =
           views().flux_sidebar_top_trailing_corner->GetPreferredSize();
       corner_bounds = gfx::Rect(
-          flux_sidebar_bounds.right() - preferred.width() -
+          flux_sidebar_visual_right - preferred.width() -
               views::Separator::kThickness,
           flux_sidebar_bounds.y(), preferred.width(), preferred.height());
     }
@@ -974,7 +979,7 @@ BrowserViewTabbedLayoutImpl::CalculateProposedLayout(
       const gfx::Size preferred =
           views().flux_sidebar_bottom_trailing_corner->GetPreferredSize();
       corner_bounds =
-          gfx::Rect(flux_sidebar_bounds.right() - preferred.width() -
+          gfx::Rect(flux_sidebar_visual_right - preferred.width() -
                         views::Separator::kThickness,
                     flux_sidebar_bounds.bottom() - preferred.height(),
                     preferred.width(), preferred.height());
