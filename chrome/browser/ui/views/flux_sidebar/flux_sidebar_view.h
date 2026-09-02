@@ -19,6 +19,7 @@
 #include "chrome/browser/ui/views/flux_sidebar/flux_sidebar_model.h"
 #include "components/favicon_base/favicon_types.h"
 #include "components/prefs/pref_change_registrar.h"
+#include "ui/base/dragdrop/mojom/drag_drop_types.mojom-forward.h"
 #include "ui/base/metadata/metadata_header_macros.h"
 #include "ui/gfx/image/image.h"
 #include "ui/gfx/image/image_skia.h"
@@ -27,6 +28,7 @@
 #include "ui/shell_dialogs/select_file_policy.h"
 #include "ui/views/context_menu_controller.h"
 #include "ui/views/controls/resize_area_delegate.h"
+#include "ui/views/drag_controller.h"
 #include "ui/views/view.h"
 
 class BrowserView;
@@ -35,6 +37,12 @@ class SkBitmap;
 namespace network {
 class SimpleURLLoader;
 }  // namespace network
+
+namespace ui {
+class DropTargetEvent;
+class LayerTreeOwner;
+class OSExchangeData;
+}  // namespace ui
 
 namespace views {
 class BoxLayout;
@@ -54,7 +62,8 @@ class FluxSidebarView : public views::View,
                         public views::ResizeAreaDelegate,
                         public views::ContextMenuController,
                         public ui::SimpleMenuModel::Delegate,
-                        public ui::SelectFileDialog::Listener {
+                        public ui::SelectFileDialog::Listener,
+                        public views::DragController {
   METADATA_HEADER(FluxSidebarView, views::View)
 
  public:
@@ -92,6 +101,14 @@ class FluxSidebarView : public views::View,
   // ui::SelectFileDialog::Listener:
   void FileSelected(const ui::SelectedFileInfo& file, int index) override;
   void FileSelectionCanceled() override;
+
+  // Column that holds the tiles. It, rather than the tiles themselves, is the
+  // drop target, so a drag anywhere over the rail reorders. Both of these are
+  // defined in the .cc; they are only public so their view metadata can be
+  // declared at namespace scope.
+  class RailView;
+  // Site tile. Only exists to hear about the end of its own drag.
+  class SiteButton;
 
  private:
   void RebuildRail();
@@ -140,11 +157,53 @@ class FluxSidebarView : public views::View,
   // Decoded icon for `site`, or a null image when it has no custom icon.
   gfx::ImageSkia GetCustomIcon(const FluxSite& site);
 
+  // Reordering. Tiles are dragged within the rail; the model is only touched
+  // once, on drop.
+  //
+  // views::DragController:
+  void WriteDragDataForView(views::View* sender,
+                            const gfx::Point& press_pt,
+                            ui::OSExchangeData* data) override;
+  int GetDragOperationsForView(views::View* sender,
+                               const gfx::Point& p) override;
+  bool CanStartDragForView(views::View* sender,
+                           const gfx::Point& press_pt,
+                           const gfx::Point& p) override;
+
+  // Drop handling, forwarded from RailView.
+  bool CanDropSite(const ui::OSExchangeData& data) const;
+  int OnSiteDragUpdated(const ui::DropTargetEvent& event);
+  void OnSiteDragExited();
+  views::View::DropCallback GetSiteDropCallback(
+      const ui::DropTargetEvent& event);
+  void PerformSiteDrop(
+      std::string id,
+      size_t index,
+      const ui::DropTargetEvent& event,
+      ui::mojom::DragOperation& output_drag_op,
+      std::unique_ptr<ui::LayerTreeOwner> drag_image_layer_owner);
+  // Called on the dragged tile once the drag loop ends, however it ended.
+  void OnSiteDragDone();
+
+  // Where the dragged tile would land, as an index into the site list with the
+  // dragged site taken out. Both FluxSidebarModel::MoveSite() and
+  // views::View::ReorderChildView() take an index in that form. `point` is in
+  // `site_buttons_` coordinates.
+  size_t GetDropIndexForPoint(const std::string& dragged_id,
+                              const gfx::Point& point) const;
+  views::View* FindSiteButton(const std::string& id) const;
+  // Puts the tiles back in model order, undoing any preview reordering.
+  void RestoreRailOrder();
+  void SetTileDragged(const std::string& id, bool dragged);
+  gfx::ImageSkia CreateSiteDragImage(const FluxSite& site,
+                                     views::LabelButton* button);
+  void MoveSiteBy(const std::string& id, int delta);
+
   const raw_ptr<BrowserView> browser_view_;
   FluxSidebarModel model_;
   base::CallbackListSubscription model_subscription_;
 
-  raw_ptr<views::View> rail_ = nullptr;
+  raw_ptr<RailView> rail_ = nullptr;
   raw_ptr<views::ImageButton> logo_button_ = nullptr;
   raw_ptr<views::View> site_buttons_ = nullptr;
   raw_ptr<views::View> panel_host_ = nullptr;
@@ -177,12 +236,22 @@ class FluxSidebarView : public views::View,
   // Decoded custom icons keyed by their data: URL, so changing an icon
   // naturally misses the cache.
   std::map<std::string, gfx::ImageSkia> decoded_icons_;
+  // Site being dragged, empty when no drag is running. While it is set the
+  // rail is not rebuilt, because destroying the dragged tile mid-drag would
+  // strand the drag loop; the rebuild happens in OnSiteDragDone() instead.
+  std::string dragged_site_id_;
+  std::optional<size_t> drop_index_;
+  bool rebuild_pending_ = false;
+
   int panel_width_ = 0;
   int starting_panel_width_ = -1;
   bool split_ = false;
   bool split_vertical_ = false;
 
   base::WeakPtrFactory<FluxSidebarView> weak_ptr_factory_{this};
+  // Invalidated whenever the model changes, so a drop callback that was handed
+  // out before the change cannot apply a stale index.
+  base::WeakPtrFactory<FluxSidebarView> drop_weak_ptr_factory_{this};
 };
 
 }  // namespace flux_sidebar

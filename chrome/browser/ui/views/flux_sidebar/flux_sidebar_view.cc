@@ -15,11 +15,15 @@
 #include "base/files/file_util.h"
 #include "base/functional/bind.h"
 #include "base/functional/callback_helpers.h"
+#include "base/no_destructor.h"
+#include "base/pickle.h"
 #include "base/strings/strcat.h"
 #include "base/strings/string_util.h"
 #include "base/strings/utf_string_conversions.h"
 #include "base/task/single_thread_task_runner.h"
 #include "base/task/thread_pool.h"
+#include "base/unguessable_token.h"
+#include "cc/paint/paint_flags.h"
 #include "chrome/app/vector_icons/vector_icons.h"
 #include "chrome/browser/favicon/favicon_service_factory.h"
 #include "chrome/browser/profiles/profile.h"
@@ -42,12 +46,20 @@
 #include "third_party/skia/include/core/SkBitmap.h"
 #include "third_party/skia/include/core/SkColor.h"
 #include "ui/accessibility/ax_enums.mojom.h"
+#include "ui/base/clipboard/clipboard_format_type.h"
+#include "ui/base/dragdrop/drag_drop_types.h"
+#include "ui/base/dragdrop/drop_target_event.h"
+#include "ui/base/dragdrop/mojom/drag_drop_types.mojom.h"
+#include "ui/base/dragdrop/os_exchange_data.h"
 #include "ui/base/interaction/element_identifier.h"
 #include "ui/base/metadata/metadata_impl_macros.h"
 #include "ui/base/models/dialog_model.h"
 #include "ui/base/models/image_model.h"
 #include "ui/color/color_id.h"
+#include "ui/color/color_provider.h"
 #include "ui/compositor/layer.h"
+#include "ui/compositor/layer_tree_owner.h"
+#include "ui/gfx/canvas.h"
 #include "ui/gfx/codec/png_codec.h"
 #include "ui/gfx/color_utils.h"
 #include "ui/gfx/geometry/insets.h"
@@ -62,6 +74,7 @@
 #include "ui/views/controls/button/label_button.h"
 #include "ui/views/controls/menu/menu_runner.h"
 #include "ui/views/controls/resize_area.h"
+#include "ui/views/drag_utils.h"
 #include "ui/views/layout/box_layout.h"
 
 namespace flux_sidebar {
@@ -112,6 +125,9 @@ enum IconCommand {
   kChooseIconFile = 1,
   kUseIconUrl,
   kResetIcon,
+  // Keyboard-reachable equivalent of dragging a tile up or down the rail.
+  kMoveUp,
+  kMoveDown,
 };
 
 // Custom icons are normalised to this square size before being stored, so a
@@ -200,6 +216,54 @@ std::optional<GURL> FindDeclaredFavicon(std::string_view html,
 }
 constexpr char kIconDataUrlPrefix[] = "data:image/png;base64,";
 
+// The tile left behind while its copy is under the cursor.
+constexpr float kDraggedTileOpacity = 0.4f;
+
+// Drag payload for a rail tile: the profile it came from, so a drag cannot
+// cross profiles, plus the site id. The rail is the only producer and the only
+// consumer, so nothing else needs to understand this format.
+const ui::ClipboardFormatType& SiteDragFormat() {
+  static base::NoDestructor<ui::ClipboardFormatType> format(
+      ui::ClipboardFormatType::CustomPlatformType("chromium/x-flux-site"));
+  return *format;
+}
+
+void WriteSiteDragData(const Profile* profile,
+                       const std::string& id,
+                       ui::OSExchangeData* data) {
+  const base::UnguessableToken token = profile->UniqueToken();
+  base::Pickle pickle;
+  pickle.WriteUInt64(token.GetHighForSerialization());
+  pickle.WriteUInt64(token.GetLowForSerialization());
+  pickle.WriteString(id);
+  data->SetPickledData(SiteDragFormat(), pickle);
+}
+
+std::optional<std::string> ReadSiteDragData(const ui::OSExchangeData& data,
+                                            const Profile* profile) {
+  if (!data.HasCustomFormat(SiteDragFormat())) {
+    return std::nullopt;
+  }
+  std::optional<base::Pickle> pickle = data.GetPickledData(SiteDragFormat());
+  if (!pickle) {
+    return std::nullopt;
+  }
+  base::PickleIterator iterator(*pickle);
+  uint64_t token_high = 0;
+  uint64_t token_low = 0;
+  std::string id;
+  if (!iterator.ReadUInt64(&token_high) || !iterator.ReadUInt64(&token_low) ||
+      !iterator.ReadString(&id)) {
+    return std::nullopt;
+  }
+  const std::optional<base::UnguessableToken> token =
+      base::UnguessableToken::Deserialize(token_high, token_low);
+  if (!token || *token != profile->UniqueToken()) {
+    return std::nullopt;
+  }
+  return id;
+}
+
 std::optional<std::string> ReadFileBytes(const base::FilePath& path) {
   std::string contents;
   if (!base::ReadFileToStringWithMaxSize(path, &contents,
@@ -211,6 +275,71 @@ std::optional<std::string> ReadFileBytes(const base::FilePath& path) {
 
 }  // namespace
 
+// The rail, not the individual tiles, answers drop questions: a tile under the
+// cursor is not a drop target, so the drag walks up to its parent and the whole
+// column stays live even when the pointer is between two tiles.
+class FluxSidebarView::RailView : public views::View {
+  METADATA_HEADER(RailView, views::View)
+
+ public:
+  explicit RailView(FluxSidebarView* sidebar) : sidebar_(sidebar) {}
+  RailView(const RailView&) = delete;
+  RailView& operator=(const RailView&) = delete;
+  ~RailView() override = default;
+
+  // views::View:
+  bool GetDropFormats(
+      int* formats,
+      std::set<ui::ClipboardFormatType>* format_types) override {
+    format_types->insert(SiteDragFormat());
+    return true;
+  }
+  bool AreDropTypesRequired() override { return true; }
+  bool CanDrop(const ui::OSExchangeData& data) override {
+    return sidebar_->CanDropSite(data);
+  }
+  int OnDragUpdated(const ui::DropTargetEvent& event) override {
+    return sidebar_->OnSiteDragUpdated(event);
+  }
+  void OnDragExited() override { sidebar_->OnSiteDragExited(); }
+  views::View::DropCallback GetDropCallback(
+      const ui::DropTargetEvent& event) override {
+    return sidebar_->GetSiteDropCallback(event);
+  }
+
+ private:
+  const raw_ptr<FluxSidebarView> sidebar_;
+};
+
+// A site tile. FluxSidebarView drives the drag through views::DragController;
+// the only thing the tile has to report itself is the end of the drag loop,
+// which is the one moment the rail is safe to rebuild again.
+class FluxSidebarView::SiteButton : public views::LabelButton {
+  METADATA_HEADER(SiteButton, views::LabelButton)
+
+ public:
+  SiteButton(FluxSidebarView* sidebar,
+             views::Button::PressedCallback callback,
+             std::u16string text)
+      : views::LabelButton(std::move(callback), std::move(text)),
+        sidebar_(sidebar) {}
+  SiteButton(const SiteButton&) = delete;
+  SiteButton& operator=(const SiteButton&) = delete;
+  ~SiteButton() override = default;
+
+  // views::View:
+  void OnDragDone() override { sidebar_->OnSiteDragDone(); }
+
+ private:
+  const raw_ptr<FluxSidebarView> sidebar_;
+};
+
+BEGIN_METADATA(FluxSidebarView, RailView)
+END_METADATA
+
+BEGIN_METADATA(FluxSidebarView, SiteButton)
+END_METADATA
+
 FluxSidebarView::FluxSidebarView(BrowserView* browser_view)
     : browser_view_(browser_view),
       model_(browser_view->GetProfile()->GetPrefs()),
@@ -218,7 +347,7 @@ FluxSidebarView::FluxSidebarView(BrowserView* browser_view)
           prefs::kFluxSidebarWidth)),
       split_vertical_(browser_view->GetProfile()->GetPrefs()->GetBoolean(
           prefs::kFluxSidebarSplitVertical)) {
-  rail_ = AddChildView(std::make_unique<views::View>());
+  rail_ = AddChildView(std::make_unique<RailView>(this));
   rail_->SetPreferredSize(gfx::Size(kRailWidth, 0));
   rail_->SetBackground(views::CreateSolidBackground(ui::kColorSysSurface2));
   rail_->SetBorder(views::CreateSolidSidedBorder(gfx::Insets().set_right(1),
@@ -293,6 +422,12 @@ void FluxSidebarView::OnResize(int resize_amount, bool done_resizing) {
 }
 
 void FluxSidebarView::RebuildRail() {
+  if (!dragged_site_id_.empty()) {
+    // Deleting the tile the drag loop is running on would strand the drag.
+    // OnSiteDragDone() picks this up.
+    rebuild_pending_ = true;
+    return;
+  }
   logo_button_ = nullptr;
   site_buttons_ = nullptr;
   button_site_ids_.clear();
@@ -319,13 +454,17 @@ void FluxSidebarView::RebuildRail() {
       views::BoxLayout::CrossAxisAlignment::kCenter);
 
   for (const FluxSite& site : model_.sites()) {
-    auto button =
-        MakeButton(site.mark, site.name,
-                   base::BindRepeating(&FluxSidebarView::ActivateSite,
-                                       base::Unretained(this), site.id),
-                   gfx::Size(kRailButtonSize, kRailButtonSize));
+    auto button = std::make_unique<SiteButton>(
+        this,
+        base::BindRepeating(&FluxSidebarView::ActivateSite,
+                            base::Unretained(this), site.id),
+        site.mark);
+    button->SetTooltipText(site.name);
+    button->SetPreferredSize(gfx::Size(kRailButtonSize, kRailButtonSize));
+    button->SetHorizontalAlignment(gfx::ALIGN_CENTER);
     button->SetAccessibleName(site.name);
     button->set_context_menu_controller(this);
+    button->set_drag_controller(this);
 
     // Neutral platform behind the icon, one step up from the rail's
     // kColorSysSurface2 so it reads as a raised tile in both light and dark.
@@ -398,6 +537,8 @@ void FluxSidebarView::OnModelChanged() {
   if (active_site_ids_.size() < 2) {
     split_ = false;
   }
+  drop_index_.reset();
+  drop_weak_ptr_factory_.InvalidateWeakPtrs();
   LoadFavicons();
   RebuildRail();
   UpdateVisiblePanels();
@@ -674,6 +815,19 @@ void FluxSidebarView::ShowContextMenuForViewImpl(
   if (!site->icon.empty()) {
     context_menu_model_->AddItem(kResetIcon, u"Reset to site favicon");
   }
+  const std::vector<FluxSite>& sites = model_.sites();
+  const size_t position =
+      static_cast<size_t>(std::ranges::find(sites, site->id, &FluxSite::id) -
+                          sites.begin());
+  if (position > 0 || position + 1 < sites.size()) {
+    context_menu_model_->AddSeparator(ui::NORMAL_SEPARATOR);
+    if (position > 0) {
+      context_menu_model_->AddItem(kMoveUp, u"Move up");
+    }
+    if (position + 1 < sites.size()) {
+      context_menu_model_->AddItem(kMoveDown, u"Move down");
+    }
+  }
   context_menu_runner_ = std::make_unique<views::MenuRunner>(
       context_menu_model_.get(), views::MenuRunner::CONTEXT_MENU);
   context_menu_runner_->RunMenuAt(
@@ -683,6 +837,10 @@ void FluxSidebarView::ShowContextMenuForViewImpl(
 
 void FluxSidebarView::ExecuteCommand(int command_id, int event_flags) {
   if (context_menu_site_id_.empty()) {
+    return;
+  }
+  if (command_id == kMoveUp || command_id == kMoveDown) {
+    MoveSiteBy(context_menu_site_id_, command_id == kMoveUp ? -1 : 1);
     return;
   }
   pending_icon_site_id_ = context_menu_site_id_;
@@ -1022,6 +1180,205 @@ void FluxSidebarView::OnFaviconPageRead(
   if (icon_url) {
     DownloadFaviconImage(id, *icon_url);
   }
+}
+
+void FluxSidebarView::WriteDragDataForView(views::View* sender,
+                                           const gfx::Point& press_pt,
+                                           ui::OSExchangeData* data) {
+  CHECK(data);
+  const auto it = button_site_ids_.find(sender);
+  if (it == button_site_ids_.end()) {
+    return;
+  }
+  const FluxSite* const site = model_.FindSite(it->second);
+  if (!site) {
+    return;
+  }
+
+  dragged_site_id_ = site->id;
+  drop_index_.reset();
+  data->provider().SetDragImage(
+      CreateSiteDragImage(*site, static_cast<views::LabelButton*>(sender)),
+      press_pt.OffsetFromOrigin());
+  WriteSiteDragData(browser_view_->GetProfile(), site->id, data);
+  SetTileDragged(site->id, true);
+}
+
+int FluxSidebarView::GetDragOperationsForView(views::View* sender,
+                                              const gfx::Point& p) {
+  // A single tile has nowhere to go.
+  return model_.sites().size() > 1 ? ui::DragDropTypes::DRAG_MOVE
+                                   : ui::DragDropTypes::DRAG_NONE;
+}
+
+bool FluxSidebarView::CanStartDragForView(views::View* sender,
+                                          const gfx::Point& press_pt,
+                                          const gfx::Point& p) {
+  return model_.sites().size() > 1 && button_site_ids_.contains(sender);
+}
+
+bool FluxSidebarView::CanDropSite(const ui::OSExchangeData& data) const {
+  const std::optional<std::string> id =
+      ReadSiteDragData(data, browser_view_->GetProfile());
+  return id.has_value() && model_.FindSite(*id) != nullptr;
+}
+
+int FluxSidebarView::OnSiteDragUpdated(const ui::DropTargetEvent& event) {
+  const std::optional<std::string> id =
+      ReadSiteDragData(event.data(), browser_view_->GetProfile());
+  if (!id || !site_buttons_) {
+    return ui::DragDropTypes::DRAG_NONE;
+  }
+  // The tile can be dragged out of one window and over another one on the same
+  // profile, in which case this rail is showing its own copy of the same site.
+  views::View* const button = FindSiteButton(*id);
+  if (!button) {
+    return ui::DragDropTypes::DRAG_NONE;
+  }
+
+  gfx::Point point = event.location();
+  views::View::ConvertPointToTarget(rail_, site_buttons_, &point);
+  const size_t index = GetDropIndexForPoint(*id, point);
+  if (drop_index_ != index) {
+    drop_index_ = index;
+    // Preview the new order. Nothing is written to the model until the drop,
+    // so leaving the drag reverts this for free.
+    site_buttons_->ReorderChildView(button, index);
+  }
+  return ui::DragDropTypes::DRAG_MOVE;
+}
+
+void FluxSidebarView::OnSiteDragExited() {
+  drop_index_.reset();
+  RestoreRailOrder();
+}
+
+views::View::DropCallback FluxSidebarView::GetSiteDropCallback(
+    const ui::DropTargetEvent& event) {
+  const std::optional<std::string> id =
+      ReadSiteDragData(event.data(), browser_view_->GetProfile());
+  if (!id || !drop_index_) {
+    return base::NullCallback();
+  }
+  const size_t index = *drop_index_;
+  drop_index_.reset();
+  return base::BindOnce(&FluxSidebarView::PerformSiteDrop,
+                        drop_weak_ptr_factory_.GetWeakPtr(), *id, index);
+}
+
+void FluxSidebarView::PerformSiteDrop(
+    std::string id,
+    size_t index,
+    const ui::DropTargetEvent& event,
+    ui::mojom::DragOperation& output_drag_op,
+    std::unique_ptr<ui::LayerTreeOwner> drag_image_layer_owner) {
+  output_drag_op = model_.MoveSite(id, index) ? ui::mojom::DragOperation::kMove
+                                              : ui::mojom::DragOperation::kNone;
+}
+
+void FluxSidebarView::OnSiteDragDone() {
+  const std::string id = std::exchange(dragged_site_id_, std::string());
+  drop_index_.reset();
+  SetTileDragged(id, false);
+  if (std::exchange(rebuild_pending_, false)) {
+    RebuildRail();
+  } else {
+    // The drag was dropped somewhere that did not reorder anything.
+    RestoreRailOrder();
+  }
+}
+
+size_t FluxSidebarView::GetDropIndexForPoint(const std::string& dragged_id,
+                                             const gfx::Point& point) const {
+  size_t index = 0;
+  for (const views::View* child : site_buttons_->children()) {
+    const auto it = button_site_ids_.find(child);
+    if (it == button_site_ids_.end() || it->second == dragged_id) {
+      continue;
+    }
+    if (point.y() > child->bounds().CenterPoint().y()) {
+      ++index;
+    }
+  }
+  return index;
+}
+
+views::View* FluxSidebarView::FindSiteButton(const std::string& id) const {
+  if (id.empty()) {
+    return nullptr;
+  }
+  for (const auto& [view, site_id] : button_site_ids_) {
+    if (site_id == id) {
+      return const_cast<views::View*>(view);
+    }
+  }
+  return nullptr;
+}
+
+void FluxSidebarView::RestoreRailOrder() {
+  if (!site_buttons_) {
+    return;
+  }
+  size_t index = 0;
+  for (const FluxSite& site : model_.sites()) {
+    if (views::View* const button = FindSiteButton(site.id)) {
+      site_buttons_->ReorderChildView(button, index++);
+    }
+  }
+}
+
+void FluxSidebarView::SetTileDragged(const std::string& id, bool dragged) {
+  views::View* const button = FindSiteButton(id);
+  if (!button) {
+    return;
+  }
+  if (dragged) {
+    button->SetPaintToLayer();
+    button->layer()->SetFillsBoundsOpaquely(false);
+    button->layer()->SetOpacity(kDraggedTileOpacity);
+  } else {
+    button->DestroyLayer();
+  }
+}
+
+gfx::ImageSkia FluxSidebarView::CreateSiteDragImage(
+    const FluxSite& site,
+    views::LabelButton* button) {
+  const float scale = views::ScaleFactorForDragFromWidget(GetWidget());
+  gfx::Canvas canvas(gfx::Size(kRailButtonSize, kRailButtonSize), scale,
+                     /*is_opaque=*/false);
+  const gfx::Rect tile(kRailButtonSize, kRailButtonSize);
+
+  cc::PaintFlags flags;
+  flags.setAntiAlias(true);
+  flags.setColor(GetColorProvider()->GetColor(ui::kColorSysSurface3));
+  canvas.DrawRoundRect(tile, kRailButtonRadius, flags);
+
+  const gfx::ImageSkia icon = button->GetImage(views::Button::STATE_NORMAL);
+  if (!icon.isNull()) {
+    canvas.DrawImageInt(icon, (kRailButtonSize - icon.width()) / 2,
+                        (kRailButtonSize - icon.height()) / 2);
+  } else {
+    // Same letter mark the tile falls back to before a favicon arrives.
+    SkColor color = SK_ColorGRAY;
+    content::ParseHexColorString(site.color, &color);
+    canvas.DrawStringRectWithFlags(site.mark, gfx::FontList(), color, tile,
+                                   gfx::Canvas::TEXT_ALIGN_CENTER);
+  }
+  return gfx::ImageSkia::CreateFromBitmap(canvas.GetBitmap(), scale);
+}
+
+void FluxSidebarView::MoveSiteBy(const std::string& id, int delta) {
+  const std::vector<FluxSite>& sites = model_.sites();
+  const auto it = std::ranges::find(sites, id, &FluxSite::id);
+  if (it == sites.end()) {
+    return;
+  }
+  const int index = static_cast<int>(it - sites.begin()) + delta;
+  if (index < 0 || static_cast<size_t>(index) >= sites.size()) {
+    return;
+  }
+  model_.MoveSite(id, static_cast<size_t>(index));
 }
 
 BEGIN_METADATA(FluxSidebarView)
