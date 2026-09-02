@@ -4927,6 +4927,10 @@ const FeatureEntry::FeatureVariation
 //
 constexpr char kEnterpriseIsolatedModeInternalName[] =
     "force-enterprise-isolated-mode";
+constexpr char kFluxSidebarName[] = "Flux website sidebar";
+constexpr char kFluxSidebarDescription[] =
+    "Adds a native left rail that can pin normal websites, display two at "
+    "once, and shrink the active tab to make room.";
 
 // When adding a new choice, add it to the end of the list.
 const FeatureEntry kFeatureEntries[] = {
@@ -13969,6 +13973,8 @@ const FeatureEntry kFeatureEntries[] = {
      FEATURE_VALUE_TYPE(
          autofill::features::
              kAutofillEnableCardOnDeviceVerificationEnforcement)},
+    {"flux-sidebar", kFluxSidebarName, kFluxSidebarDescription, kOsDesktop,
+     FEATURE_VALUE_TYPE(features::kFluxSidebar)},
     // Add new entries above this line.
     // NOTE: Adding a new flag requires adding a corresponding entry to enum
     // "LoginCustomFlags" in tools/metrics/histograms/enums.xml. See "Flag

@@ -20,6 +20,11 @@ class BrowserWindowInterface;
 class BrowserViewLayoutDelegate;
 class InfoBarContainerView;
 class MultiContentsView;
+
+namespace flux_sidebar {
+class FluxSidebarView;
+}
+
 class OrganizerPanelView;
 class SidePanel;
 class SidePanelAnimationContentView;
@@ -73,6 +78,11 @@ struct BrowserViewLayoutViews {
       vertical_tab_strip_background_blur_backdrop = nullptr;
   raw_ptr<CustomFloatingCorner> vertical_tab_strip_bottom_corner = nullptr;
   raw_ptr<CustomFloatingCorner> vertical_tab_strip_top_corner = nullptr;
+  raw_ptr<flux_sidebar::FluxSidebarView> flux_sidebar = nullptr;
+  raw_ptr<CustomFloatingCorner> flux_sidebar_top_corner = nullptr;
+  raw_ptr<CustomFloatingCorner> flux_sidebar_bottom_corner = nullptr;
+  raw_ptr<CustomFloatingCorner> flux_sidebar_top_trailing_corner = nullptr;
+  raw_ptr<CustomFloatingCorner> flux_sidebar_bottom_trailing_corner = nullptr;
   raw_ptr<OrganizerPanelView> organizer_panel_container = nullptr;
   raw_ptr<views::View> toolbar = nullptr;
   raw_ptr<InfoBarContainerView> infobar_container = nullptr;

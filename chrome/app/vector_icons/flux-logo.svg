@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Flux four-part spiral</title>
+  <desc id="desc">An original four-piece yellow-orange spiral with curved outer motion and an angular interlocking center.</desc>
+
+  <path d="M282 26H362L464 128V168L381 216L347 158C332 133 306 118 277 116L254 115V57Z" fill="#FFD64A"/>
+  <path d="M486 282V362L384 464H344L296 381L354 347C379 332 394 306 396 277L397 254H455Z" fill="#FFB41F"/>
+  <path d="M230 486H150L48 384V344L131 296L165 354C180 379 206 394 235 396L258 397V455Z" fill="#FF7A00"/>
+  <path d="M26 230V150L128 48H168L216 131L158 165C133 180 118 206 116 235L115 258H57Z" fill="#F24800"/>
+
+  <!-- Tinted at runtime via CreateVectorIcon(); fill is preview-only. -->
+  <path d="M215 179H321L313 221H265L259 249H302L294 291H251L243 333H191Z" fill="#FFFFFF" data-icon-color="runtime"/>
+</svg>

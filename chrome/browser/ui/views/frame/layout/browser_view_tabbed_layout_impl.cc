@@ -25,6 +25,7 @@
 #include "chrome/browser/ui/views/animations/side_panel_animations.h"
 #include "chrome/browser/ui/views/animations/tab_strip_animations.h"
 #include "chrome/browser/ui/views/bookmarks/bookmark_bar_view.h"
+#include "chrome/browser/ui/views/flux_sidebar/flux_sidebar_view.h"
 #include "chrome/browser/ui/views/frame/custom_corners.h"
 #include "chrome/browser/ui/views/frame/custom_corners_background.h"
 #include "chrome/browser/ui/views/frame/custom_floating_corner.h"
@@ -121,6 +122,7 @@ struct BrowserViewTabbedLayoutImpl::HorizontalLayout {
   VerticalTabStripCollapsedState vertical_tab_strip_collapsed_state =
       VerticalTabStripCollapsedState::kExpanded;
   int vertical_tab_strip_width = 0;
+  int flux_sidebar_width = 0;
   int side_panel_width = 0;
   int min_content_width = 0;
 
@@ -390,6 +392,11 @@ BrowserViewTabbedLayoutImpl::CalculateHorizontalLayout(
 
   layout.min_content_width = kContentsContainerMinimumWidth;
 
+  if (views().flux_sidebar) {
+    layout.flux_sidebar_width = views().flux_sidebar->GetPreferredWidth(
+        params.visual_client_area.width());
+  }
+
   // Get information about the vertical tabstrip, if present.
   const int toolbar_minimum_width = views().toolbar->GetMinimumSize().width();
   int min_vertical_tab_strip_width = 0;
@@ -433,6 +440,7 @@ BrowserViewTabbedLayoutImpl::CalculateHorizontalLayout(
       // from the available width.
       const int remainder =
           params.visual_client_area.width() - toolbar_minimum_width -
+          layout.flux_sidebar_width -
           base::ClampCeil(
               params.trailing_exclusion.ContentWithPadding().width());
       preferred_vertical_tab_strip_width =
@@ -467,7 +475,8 @@ BrowserViewTabbedLayoutImpl::CalculateHorizontalLayout(
     // it is forced into content height.
     if (!layout.force_top_container_to_top) {
       const int remainder = params.visual_client_area.width() -
-                            (toolbar_minimum_width + layout.side_panel_padding);
+                            (toolbar_minimum_width + layout.side_panel_padding +
+                             layout.flux_sidebar_width);
       layout.force_top_container_to_top = remainder < min_side_panel_width;
 
       // If still allowing toolbar height, clamp the side panel based on what
@@ -495,7 +504,7 @@ BrowserViewTabbedLayoutImpl::CalculateHorizontalLayout(
   // Determine how much space is left to allocate.
   int remaining = params.visual_client_area.width() - layout.min_content_width -
                   layout.side_panel_padding - min_vertical_tab_strip_width -
-                  min_side_panel_width;
+                  min_side_panel_width - layout.flux_sidebar_width;
 
   // Keep the width of the tabstrip stable when possible; allocate as much space
   // as possible to it (up to its maximum).
@@ -620,7 +629,7 @@ gfx::Size BrowserViewTabbedLayoutImpl::GetMinimumMainAreaSize(
 
   int width = std::max({toolbar_size.width(), bookmark_bar_size.width(),
                         infobar_container_size.width(),
-                            kContentsContainerMinimumWidth});
+                        kContentsContainerMinimumWidth});
   const int height = toolbar_size.height() + bookmark_bar_size.height() +
                      infobar_container_size.height() + contents_size.height();
 
@@ -690,6 +699,9 @@ gfx::Size BrowserViewTabbedLayoutImpl::GetMinimumSize(
 
   // This is a simplified version of the same method in
   // `BrowserViewLayoutImplOld` that assumes a standard browser.
+  const int flux_sidebar_width =
+      views().flux_sidebar ? flux_sidebar::FluxSidebarView::kRailWidth : 0;
+  params.InsetHorizontal(flux_sidebar_width, /*leading=*/true);
   const auto [vertical_tabstrip_size, horizontal_tabstrip_size] =
       GetMinimumTabStripSize(params);
   if (!vertical_tabstrip_size.IsEmpty()) {
@@ -708,7 +720,7 @@ gfx::Size BrowserViewTabbedLayoutImpl::GetMinimumSize(
 
   // This assumes a horizontal tabstrip. There is also a hard minimum on the
   // width of the browser defined by `kMainBrowserContentsMinimumWidth`.
-  int min_width = vertical_tabstrip_size.width() +
+  int min_width = flux_sidebar_width + vertical_tabstrip_size.width() +
                   std::max({horizontal_tabstrip_size.width(),
                             side_panel_size.width() + main_area_size.width(),
                             kMainBrowserContentsMinimumWidth});
@@ -741,6 +753,25 @@ BrowserViewTabbedLayoutImpl::CalculateProposedLayout(
   BrowserLayoutParams params = layout_data_->revised_params;
   bool needs_exclusion = true;
   const HorizontalLayout& horizontal_layout = layout_data_->horizontal_layout;
+
+  // Lay out the Flux sidebar at full window height on the leading edge.
+  gfx::Rect flux_sidebar_bounds;
+  const bool flux_sidebar_visible = horizontal_layout.flux_sidebar_width > 0;
+  if (IsParentedTo(views().flux_sidebar, views().browser_view)) {
+    if (flux_sidebar_visible) {
+      flux_sidebar_bounds = gfx::Rect(
+          params.visual_client_area.x(), params.visual_client_area.y(),
+          horizontal_layout.flux_sidebar_width +
+              views().flux_sidebar->GetResizeHandleWidth(),
+          params.visual_client_area.height());
+      params.InsetHorizontal(horizontal_layout.flux_sidebar_width,
+                             /*leading=*/true);
+    }
+    layout.AddChild(views().flux_sidebar, flux_sidebar_bounds,
+                    flux_sidebar_visible);
+  }
+  const int flux_sidebar_visual_right =
+      flux_sidebar_bounds.x() + horizontal_layout.flux_sidebar_width;
 
   // Lay out horizontal tab strip region if present.
   if (IsParentedTo(views().horizontal_tab_strip_region_view,
@@ -895,6 +926,66 @@ BrowserViewTabbedLayoutImpl::CalculateProposedLayout(
     }
     layout.AddChild(views().vertical_tab_strip_bottom_corner, corner_bounds,
                     bottom_corner_visible);
+  }
+
+  // Position the Flux sidebar corners where the rail meets browser chrome.
+  if (IsParentedTo(views().flux_sidebar_top_corner, views().browser_view)) {
+    gfx::Rect corner_bounds;
+    if (flux_sidebar_visible) {
+      const gfx::Size preferred =
+          views().flux_sidebar_top_corner->GetPreferredSize();
+      corner_bounds = gfx::Rect(
+          gfx::Point(flux_sidebar_visual_right, flux_sidebar_bounds.y()),
+          preferred);
+      corner_bounds.Outset(
+          gfx::Outsets::TLBR(0, views::Separator::kThickness, 0, 0));
+    }
+    layout.AddChild(views().flux_sidebar_top_corner, corner_bounds,
+                    flux_sidebar_visible);
+  }
+  if (IsParentedTo(views().flux_sidebar_bottom_corner, views().browser_view)) {
+    gfx::Rect corner_bounds;
+    if (flux_sidebar_visible) {
+      const gfx::Size preferred =
+          views().flux_sidebar_bottom_corner->GetPreferredSize();
+      corner_bounds =
+          gfx::Rect(flux_sidebar_visual_right,
+                    flux_sidebar_bounds.bottom() - preferred.height(),
+                    preferred.width(), preferred.height());
+      corner_bounds.Outset(
+          gfx::Outsets::TLBR(0, views::Separator::kThickness, 0, 0));
+    }
+    layout.AddChild(views().flux_sidebar_bottom_corner, corner_bounds,
+                    flux_sidebar_visible);
+  }
+  if (IsParentedTo(views().flux_sidebar_top_trailing_corner,
+                   views().browser_view)) {
+    gfx::Rect corner_bounds;
+    if (flux_sidebar_visible) {
+      const gfx::Size preferred =
+          views().flux_sidebar_top_trailing_corner->GetPreferredSize();
+      corner_bounds = gfx::Rect(
+          flux_sidebar_visual_right - preferred.width() -
+              views::Separator::kThickness,
+          flux_sidebar_bounds.y(), preferred.width(), preferred.height());
+    }
+    layout.AddChild(views().flux_sidebar_top_trailing_corner, corner_bounds,
+                    flux_sidebar_visible);
+  }
+  if (IsParentedTo(views().flux_sidebar_bottom_trailing_corner,
+                   views().browser_view)) {
+    gfx::Rect corner_bounds;
+    if (flux_sidebar_visible) {
+      const gfx::Size preferred =
+          views().flux_sidebar_bottom_trailing_corner->GetPreferredSize();
+      corner_bounds =
+          gfx::Rect(flux_sidebar_visual_right - preferred.width() -
+                        views::Separator::kThickness,
+                    flux_sidebar_bounds.bottom() - preferred.height(),
+                    preferred.width(), preferred.height());
+    }
+    layout.AddChild(views().flux_sidebar_bottom_trailing_corner, corner_bounds,
+                    flux_sidebar_visible);
   }
 
   // TODO(crbug.com/469425263): Ensure correct layout calculations for the
@@ -1213,17 +1304,23 @@ BrowserViewTabbedLayoutImpl::CalculateProposedLayout(
   // If the window goes out of glass mode, these changes won't hurt anything.
   if (in_glass_mode()) {
     gfx::RoundedCornersF content_corners;
+    int leading_radius = 0;
     if (layout_data_->tab_strip_type == TabStripType::kVertical &&
         !is_fullscreen(layout_data_->window_state)) {
       // Note that this will set a lower leading corner on the multi contents
       // view even if there's a shadow box, but since the curve is effectively
       // the same this will not produce a visual bug.
-      const int radius =
+      leading_radius =
           views().vertical_tab_strip_bottom_corner->GetCornerRadius();
+    } else if (flux_sidebar_visible && views().flux_sidebar_bottom_corner &&
+               !is_fullscreen(layout_data_->window_state)) {
+      leading_radius = views().flux_sidebar_bottom_corner->GetCornerRadius();
+    }
+    if (leading_radius) {
       if (base::i18n::IsRTL()) {
-        content_corners.set_lower_right(radius);
+        content_corners.set_lower_right(leading_radius);
       } else {
-        content_corners.set_lower_left(radius);
+        content_corners.set_lower_left(leading_radius);
       }
     }
     views().multi_contents_view->SetBackgroundRadii(content_corners);

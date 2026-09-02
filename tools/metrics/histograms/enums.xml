@@ -10987,6 +10987,7 @@ from previous Chrome versions.
       label="BluetoothAggressiveAppearanceFilter:disabled"/>
   <int value="-1166715563" label="ChromeOSAssistant:disabled"/>
   <int value="-1166067121" label="PermissionsAIv4:enabled"/>
+  <int value="-1165717924" label="flux-sidebar:disabled"/>
   <int value="-1165284756" label="WindowsSystemTracing:disabled"/>
   <int value="-1165271479"
       label="UnifiedPasswordManagerErrorMessages:disabled"/>
@@ -15251,6 +15252,7 @@ from previous Chrome versions.
   <int value="165912610"
       label="PrivateNetworkAccessForWorkersWarningOnly:enabled"/>
   <int value="165962668" label="EnablePreferencesAccountStorage:enabled"/>
+  <int value="166011530" label="flux-sidebar:enabled"/>
   <int value="167951987" label="TabAndroidGracefulShutdown:disabled"/>
   <int value="168025622" label="EnableInputEventLogging:enabled"/>
   <int value="168052820" label="PermissionsAndroidClapperQuiet:disabled"/>

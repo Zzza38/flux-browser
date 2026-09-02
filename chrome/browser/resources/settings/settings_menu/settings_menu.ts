@@ -51,6 +51,7 @@ const pathToActionMap: Map<string, string> = new Map([
   ['/performance', 'SettingsMenu_PerformanceClicked'],
   ['/ai', 'SettingsMenu_AiPageEntryPointClicked'],
   ['/appearance', 'SettingsMenu_AppearanceClicked'],
+  ['/fluxFeatures', 'SettingsMenu_FluxFeaturesClicked'],
   ['/search', 'SettingsMenu_SearchClicked'],
   ['/defaultBrowser', 'SettingsMenu_DefaultBrowserClicked'],
   ['/onStartup', 'SettingsMenu_OnStartupClicked'],

@@ -156,6 +156,7 @@
 #include "chrome/browser/ui/views/eye_dropper/eye_dropper.h"
 #include "chrome/browser/ui/views/find_bar_host.h"
 #include "chrome/browser/ui/views/find_bar_owner.h"
+#include "chrome/browser/ui/views/flux_sidebar/flux_sidebar_view.h"
 #include "chrome/browser/ui/views/frame/app_menu_button.h"
 #include "chrome/browser/ui/views/frame/browser_frame_view.h"
 #include "chrome/browser/ui/views/frame/browser_native_widget.h"
@@ -243,6 +244,7 @@
 #include "chrome/browser/user_education/user_education_service.h"
 #include "chrome/browser/user_education/user_education_service_factory.h"
 #include "chrome/common/channel_info.h"
+#include "chrome/common/chrome_features.h"
 #include "chrome/common/chrome_switches.h"
 #include "chrome/common/pref_names.h"
 #include "chrome/common/url_constants.h"
@@ -1003,6 +1005,36 @@ BrowserView::BrowserView(BrowserWindowInterface* browser)
     horizontal_tab_strip_region_view_->InitializeTabStrip();
   }
 
+  if (base::FeatureList::IsEnabled(features::kFluxSidebar) &&
+      browser_->GetType() == BrowserWindowInterface::Type::TYPE_NORMAL) {
+    flux_sidebar_ =
+        AddChildView(std::make_unique<flux_sidebar::FluxSidebarView>(this));
+    flux_sidebar_top_corner_ =
+        AddChildView(std::make_unique<CustomFloatingCorner>(
+            *this, CornerOrientation::kTopLeading,
+            views::ShapeContextTokens::kContentSeparatorRadius,
+            CustomFloatingCorner::FrameTheme(), ui::kColorSysDivider,
+            /*is_vertical_window_edge=*/true));
+    flux_sidebar_bottom_corner_ =
+        AddChildView(std::make_unique<CustomFloatingCorner>(
+            *this, CornerOrientation::kBottomLeading,
+            views::ShapeContextTokens::kContentSeparatorRadius,
+            CustomFloatingCorner::FrameTheme(), ui::kColorSysDivider,
+            /*is_vertical_window_edge=*/true));
+    flux_sidebar_top_trailing_corner_ =
+        AddChildView(std::make_unique<CustomFloatingCorner>(
+            *this, CornerOrientation::kTopTrailing,
+            views::ShapeContextTokens::kContentSeparatorRadius,
+            CustomFloatingCorner::FrameTheme(), ui::kColorSysDivider,
+            /*is_vertical_window_edge=*/true));
+    flux_sidebar_bottom_trailing_corner_ =
+        AddChildView(std::make_unique<CustomFloatingCorner>(
+            *this, CornerOrientation::kBottomTrailing,
+            views::ShapeContextTokens::kContentSeparatorRadius,
+            CustomFloatingCorner::FrameTheme(), ui::kColorSysDivider,
+            /*is_vertical_window_edge=*/true));
+  }
+
   auto* const organizer_panel_state_controller =
       OrganizerPanelStateController::From(browser_);
   if (organizer_panel_state_controller) {
@@ -1137,6 +1169,11 @@ BrowserView::~BrowserView() {
   vertical_tab_strip_background_blur_backdrop_ = nullptr;
   vertical_tab_strip_top_corner_ = nullptr;
   vertical_tab_strip_bottom_corner_ = nullptr;
+  flux_sidebar_ = nullptr;
+  flux_sidebar_top_corner_ = nullptr;
+  flux_sidebar_bottom_corner_ = nullptr;
+  flux_sidebar_top_trailing_corner_ = nullptr;
+  flux_sidebar_bottom_trailing_corner_ = nullptr;
   organizer_panel_container_ = nullptr;
   side_panel_ = nullptr;
 
@@ -4481,6 +4518,9 @@ void BrowserView::GetAccessiblePanes(std::vector<views::View*>* panes) {
   if (vertical_tab_strip_region_view_) {
     panes->push_back(vertical_tab_strip_region_view_);
   }
+  if (flux_sidebar_) {
+    panes->push_back(flux_sidebar_);
+  }
   if (toolbar_ && toolbar_->custom_tab_bar()) {
     panes->push_back(toolbar_->custom_tab_bar());
   }
@@ -5062,6 +5102,13 @@ void BrowserView::AddedToWidget() {
   layout_views.vertical_tab_strip_bottom_corner =
       vertical_tab_strip_bottom_corner_;
   layout_views.vertical_tab_strip_top_corner = vertical_tab_strip_top_corner_;
+  layout_views.flux_sidebar = flux_sidebar_;
+  layout_views.flux_sidebar_top_corner = flux_sidebar_top_corner_;
+  layout_views.flux_sidebar_bottom_corner = flux_sidebar_bottom_corner_;
+  layout_views.flux_sidebar_top_trailing_corner =
+      flux_sidebar_top_trailing_corner_;
+  layout_views.flux_sidebar_bottom_trailing_corner =
+      flux_sidebar_bottom_trailing_corner_;
   layout_views.organizer_panel_container = organizer_panel_container_;
   layout_views.toolbar = toolbar_;
   layout_views.infobar_container = infobar_container_;

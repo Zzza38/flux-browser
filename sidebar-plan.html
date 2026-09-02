@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flux Sidebar Implementation Plan</title>
+  <style>
+    :root { color-scheme:dark; --bg:#0b0c0f; --surface:#111318; --surface2:#181b22; --line:#2b303a; --line2:#424956; --text:#f5f6f8; --muted:#969da9; --quiet:#686f7b; --accent:#a8ff78; --accent-dim:rgba(168,255,120,.1); --red:#ff7a8f; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; background:var(--bg); }
+    body { margin:0; color:var(--text); background:var(--bg); font:15px/1.55 "Geist","Inter","Segoe UI",sans-serif; }
+    button,input { font:inherit; } button { color:inherit; }
+    .wrap { width:min(1180px,calc(100% - 40px)); margin:auto; }
+    .hero { min-height:20vh; display:flex; align-items:flex-end; border-bottom:1px solid var(--line); background:linear-gradient(90deg,rgba(168,255,120,.04) 1px,transparent 1px),linear-gradient(rgba(168,255,120,.03) 1px,transparent 1px),var(--bg); background-size:80px 80px; }
+    .hero-inner { width:min(1180px,calc(100% - 40px)); margin:auto; padding:54px 0 42px; }
+    .kicker,.section-kicker,.phase-number,.code-label { font-size:11px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    .kicker { margin:0 0 12px; color:var(--accent); }
+    h1 { margin:0; font-size:clamp(42px,7vw,78px); line-height:.95; letter-spacing:-.06em; font-weight:650; }
+    .hero-copy { max-width:650px; margin:18px 0 0; color:var(--muted); font-size:17px; }
+    main { padding:42px 0 80px; } section { scroll-margin-top:24px; }
+    .section-head { display:grid; grid-template-columns:160px 1fr; gap:30px; margin-bottom:22px; }
+    .section-kicker { margin:5px 0 0; color:var(--quiet); }
+    .section-head h2 { margin:0; font-size:clamp(25px,3vw,38px); letter-spacing:-.04em; line-height:1.1; }
+    .section-head p { max-width:700px; margin:10px 0 0; color:var(--muted); }
+    .spec-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:var(--line); }
+    .spec { min-height:116px; padding:18px; background:var(--surface); }
+    .spec-label { display:block; margin-bottom:15px; color:var(--quiet); font-size:11px; }
+    .spec strong { display:block; font-size:15px; line-height:1.3; } .spec small { display:block; margin-top:6px; color:var(--muted); font-size:12px; }
+    .architecture,.roadmap,.scope,.demo-section { margin-top:66px; }
+    .arch-flow { display:grid; grid-template-columns:1fr 36px 1fr 36px 1fr; padding:20px; border:1px solid var(--line); border-radius:14px; background:var(--surface); }
+    .arch-node { padding:18px; border:1px solid var(--line); border-radius:10px; background:var(--surface2); }
+    .arch-node strong { display:block; margin-bottom:8px; font-size:14px; } .arch-node p { margin:0; color:var(--muted); font-size:12px; }
+    .arch-arrow { display:grid; place-items:center; color:var(--quiet); }
+    code { font-family:"Cascadia Code","SFMono-Regular",monospace; font-size:.9em; color:#d7dde7; }
+    .rule { margin-top:14px; padding:13px 15px; border-left:2px solid var(--accent); color:var(--muted); background:var(--accent-dim); font-size:13px; }
+    .rule strong { color:var(--text); }
+    .phases { border-top:1px solid var(--line); }
+    .phase { display:grid; grid-template-columns:160px 1fr; gap:30px; padding:34px 0 38px; border-bottom:1px solid var(--line); }
+    .phase-number { color:var(--accent); } .phase-state { display:block; margin-top:8px; color:var(--quiet); font-size:12px; }
+    .phase h3 { margin:0 0 8px; font-size:25px; letter-spacing:-.035em; } .phase-summary { max-width:760px; margin:0 0 22px; color:var(--muted); }
+    .work-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .work-card { padding:17px; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
+    .work-card h4 { margin:0 0 10px; font-size:13px; } .work-card ul { margin:0; padding-left:17px; color:var(--muted); font-size:13px; } .work-card li+li { margin-top:6px; }
+    .gate { border-color:rgba(168,255,120,.3); background:var(--accent-dim); } .gate h4 { color:var(--accent); }
+    .paths { margin-top:14px; padding:14px 16px; border-radius:8px; background:#08090c; }
+    .code-label { display:block; margin-bottom:8px; color:var(--quiet); } .paths code { display:block; overflow-wrap:anywhere; color:#aeb7c6; line-height:1.7; }
+    .scope-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .scope-card { padding:22px; border:1px solid var(--line); border-radius:14px; background:var(--surface); }
+    .scope-card h3 { margin:0 0 14px; font-size:16px; } .scope-card ul { margin:0; padding:0; list-style:none; }
+    .scope-card li { display:flex; gap:10px; padding:8px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    .scope-card li::before { content:"✓"; color:var(--accent); } .scope-card.out li::before { content:"×"; color:var(--red); }
+    .demo-shell { overflow:hidden; min-height:590px; border:1px solid var(--line2); border-radius:16px; background:#0d1017; box-shadow:0 30px 80px rgba(0,0,0,.35); }
+    .window-bar { display:flex; align-items:center; gap:7px; height:42px; padding:0 14px; border-bottom:1px solid #252a34; background:#171a20; }
+    .window-dot { width:8px; height:8px; border-radius:50%; background:#3b414c; }
+    .address { flex:1; max-width:570px; height:26px; margin-left:10px; padding:4px 11px; overflow:hidden; border:1px solid #303641; border-radius:7px; color:#8991a0; background:#0c0e13; font:11px/17px "Cascadia Code",monospace; white-space:nowrap; }
+    .window-label { margin-left:auto; color:#656d7a; font-size:11px; }
+    .browser { display:flex; min-height:548px; }
+    .rail { width:52px; flex:0 0 52px; display:flex; flex-direction:column; align-items:center; gap:8px; padding:10px 8px; border-right:1px solid #2b3140; background:#242a3c; }
+    .rail-spacer { flex:1; } .rail-rule { width:24px; height:1px; margin:2px 0; background:rgba(255,255,255,.1); }
+    .rail-button { position:relative; display:grid; place-items:center; width:34px; height:34px; flex:0 0 34px; border:0; border-radius:9px; color:white; background:#3b435c; cursor:pointer; font-weight:700; font-size:12px; transition:transform .15s,filter .15s; }
+    .rail-button:hover { transform:translateX(2px); filter:brightness(1.12); }
+    .rail-button.active::before { content:""; position:absolute; left:-8px; width:3px; height:20px; border-radius:0 3px 3px 0; background:var(--accent); }
+    .rail-button.logo { color:#ff5470; background:transparent; font:700 21px/1 Georgia,serif; } .rail-button.add,.rail-button.utility { color:#d9deea; background:transparent; } .rail-button.add { border:1px dashed #687189; }
+    .browser-main { position:relative; flex:1; min-width:0; display:flex; }
+    .webpage { min-width:120px; flex:1; display:grid; place-items:center; padding:38px; background:radial-gradient(circle at 50% 45%,#182031,#0c0f16 52%); }
+    .page-copy { max-width:470px; } .page-copy span { color:var(--accent); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    .page-copy h3 { margin:12px 0; font-size:clamp(30px,4vw,56px); line-height:1; letter-spacing:-.055em; } .page-copy p { margin:0; color:#8790a0; }
+    .panel-wrap { display:none; position:relative; width:25vw; min-width:10vw; max-width:calc(100% - 120px); border-right:1px solid #353b48; background:#151820; }
+    .panel-wrap.open { display:flex; } .resize-handle { position:absolute; z-index:5; inset:0 -4px 0 auto; width:8px; cursor:col-resize; }
+    .panel-grid { flex:1; min-width:0; display:grid; grid-template-columns:1fr; } .panel-grid.split { grid-template-columns:1fr 1fr; } .panel-grid.split.vertical { grid-template-columns:1fr; grid-template-rows:1fr 1fr; }
+    .site-panel { min-width:0; display:grid; grid-template-rows:40px 1fr; border-left:1px solid #2c313c; } .site-panel:first-child { border-left:0; }
+    .panel-grid.vertical .site-panel { border-left:0; border-top:1px solid #2c313c; } .panel-grid.vertical .site-panel:first-child { border-top:0; }
+    .site-toolbar { display:flex; align-items:center; gap:8px; padding:0 10px; border-bottom:1px solid #2c313c; background:#1b1f28; }
+    .site-dot { width:8px; height:8px; border-radius:3px; background:var(--site-color); } .site-title { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:11px; font-weight:650; }
+    .site-url { margin-left:auto; overflow:hidden; color:#697180; font:9px/1 "Cascadia Code",monospace; text-overflow:ellipsis; white-space:nowrap; }
+    .site-content { display:grid; place-items:center; padding:18px; text-align:center; background:linear-gradient(145deg,color-mix(in srgb,var(--site-color) 9%,#10131a),#10131a 55%); }
+    .site-mark { display:grid; place-items:center; width:48px; height:48px; margin:0 auto 13px; border-radius:13px; color:#0b0d12; background:var(--site-color); font-size:18px; font-weight:800; }
+    .site-content strong { display:block; font-size:17px; } .site-content small { display:block; margin-top:6px; color:#798190; font-size:10px; }
+    .demo-controls { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:12px; }
+    .demo-controls button { padding:8px 11px; border:1px solid var(--line2); border-radius:7px; background:var(--surface2); cursor:pointer; font-size:12px; }
+    .demo-controls button.on { color:#0c0e11; border-color:var(--accent); background:var(--accent); } .demo-controls button:disabled { opacity:.4; cursor:not-allowed; }
+    .wand-button { display:inline-flex; align-items:center; gap:7px; }
+    .wand-button svg { width:14px; height:14px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    .demo-edit-mode [data-demo-edit] { cursor:crosshair; }
+    .demo-edit-mode [data-demo-edit]:hover { outline:1px dashed var(--accent); outline-offset:-3px; }
+    .selected-for-edit { outline:2px solid var(--accent)!important; outline-offset:-3px; }
+    .width-readout { margin-left:auto; color:var(--muted); font:11px/1 "Cascadia Code",monospace; }
+    .edit-toolbar { position:fixed; z-index:1000; top:18px; left:50%; width:min(680px,calc(100% - 28px)); padding:12px; border:1px solid var(--line2); border-radius:11px; background:#171a21; box-shadow:0 18px 60px rgba(0,0,0,.55); opacity:0; pointer-events:none; transform:translate(-50%,-14px); transition:opacity .16s,transform .16s; }
+    .edit-toolbar.show { opacity:1; pointer-events:auto; transform:translate(-50%,0); }
+    .edit-toolbar-head { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:8px; }
+    .edit-context { overflow:hidden; color:var(--muted); font-size:11px; text-overflow:ellipsis; white-space:nowrap; }
+    .edit-close { width:26px; height:26px; padding:0; border:0; color:var(--muted); background:transparent; cursor:pointer; }
+    .edit-row { display:grid; grid-template-columns:1fr auto; gap:8px; }
+    .edit-row input { height:40px; }
+    .edit-submit { padding:0 15px; border:1px solid var(--accent); border-radius:7px; color:#0b0d10; background:var(--accent); cursor:pointer; font-weight:650; }
+    .selection-hint { margin-top:8px; color:var(--quiet); font-size:10px; }
+    .toast { position:fixed; z-index:1100; right:20px; bottom:20px; max-width:430px; padding:13px 15px; border:1px solid rgba(168,255,120,.4); border-radius:9px; color:var(--text); background:#171c18; box-shadow:0 18px 55px rgba(0,0,0,.5); font-size:12px; opacity:0; pointer-events:none; transform:translateY(12px); transition:opacity .18s,transform .18s; }
+    .toast.show { opacity:1; transform:translateY(0); }
+    dialog { width:min(410px,calc(100% - 30px)); padding:0; border:1px solid var(--line2); border-radius:13px; color:var(--text); background:var(--surface2); box-shadow:0 30px 100px #000; }
+    dialog::backdrop { background:rgba(0,0,0,.72); backdrop-filter:blur(4px); } form { padding:22px; } form h3 { margin:0 0 5px; font-size:21px; } form p { margin:0 0 18px; color:var(--muted); font-size:12px; }
+    label { display:block; margin:12px 0 5px; color:#c0c6d0; font-size:11px; } input { width:100%; height:38px; padding:0 10px; border:1px solid #3a414d; border-radius:7px; outline:0; color:var(--text); background:#0e1015; } input:focus { border-color:var(--accent); }
+    .form-actions { display:flex; justify-content:flex-end; gap:8px; margin-top:20px; } .form-actions button { width:auto; padding:8px 12px; border:1px solid #404754; border-radius:7px; background:#242934; cursor:pointer; } .form-actions .primary { color:#0a0c0e; border-color:var(--accent); background:var(--accent); }
+    footer { margin-top:54px; padding-top:18px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; color:var(--quiet); font-size:11px; }
+    @media(max-width:900px){ .section-head,.phase{grid-template-columns:1fr}.spec-grid{grid-template-columns:1fr 1fr}.arch-flow{grid-template-columns:1fr;gap:8px}.arch-arrow{transform:rotate(90deg)}.work-grid{grid-template-columns:1fr}.panel-wrap{width:45%} }
+    @media(max-width:620px){ .wrap,.hero-inner{width:calc(100% - 24px)}.spec-grid,.scope-grid{grid-template-columns:1fr}.page-copy{display:none}.panel-wrap{width:calc(100% - 80px);max-width:calc(100% - 80px)}.window-label{display:none}.width-readout{width:100%;margin:4px 0 0} }
+  </style>
+</head>
+<body>
+  <header class="hero"><div class="hero-inner"><p class="kicker">Flux Browser · implementation plan</p><h1>Websites belong<br>in the sidebar.</h1><p class="hero-copy">Build an Opera-style web-app rail directly into Chromium, but let users pin any normal website. Panels share the active profile, shrink the page, sync across devices, and unload cleanly after three idle minutes.</p></div></header>
+  <main class="wrap">
+    <section><div class="section-head"><p class="section-kicker">Locked brief</p><div><h2>Decisions already made</h2><p>These are requirements, not suggestions awaiting another meeting where everyone discovers rectangles.</p></div></div>
+      <div class="spec-grid">
+        <div class="spec"><span class="spec-label">Panel behavior</span><strong>Shrinks the webpage</strong><small>Opera-style pinned panel, never an iframe overlay.</small></div>
+        <div class="spec"><span class="spec-label">Width</span><strong>25vw default · 10vw minimum</strong><small>No artificial maximum beyond available window space.</small></div>
+        <div class="spec"><span class="spec-label">Content</span><strong>Any HTTP(S) website</strong><small>Normal navigation, auth, downloads, and permissions.</small></div>
+        <div class="spec"><span class="spec-label">Profile</span><strong>Shared cookies</strong><small>Normal profile; Incognito uses its normal OTR profile.</small></div>
+        <div class="spec"><span class="spec-label">Lifecycle</span><strong>Warm for 3 minutes</strong><small>Then destroy the renderer and retain only the last URL.</small></div>
+        <div class="spec"><span class="spec-label">Split view</span><strong>Two sites</strong><small>Side-by-side default with a top/bottom layout toggle.</small></div>
+        <div class="spec"><span class="spec-label">Persistence</span><strong>Chromium Sync</strong><small>URLs, names, order, icons, and settings follow the profile.</small></div>
+        <div class="spec"><span class="spec-label">Design</span><strong>Original Opera-style UX</strong><small>Match the interaction model, not proprietary artwork or code.</small></div>
+      </div>
+    </section>
+
+    <section class="architecture"><div class="section-head"><p class="section-kicker">Architecture</p><div><h2>Separate feature, native Chromium pieces</h2><p>Flux integrates with <code>BrowserView</code> but owns its rail, state, and web contents. Reuse side-panel patterns without coupling arbitrary websites to Reading List and extension panels.</p></div></div>
+      <div class="arch-flow"><article class="arch-node"><strong>FluxSidebarCoordinator</strong><p>Window-scoped visibility, active sites, split layout, timers, and commands.</p></article><div class="arch-arrow">→</div><article class="arch-node"><strong>FluxSidebarView</strong><p>52px rail, resizable host, toolbar, split container, and accessibility.</p></article><div class="arch-arrow">→</div><article class="arch-node"><strong>FluxSiteContents</strong><p>Profile-backed <code>WebContents</code>, navigation, permissions, audio, discard, and reload.</p></article></div>
+      <p class="rule"><strong>Boundary:</strong> reuse concepts and helpers from <code>chrome/browser/ui/views/side_panel/</code>, but keep Flux in a separate coordinator so existing Chrome side panels do not inherit web-app behavior.</p>
+    </section>
+
+    <section class="roadmap"><div class="section-head"><p class="section-kicker">Roadmap</p><div><h2>Six phases, each ending in proof</h2><p>A successful compile is not a feature. Each phase ends with browser-visible behavior or a test demonstrating the actual contract.</p></div></div>
+      <div class="phases">
+        <article class="phase"><div><span class="phase-number">Phase 00</span><span class="phase-state">Foundation</span></div><div><h3>Baseline and feature boundary</h3><p class="phase-summary">Prove the fork builds and launches, then establish a disabled-by-default feature flag and isolated component boundary.</p><div class="work-grid"><div class="work-card"><h4>Build</h4><ul><li>Generate a clean desktop build directory.</li><li>Build and launch the current fork once.</li><li>Record upstream revision and GN args.</li></ul></div><div class="work-card"><h4>Scaffold</h4><ul><li>Add <code>kFluxSidebar</code>.</li><li>Create model, coordinator, and Views targets.</li><li>Keep it off until the shell is usable.</li></ul></div><div class="work-card gate"><h4>Exit gate</h4><ul><li>Stock browser launches.</li><li>Flag appears in <code>chrome://flags</code>.</li><li>Toggling it causes no UI regression.</li></ul></div></div><div class="paths"><span class="code-label">Likely touchpoints</span><code>chrome/common/chrome_features.*</code><code>chrome/browser/about_flags.cc</code><code>chrome/browser/ui/browser_window/internal/browser_window_features.cc</code></div></div></article>
+        <article class="phase"><div><span class="phase-number">Phase 01</span><span class="phase-state">Native shell</span></div><div><h3>Rail, panel host, and resizing</h3><p class="phase-summary">Add the left rail to the desktop frame. Opening a site consumes layout width so the webpage visibly shrinks.</p><div class="work-grid"><div class="work-card"><h4>Rail</h4><ul><li>52px native Views rail inside <code>BrowserView</code>.</li><li>Top actions, pinned sites, bottom utilities.</li><li>Same icon opens and closes its panel.</li></ul></div><div class="work-card"><h4>Geometry</h4><ul><li>Start at 25% of browser content width.</li><li>Clamp only to 10% minimum and remaining page width.</li><li>Persist width and support drag resize.</li></ul></div><div class="work-card gate"><h4>Exit gate</h4><ul><li>Rail survives tabs and navigation.</li><li>Panel shrinks, never covers, the page.</li><li>Narrow-window behavior passes.</li></ul></div></div><div class="paths"><span class="code-label">Reuse and extend</span><code>chrome/browser/ui/views/frame/browser_view.*</code><code>chrome/browser/ui/views/side_panel/side_panel.*</code><code>chrome/browser/ui/views/side_panel/side_panel_resize_area.*</code></div></div></article>
+        <article class="phase"><div><span class="phase-number">Phase 02</span><span class="phase-state">Arbitrary websites</span></div><div><h3>Pin, manage, and sync normal URLs</h3><p class="phase-summary">Turn the shell into a user-owned website list with durable ordering and no service-specific code.</p><div class="work-grid"><div class="work-card"><h4>Site model</h4><ul><li>ID, title, last URL, favicon, order, muted state.</li><li>Accept HTTP(S); reject privileged schemes.</li><li>Add, edit, remove, and drag to reorder.</li></ul></div><div class="work-card"><h4>Profile data</h4><ul><li>Store pins in syncable profile preferences.</li><li>Use the active Profile storage partition.</li><li>Use standard OffTheRecord behavior in Incognito.</li></ul></div><div class="work-card gate"><h4>Exit gate</h4><ul><li>Added URLs open and sign in normally.</li><li>Restart preserves list and order.</li><li>A synced profile receives the pins.</li></ul></div></div><div class="paths"><span class="code-label">Likely touchpoints</span><code>components/prefs/</code><code>components/sync_preferences/</code><code>components/favicon/</code><code>chrome/browser/profiles/profile.*</code></div></div></article>
+        <article class="phase"><div><span class="phase-number">Phase 03</span><span class="phase-state">Web contents</span></div><div><h3>Real pages and the three-minute lifecycle</h3><p class="phase-summary">Host sites as proper <code>WebContents</code>, not iframes. Keep inactive sites instant for three minutes, then reclaim their renderer.</p><div class="work-grid"><div class="work-card"><h4>Navigation</h4><ul><li>Links, redirects, auth popups, downloads, permissions.</li><li>Reload, back, forward, mute, open in tab.</li><li>Keep browser security indicators truthful.</li></ul></div><div class="work-card"><h4>Lifecycle</h4><ul><li><code>Active → Warm → Discarded</code>.</li><li>Restart a three-minute timer on deactivation.</li><li>Retain last committed URL, then destroy contents.</li></ul></div><div class="work-card gate"><h4>Exit gate</h4><ul><li>Renderer exists at 2:59 and is gone after 3:00.</li><li>Reopening reloads the last URL.</li><li>Shared-profile cookies remain available.</li></ul></div></div><div class="paths"><span class="code-label">Core APIs</span><code>content/public/browser/web_contents.h</code><code>content/public/browser/web_contents_observer.h</code><code>ui/views/controls/webview/webview.h</code></div></div></article>
+        <article class="phase"><div><span class="phase-number">Phase 04</span><span class="phase-state">Multitasking</span></div><div><h3>Two-site split and Opera-style controls</h3><p class="phase-summary">Allow exactly two sidebar sites at once without turning the browser into a tiling-window-manager thesis project.</p><div class="work-grid"><div class="work-card"><h4>Split host</h4><ul><li>Side-by-side by default.</li><li>Toggle top/bottom without reloading.</li><li>Independent focus, navigation, audio, and resize state.</li></ul></div><div class="work-card"><h4>Interaction polish</h4><ul><li>Three-dot setup and removable starter pins.</li><li>Notification badges and mute indicators.</li><li>Keyboard order, tooltips, and shortcuts.</li></ul></div><div class="work-card gate"><h4>Exit gate</h4><ul><li>Both sites work simultaneously.</li><li>Layout switching preserves both renderers.</li><li>Keyboard and screen-reader navigation pass.</li></ul></div></div></div></article>
+        <article class="phase"><div><span class="phase-number">Phase 05</span><span class="phase-state">Release gate</span></div><div><h3>Cross-platform hardening</h3><p class="phase-summary">Ship only after this behaves like a browser surface rather than a particularly ambitious demo.</p><div class="work-grid"><div class="work-card"><h4>Automated coverage</h4><ul><li>Model, preference, and lifecycle unit tests.</li><li>Coordinator browser and Views interaction tests.</li><li>Split, sync, and Incognito coverage.</li></ul></div><div class="work-card"><h4>Manual matrix</h4><ul><li>Windows, macOS, and Linux builds.</li><li>OAuth, passkeys, downloads, media, notifications.</li><li>Narrow windows, scaling, multi-monitor, RTL.</li></ul></div><div class="work-card gate"><h4>Exit gate</h4><ul><li>No existing Chrome side-panel regressions.</li><li>Clean restart and profile migration.</li><li>No Opera assets or proprietary code.</li></ul></div></div></div></article>
+      </div>
+    </section>
+
+    <section class="scope"><div class="section-head"><p class="section-kicker">Scope control</p><div><h2>What v1 is, and what it is not</h2></div></div><div class="scope-grid"><article class="scope-card"><h3>Required for v1</h3><ul><li>Native rail and shrinking panel</li><li>Arbitrary normal websites</li><li>Shared cookies and normal Incognito</li><li>Three-minute renderer cleanup</li><li>Two-site split</li><li>Cross-platform desktop support</li></ul></article><article class="scope-card out"><h3>Explicitly deferred</h3><ul><li>Restoring scroll, forms, or media position</li><li>A separate sidebar cookie jar</li><li>More than two visible sites</li><li>Mobile Chromium support</li><li>Opera artwork or proprietary code</li><li>Service-specific integrations</li></ul></article></div></section>
+
+    <section class="demo-section"><div class="section-head"><p class="section-kicker">Interaction demo</p><div><h2>The browser should feel like this</h2><p>Click rail icons, add a URL, toggle split view, change its orientation, and drag the divider. This is a behavioral mock, not a fake iframe pretending websites permit embedding.</p></div></div>
+      <div class="demo-shell"><div class="window-bar" data-demo-edit="browser toolbar"><i class="window-dot"></i><i class="window-dot"></i><div class="address">https://example.com/current-tab</div><span class="window-label">FLUX PROTOTYPE</span></div><div class="browser"><nav class="rail" data-demo-edit="sidebar rail" aria-label="Flux sidebar sites"><button class="rail-button logo" data-demo-edit="Flux menu button" aria-label="Flux menu">F</button><div class="rail-rule"></div><div id="site-buttons" style="display:contents"></div><button class="rail-button add" id="add-site" data-demo-edit="add website button" aria-label="Add website">+</button><div class="rail-spacer"></div><button class="rail-button utility" data-demo-edit="sidebar setup button" aria-label="Sidebar setup">•••</button></nav><div class="browser-main" id="browser-main"><aside class="panel-wrap" id="panel-wrap" data-demo-edit="website panel host"><div class="panel-grid" id="panel-grid"></div><div class="resize-handle" id="resize-handle"></div></aside><div class="webpage" data-demo-edit="current webpage area"><div class="page-copy"><span>Current tab</span><h3>The page makes room.</h3><p>Opening the sidebar changes layout width. It does not float above the tab or trap the website inside an iframe.</p></div></div></div></div></div>
+      <div class="demo-controls" data-demo-edit="demo controls"><button class="wand-button" id="edit-demo" aria-pressed="false" title="Select a demo element to edit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 4 5 5L9 20H4v-5Z"/><path d="m13 6 5 5M5 4v3M3.5 5.5h3M19 16v4M17 18h4"/></svg>Edit demo</button><button id="split-toggle" data-demo-edit="two-site split control">Two-site split</button><button id="layout-toggle" data-demo-edit="split orientation control" disabled>Top / bottom</button><button id="close-panel" data-demo-edit="close panel control">Close panel</button><span class="width-readout" id="width-readout">Panel: 25vw · min 10vw · no fixed max</span></div>
+    </section>
+    <footer><span>FLUX SIDEBAR · IMPLEMENTATION PLAN 1.0</span><span>DESKTOP CHROMIUM · CROSS-PLATFORM</span></footer>
+  </main>
+
+  <aside class="edit-toolbar" id="edit-toolbar" aria-live="polite">
+    <div class="edit-toolbar-head"><span class="edit-context" id="edit-context">Selected item</span><button class="edit-close" id="edit-close" aria-label="Close edit prompt">×</button></div>
+    <form class="edit-row" id="edit-form"><input id="edit-request" type="text" aria-label="Desired edit" placeholder="Describe the change you want…" required><button class="edit-submit" type="submit">Copy prompt</button></form>
+    <div class="selection-hint">Select roadmap text directly, or use the wand to choose something in the demo.</div>
+  </aside>
+  <div class="toast" id="toast" role="status">Successfully copied prompt to clipboard. Paste it into T3 Code to make your desired edits.</div>
+
+  <dialog id="site-dialog"><form id="site-form"><h3>Add a website</h3><p>Saved in local storage here. Production uses a syncable Chromium profile preference.</p><label for="site-name">Name</label><input id="site-name" name="name" type="text" placeholder="Linear" maxlength="24" required><label for="site-url">URL</label><input id="site-url" name="url" type="url" placeholder="https://linear.app" required><div class="form-actions"><button type="button" id="cancel-site">Cancel</button><button class="primary" type="submit">Add site</button></div></form></dialog>
+  <script>
+    const defaults=[{id:"chatgpt",name:"ChatGPT",url:"https://chatgpt.com",mark:"◎",color:"#75c4a8"},{id:"gemini",name:"Gemini",url:"https://gemini.google.com",mark:"✦",color:"#7aa2ff"},{id:"gmail",name:"Gmail",url:"https://mail.google.com",mark:"M",color:"#ff7a8f"},{id:"discord",name:"Discord",url:"https://discord.com/app",mark:"D",color:"#9a9fff"}];
+    const key="flux-plan-sites-v2",buttons=document.querySelector("#site-buttons"),wrap=document.querySelector("#panel-wrap"),grid=document.querySelector("#panel-grid"),splitButton=document.querySelector("#split-toggle"),layoutButton=document.querySelector("#layout-toggle"),dialog=document.querySelector("#site-dialog"),form=document.querySelector("#site-form"),browserMain=document.querySelector("#browser-main"),readout=document.querySelector("#width-readout");
+    let sites=JSON.parse(localStorage.getItem(key)||"null")||defaults,active=[],split=false,vertical=false;
+    const escape=value=>{const n=document.createElement("span");n.textContent=String(value);return n.innerHTML};
+    const byId=id=>sites.find(site=>site.id===id);
+    function renderButtons(){buttons.replaceChildren();sites.forEach(site=>{const b=document.createElement("button");b.className="rail-button"+(active.includes(site.id)?" active":"");b.style.background=site.color;b.textContent=site.mark;b.title=site.name;b.dataset.demoEdit=`${site.name} rail item`;b.setAttribute("aria-label",site.name);b.onclick=()=>activate(site.id);buttons.append(b)})}
+    function markup(site){return `<article class="site-panel" data-demo-edit="${escape(site.name)} website panel" style="--site-color:${site.color}"><div class="site-toolbar"><i class="site-dot"></i><span class="site-title">${escape(site.name)}</span><span class="site-url">${escape(site.url)}</span></div><div class="site-content"><div><div class="site-mark">${escape(site.mark)}</div><strong>${escape(site.name)}</strong><small>Live profile-backed WebContents</small></div></div></article>`}
+    function render(){const ids=split?active.slice(0,2):active.slice(0,1);grid.className="panel-grid"+(split?" split":"")+(vertical?" vertical":"");grid.innerHTML=ids.map(id=>markup(byId(id))).join("");wrap.classList.toggle("open",ids.length>0);splitButton.classList.toggle("on",split);layoutButton.classList.toggle("on",vertical);layoutButton.disabled=!split;renderButtons()}
+    function activate(id){if(!split&&active[0]===id)active=[];else if(split){active=[id,...active.filter(x=>x!==id)].slice(0,2);if(active.length<2){const fallback=sites.find(s=>s.id!==id);if(fallback)active.push(fallback.id)}}else active=[id];render()}
+    splitButton.onclick=()=>{split=!split;if(split){if(!active.length&&sites[0])active.push(sites[0].id);const fallback=sites.find(s=>!active.includes(s.id));if(fallback)active.push(fallback.id)}render()};
+    layoutButton.onclick=()=>{vertical=!vertical;render()};document.querySelector("#close-panel").onclick=()=>{active=[];split=false;render()};document.querySelector("#add-site").onclick=()=>dialog.showModal();document.querySelector("#cancel-site").onclick=()=>dialog.close();
+    form.onsubmit=event=>{event.preventDefault();const data=new FormData(form),name=String(data.get("name")).trim(),site={id:crypto.randomUUID(),name,url:String(data.get("url")).trim(),mark:name.slice(0,2).toUpperCase(),color:"#a8ff78"};sites.push(site);localStorage.setItem(key,JSON.stringify(sites));active=[site.id];split=false;form.reset();dialog.close();render()};
+    let startX=0,startWidth=0;const handle=document.querySelector("#resize-handle");handle.onpointerdown=event=>{startX=event.clientX;startWidth=wrap.getBoundingClientRect().width;handle.setPointerCapture(event.pointerId)};handle.onpointermove=event=>{if(!handle.hasPointerCapture(event.pointerId))return;const available=browserMain.getBoundingClientRect().width,min=available*.10,next=Math.max(min,Math.min(available-120,startWidth+event.clientX-startX));wrap.style.width=`${next}px`;readout.textContent=`Panel: ${Math.round(next/available*100)}% of content · min 10vw · no fixed max`};
+
+    const editToolbar=document.querySelector("#edit-toolbar"),editContext=document.querySelector("#edit-context"),editForm=document.querySelector("#edit-form"),editRequest=document.querySelector("#edit-request"),toast=document.querySelector("#toast"),wand=document.querySelector("#edit-demo"),demoSection=document.querySelector(".demo-section");
+    let editSelection=null,selectedElement=null,demoEditMode=false,toastTimer=0;
+
+    function clearSelectedElement(){if(selectedElement)selectedElement.classList.remove("selected-for-edit");selectedElement=null}
+    function closeEditor(){editToolbar.classList.remove("show");editRequest.value="";editSelection=null;clearSelectedElement()}
+    function openEditor(selection,element=null){editSelection=selection;clearSelectedElement();selectedElement=element;if(element)element.classList.add("selected-for-edit");editContext.textContent=selection.kind==="demo"?`Demo element · ${selection.label}`:`Plan text · ${selection.label}`;editToolbar.classList.add("show");requestAnimationFrame(()=>editRequest.focus())}
+    function setDemoEditMode(enabled){demoEditMode=enabled;demoSection.classList.toggle("demo-edit-mode",enabled);wand.classList.toggle("on",enabled);wand.setAttribute("aria-pressed",String(enabled));if(!enabled)closeEditor()}
+    function showToast(){clearTimeout(toastTimer);toast.classList.add("show");toastTimer=setTimeout(()=>toast.classList.remove("show"),4200)}
+    async function copyPrompt(prompt){try{await navigator.clipboard.writeText(prompt)}catch{const area=document.createElement("textarea");area.value=prompt;area.style.position="fixed";area.style.opacity="0";document.body.append(area);area.select();document.execCommand("copy");area.remove()}showToast()}
+
+    wand.addEventListener("click",event=>{event.stopPropagation();setDemoEditMode(!demoEditMode)});
+    demoSection.addEventListener("click",event=>{if(!demoEditMode||event.target.closest("#edit-demo"))return;const target=event.target.closest("[data-demo-edit]");if(!target)return;event.preventDefault();event.stopImmediatePropagation();openEditor({kind:"demo",label:target.dataset.demoEdit},target)},true);
+    let selectionTimer=0;
+    function capturePlanSelection(){const selection=window.getSelection(),text=selection.toString().trim();if(!text)return;const anchor=selection.anchorNode?.nodeType===Node.TEXT_NODE?selection.anchorNode.parentElement:selection.anchorNode;if(!anchor?.closest(".hero,main")||anchor.closest(".demo-section,#edit-toolbar"))return;const section=anchor.closest("section"),heading=section?.querySelector("h2,h3")?.textContent.trim()||"Flux sidebar overview";openEditor({kind:"plan",label:heading,text})}
+    document.addEventListener("selectionchange",()=>{clearTimeout(selectionTimer);selectionTimer=setTimeout(capturePlanSelection,120)});
+    document.addEventListener("pointerup",event=>{if(!event.target.closest("#edit-toolbar,.demo-section"))setTimeout(capturePlanSelection,0)});
+    document.querySelector("#edit-close").addEventListener("click",()=>setDemoEditMode(false));
+    editForm.addEventListener("submit",event=>{event.preventDefault();if(!editSelection)return;const request=editRequest.value.trim();if(!request)return;const prompt=editSelection.kind==="demo"?`Edit the interactive Flux sidebar demo in sidebar-plan.html. Selected element or group: "${editSelection.label}". Requested change: ${request}. Preserve the locked product decisions and the rest of the roadmap unless this change requires a directly related adjustment.`:`Edit the Flux sidebar implementation plan in sidebar-plan.html. Section: "${editSelection.label}". Selected text: "${editSelection.text}". Requested change: ${request}. Preserve all unrelated product decisions and roadmap content.`;copyPrompt(prompt);editRequest.value=""});
+    document.addEventListener("keydown",event=>{if(event.key==="Escape"&&(editToolbar.classList.contains("show")||demoEditMode))setDemoEditMode(false)});
+
+    active=sites[0]?[sites[0].id]:[];render();
+  </script>
+</body>
+</html>

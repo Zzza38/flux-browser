@@ -34,6 +34,7 @@ export interface SettingsRoutes {
   DOWNLOADS: Route;
   EDIT_DICTIONARY: Route;
   FONTS: Route;
+  FLUX_FEATURES: Route;
   GEMINI: Route;
   GEMINI_LOGIN: Route;
   GLIC_SECTION: Route;

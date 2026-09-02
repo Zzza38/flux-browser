@@ -106,6 +106,7 @@
 #include "chrome/browser/updates/announcement_notification/announcement_notification_service.h"
 #include "chrome/browser/webauthn/webauthn_pref_names.h"
 #include "chrome/common/buildflags.h"
+#include "chrome/common/flux_sidebar_pref_names.h"
 #include "chrome/common/pref_names.h"
 #include "chrome/common/secure_origin_allowlist.h"
 #include "components/autofill/core/common/autofill_prefs.h"
@@ -2237,6 +2238,16 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySyncable* registry,
   enterprise_custom_headers::RegisterProfilePrefs(registry);
 
 #if !BUILDFLAG(IS_ANDROID)
+  registry->RegisterBooleanPref(prefs::kFluxSidebarEnabled, true);
+  registry->RegisterListPref(prefs::kFluxSidebarSites, base::ListValue(),
+                             user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
+  registry->RegisterIntegerPref(
+      prefs::kFluxSidebarWidth, 0,
+      user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
+  registry->RegisterBooleanPref(
+      prefs::kFluxSidebarSplitVertical, false,
+      user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
+
   registry->RegisterBooleanPref(
       webauthn::pref_names::kRemoteProxiedRequestsAllowed, false);
 

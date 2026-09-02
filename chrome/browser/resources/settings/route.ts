@@ -213,6 +213,10 @@ function createRoutes(): SettingsRoutes {
     r.FONTS = r.APPEARANCE.createChild('/fonts');
   }
 
+  r.FLUX_FEATURES = r.BASIC.createSection(
+      '/fluxFeatures', 'fluxFeatures',
+      loadTimeData.getString('fluxFeaturesPageTitle'));
+
   if (visibility.yourSavedInfo !== false) {
     r.AUTOFILL = r.BASIC.createSection(
         '/autofill', 'yourSavedInfo',
