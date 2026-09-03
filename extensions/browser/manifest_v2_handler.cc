@@ -114,7 +114,9 @@ bool ShouldDisableLegacyExtensions() {
     return false;
   }
 
-  return true;
+  // Flux keeps Manifest V2 enabled so extensions such as uBlock Origin can
+  // still be installed and remain enabled.
+  return false;
 }
 
 }  // namespace

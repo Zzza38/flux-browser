@@ -1620,7 +1620,7 @@ ExtensionFunction::ResponseAction
 WebstorePrivateGetMV2DeprecationStatusFunction::Run() {
   return RespondNow(ArgumentList(
       api::webstore_private::GetMV2DeprecationStatus::Results::Create(
-          api::webstore_private::MV2DeprecationStatus::kHardDisable)));
+          api::webstore_private::MV2DeprecationStatus::kInactive)));
 }
 
 #if !BUILDFLAG(IS_ANDROID)
