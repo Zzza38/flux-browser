@@ -46,6 +46,7 @@ source_set("impl") {
     "//chrome/browser:renderer_preferences_util",
     "//chrome/browser/profiles:profile",
     "//chrome/browser/ui/zoom",
+    "//chrome/common:constants",
     "//components/language/core/browser",
     "//components/live_caption:constants",
     "//components/pref_registry",

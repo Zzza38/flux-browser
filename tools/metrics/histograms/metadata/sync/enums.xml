@@ -827,6 +827,7 @@ chromium-metrics-reviews@google.com.
   <int value="100387" label="FluxSidebarSites"/>
   <int value="100388" label="FluxSidebarWidth"/>
   <int value="100389" label="FluxSidebarSplitVertical"/>
+  <int value="100390" label="FluxVideoPictureInPictureOverlayEnabled"/>
 <!-- LINT.ThenChange(/chrome/browser/sync/prefs/chrome_syncable_prefs_database.cc:ChromeSyncablePref)-->
 
 <!-- LINT.IfChange(IosSyncablePref) -->

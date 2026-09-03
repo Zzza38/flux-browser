@@ -512,6 +512,8 @@ class CORE_EXPORT Node : public EventTarget {
   virtual bool IsFrameOwnerElement() const { return false; }
   virtual bool IsMediaRemotingInterstitial() const { return false; }
   virtual bool IsPictureInPictureInterstitial() const { return false; }
+  // Flux: the hover picture-in-picture button in a <video>'s shadow root.
+  virtual bool IsFluxPictureInPictureOverlay() const { return false; }
 
   // Either ::scroll-marker or ::scroll-*-button pseudo-element.
   bool IsScrollControlPseudoElement() const {

@@ -772,6 +772,11 @@ struct BLINK_COMMON_EXPORT StructTraits<blink::mojom::WebPreferencesDataView,
     return r.picture_in_picture_enabled;
   }
 
+  static bool flux_video_picture_in_picture_overlay_enabled(
+      const blink::web_pref::WebPreferences& r) {
+    return r.flux_video_picture_in_picture_overlay_enabled;
+  }
+
   static bool translate_service_available(
       const blink::web_pref::WebPreferences& r) {
     return r.translate_service_available;

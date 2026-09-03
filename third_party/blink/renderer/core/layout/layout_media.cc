@@ -55,8 +55,8 @@ HTMLMediaElement* LayoutMedia::MediaElement() const {
 bool LayoutMedia::IsChildAllowed(LayoutObject* child,
                                  const ComputedStyle& style) const {
   NOT_DESTROYED();
-  // Two types of child layout objects are allowed: media controls
-  // and the text track container. Filter children by node type.
+  // Only internal media UI and the text track container may become children
+  // of this replaced element. Filter children by node type.
   DCHECK(child->GetNode());
 
   // Out-of-flow positioned or floating child breaks layout hierarchy.
@@ -81,7 +81,8 @@ bool LayoutMedia::IsChildAllowed(LayoutObject* child,
 
   if (child->GetNode()->IsTextTrackContainer() ||
       child->GetNode()->IsMediaRemotingInterstitial() ||
-      child->GetNode()->IsPictureInPictureInterstitial()) {
+      child->GetNode()->IsPictureInPictureInterstitial() ||
+      child->GetNode()->IsFluxPictureInPictureOverlay()) {
     // LayoutObject::IsInline() doesn't work at this timing.
     DCHECK(!To<Element>(child->GetNode())
                 ->GetComputedStyle()

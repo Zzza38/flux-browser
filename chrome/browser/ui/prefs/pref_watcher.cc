@@ -18,6 +18,7 @@
 #include "chrome/browser/profiles/profile_selections.h"
 #include "chrome/browser/renderer_preferences_util.h"
 #include "chrome/browser/ui/prefs/prefs_tab_helper.h"
+#include "chrome/common/flux_pref_names.h"
 #include "chrome/common/pref_names.h"
 #include "components/autofill/core/common/autofill_prefs.h"
 #include "components/keyed_service/core/keyed_service.h"
@@ -89,6 +90,9 @@ const char* const kWebPrefsToObserve[] = {
     prefs::kAccessibilityFocusHighlightEnabled,
 #endif
     prefs::kPageColorsBlockList,
+#if !BUILDFLAG(IS_ANDROID)
+    prefs::kFluxVideoPictureInPictureOverlayEnabled,
+#endif
 };
 
 }  // namespace

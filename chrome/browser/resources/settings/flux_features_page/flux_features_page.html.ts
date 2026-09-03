@@ -15,6 +15,11 @@ export function getHtml(this: SettingsFluxFeaturesPageElement) {
       label="$i18n{fluxSidebarEnabledLabel}"
       sub-label="$i18n{fluxSidebarEnabledSubLabel}">
   </settings-toggle-button>
+  <settings-toggle-button id="videoPipOverlayEnabled"
+      pref-key="flux.video_picture_in_picture_overlay.enabled"
+      label="$i18n{fluxVideoPipOverlayEnabledLabel}"
+      sub-label="$i18n{fluxVideoPipOverlayEnabledSubLabel}">
+  </settings-toggle-button>
 </settings-section>
 <!--_html_template_end_-->`;
 }

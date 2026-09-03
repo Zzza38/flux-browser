@@ -426,6 +426,9 @@ void HTMLMediaElement::OnMediaControlsEnabledChange(Document* document) {
     element->UpdateControlsVisibility();
     if (element->GetMediaControls())
       element->GetMediaControls()->OnMediaControlsEnabledChange();
+    if (auto* video = DynamicTo<HTMLVideoElement>(element.Get())) {
+      video->EnsureFluxPictureInPictureOverlay();
+    }
   }
 }
 
@@ -4507,15 +4510,28 @@ bool HTMLMediaElement::TextTracksVisible() const {
 // static
 void HTMLMediaElement::AssertShadowRootChildren(ShadowRoot& shadow_root) {
 #if DCHECK_IS_ON()
+  // Flux: the picture-in-picture hover button can sit anywhere in the shadow
+  // root, so it is left out of the ordering rules below.
+  HeapVector<Member<Node>> children;
+  for (Node* child = shadow_root.firstChild(); child;
+       child = child->nextSibling()) {
+    if (!child->IsFluxPictureInPictureOverlay()) {
+      children.push_back(child);
+    }
+  }
+
   // There can be up to three children: an interstitial (media remoting or
   // picture in picture), text track container, and media controls. The media
   // controls has to be the last child if present, and has to be the next
   // sibling of the text track container if both present. When present, media
   // remoting interstitial has to be the first child.
-  unsigned number_of_children = shadow_root.CountChildren();
+  unsigned number_of_children = children.size();
   DCHECK_LE(number_of_children, 3u);
-  Node* first_child = shadow_root.firstChild();
-  Node* last_child = shadow_root.lastChild();
+  if (number_of_children == 0) {
+    return;
+  }
+  Node* first_child = children.front();
+  Node* last_child = children.back();
   if (number_of_children == 1) {
     DCHECK(first_child->IsTextTrackContainer() ||
            first_child->IsMediaControls() ||
@@ -4529,7 +4545,7 @@ void HTMLMediaElement::AssertShadowRootChildren(ShadowRoot& shadow_root) {
     if (first_child->IsTextTrackContainer())
       DCHECK(last_child->IsMediaControls());
   } else if (number_of_children == 3) {
-    Node* second_child = first_child->nextSibling();
+    Node* second_child = children[1];
     DCHECK(first_child->IsMediaRemotingInterstitial() ||
            first_child->IsPictureInPictureInterstitial());
     DCHECK(second_child->IsTextTrackContainer());

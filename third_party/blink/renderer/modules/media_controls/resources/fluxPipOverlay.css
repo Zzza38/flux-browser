@@ -1,0 +1,64 @@
+/* Copyright 2026 The Chromium Authors
+   Use of this source code is governed by a BSD-style license that can be
+   found in the LICENSE file. */
+
+/* Flux: a picture-in-picture button drawn over the top right corner of every
+   <video> that supports picture-in-picture, whether or not the page asked for
+   controls. The button is hidden until the video is hovered.
+
+   Rules in this and other mediaControls*.css files override rules from html.css
+   and other UA sheets regardless of specificity. See comment in
+   StyleResolver::MatchUARules(). */
+
+video::-internal-flux-picture-in-picture-overlay {
+    width: inherit;
+    height: inherit;
+    position: relative;
+    direction: ltr;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: transparent;
+    /* Native media controls stretch a full-size overlay enclosure across the
+       video and may be appended after this element, so the stacking order,
+       not the DOM order, is what keeps the button clickable. */
+    z-index: 2147483647;
+    /* The overlay covers the whole video, so it must not swallow the clicks
+       the page expects to receive. Only the button below takes pointers. */
+    pointer-events: none;
+}
+
+video::-internal-flux-picture-in-picture-button {
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .65);
+    background-image: url(ic_picture_in_picture_white.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+    opacity: 0;
+    pointer-events: none;
+}
+
+video::-internal-flux-picture-in-picture-button.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+video::-internal-flux-picture-in-picture-button:hover {
+    background-color: rgba(0, 0, 0, .85);
+}
+
+/* While the video is already playing in picture-in-picture the button exits
+   it again, so it shows the matching icon. */
+video:picture-in-picture::-internal-flux-picture-in-picture-button {
+    background-image: url(ic_picture_in_picture_exit_white.svg);
+}

@@ -501,6 +501,8 @@ blink_core_sources_html = [
   "media/autoplay_policy.h",
   "media/autoplay_uma_helper.cc",
   "media/autoplay_uma_helper.h",
+  "media/flux_picture_in_picture_overlay.cc",
+  "media/flux_picture_in_picture_overlay.h",
   "media/html_audio_element.cc",
   "media/html_audio_element.h",
   "media/html_media_element.cc",

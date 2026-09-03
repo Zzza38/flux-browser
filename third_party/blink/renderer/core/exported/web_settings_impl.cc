@@ -618,6 +618,10 @@ void WebSettingsImpl::SetPictureInPictureEnabled(bool enabled) {
   settings_->SetPictureInPictureEnabled(enabled);
 }
 
+void WebSettingsImpl::SetFluxVideoPictureInPictureOverlayEnabled(bool enabled) {
+  settings_->SetFluxVideoPictureInPictureOverlayEnabled(enabled);
+}
+
 void WebSettingsImpl::SetWebAppScope(const WebString& scope) {
   settings_->SetWebAppScope(scope);
 }
