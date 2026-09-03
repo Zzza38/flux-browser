@@ -1016,6 +1016,21 @@
     <message name="IDS_SETTINGS_FLUX_VIDEO_PIP_OVERLAY_ENABLED_SUB_LABEL" desc="Description of the toggle that controls whether Flux shows a picture-in-picture button on videos.">
       Hover a video to pop it out, even when the page hides its own controls
     </message>
+    <message name="IDS_SETTINGS_FLUX_RGB_MODE_ENABLED_LABEL" desc="Label for the toggle that controls whether the browser window cycles through rainbow colors.">
+      RGB mode
+    </message>
+    <message name="IDS_SETTINGS_FLUX_RGB_MODE_ENABLED_SUB_LABEL" desc="Description of the toggle that controls whether the browser window cycles through rainbow colors.">
+      Wash the whole browser window through the color wheel, forever
+    </message>
+    <message name="IDS_SETTINGS_FLUX_RGB_MODE_SPEED_LABEL" desc="Label for the slider that controls how fast the browser window cycles through rainbow colors.">
+      Color cycle speed
+    </message>
+    <message name="IDS_SETTINGS_FLUX_RGB_MODE_SPEED_SLOW" desc="Label for the slow end of the slider that controls how fast the browser window cycles through rainbow colors.">
+      Slow
+    </message>
+    <message name="IDS_SETTINGS_FLUX_RGB_MODE_SPEED_FAST" desc="Label for the fast end of the slider that controls how fast the browser window cycles through rainbow colors.">
+      Fast
+    </message>
     <message name="IDS_SETTINGS_ON_STARTUP_OPEN_NEW_TAB" desc="Radio button option to open the new tab page.">
       Open the New Tab page
     </message>

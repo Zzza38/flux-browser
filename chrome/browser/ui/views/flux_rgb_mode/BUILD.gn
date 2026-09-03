@@ -1,0 +1,18 @@
+# Copyright 2026 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+assert(is_win || is_mac || is_linux || is_chromeos)
+
+source_set("unit_tests") {
+  testonly = true
+  sources = [ "flux_rgb_mode_controller_unittest.cc" ]
+  deps = [
+    "//base",
+    "//cc/paint",
+    "//chrome/browser/ui",
+    "//components/prefs",
+    "//testing/gtest",
+    "//ui/compositor",
+  ]
+}

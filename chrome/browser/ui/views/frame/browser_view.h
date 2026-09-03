@@ -121,6 +121,10 @@ class WebView;
 
 class CustomFloatingCorner;
 
+namespace flux_rgb_mode {
+class FluxRgbModeController;
+}
+
 namespace flux_sidebar {
 class FluxSidebarView;
 }
@@ -1218,6 +1222,11 @@ class BrowserView : public BrowserWindow,
   // Outward-projecting corners of the vertical tab strip.
   raw_ptr<CustomFloatingCorner> vertical_tab_strip_top_corner_ = nullptr;
   raw_ptr<CustomFloatingCorner> vertical_tab_strip_bottom_corner_ = nullptr;
+
+  // Sweeps a rainbow color filter over the whole window while Flux RGB mode is
+  // on. Created in AddedToWidget(), because it needs the widget's compositor.
+  std::unique_ptr<flux_rgb_mode::FluxRgbModeController>
+      flux_rgb_mode_controller_;
 
   // Full-height Flux website rail and the corners where it meets browser
   // chrome.
