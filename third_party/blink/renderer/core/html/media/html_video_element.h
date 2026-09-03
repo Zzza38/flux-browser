@@ -47,6 +47,7 @@ class IntersectionObserverEntry;
 class MediaCustomControlsFullscreenDetector;
 class MediaVideoVisibilityTracker;
 class MediaRemotingInterstitial;
+class FluxPictureInPictureOverlay;
 class PictureInPictureInterstitial;
 class StaticBitmapImage;
 class VideoTiming;
@@ -192,6 +193,10 @@ class CORE_EXPORT HTMLVideoElement final
     return poster_deferred_for_lazy_load_;
   }
 
+  // Flux: creates or removes the hover picture-in-picture button so it matches
+  // the current setting. Safe to call repeatedly.
+  void EnsureFluxPictureInPictureOverlay();
+
  protected:
   // EventTarget overrides.
   void AddedEventListener(const AtomicString& event_type,
@@ -247,6 +252,7 @@ class CORE_EXPORT HTMLVideoElement final
   void DidChangeIsInCanvasSubtree() override;
 
   void UpdatePictureInPictureAvailability();
+
   void UpdateVideoFrameAvailability() override;
 
   void MaybeEnterImmersivePictureInPicture();
@@ -287,6 +293,7 @@ class CORE_EXPORT HTMLVideoElement final
 
   Member<MediaRemotingInterstitial> remoting_interstitial_;
   Member<PictureInPictureInterstitial> picture_in_picture_interstitial_;
+  Member<FluxPictureInPictureOverlay> flux_picture_in_picture_overlay_;
 
   // TODO(crbug.com/454082773): Remove once MediaTiming lifetime is fixed.
   Member<VideoTiming> video_timing_;

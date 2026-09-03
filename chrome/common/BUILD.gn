@@ -562,6 +562,7 @@ static_library("constants") {
     "chrome_paths.h",
     "chrome_paths_internal.h",
     "chrome_result_codes.h",
+    "flux_pref_names.h",
     "flux_sidebar_pref_names.h",
     "pref_font_script_names-inl.h",
     "pref_font_webkit_names.h",

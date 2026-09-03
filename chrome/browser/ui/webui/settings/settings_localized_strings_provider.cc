@@ -1582,6 +1582,10 @@ void AddFluxFeaturesStrings(content::WebUIDataSource* html_source) {
       {"fluxSidebarEnabledLabel", IDS_SETTINGS_FLUX_SIDEBAR_ENABLED_LABEL},
       {"fluxSidebarEnabledSubLabel",
        IDS_SETTINGS_FLUX_SIDEBAR_ENABLED_SUB_LABEL},
+      {"fluxVideoPipOverlayEnabledLabel",
+       IDS_SETTINGS_FLUX_VIDEO_PIP_OVERLAY_ENABLED_LABEL},
+      {"fluxVideoPipOverlayEnabledSubLabel",
+       IDS_SETTINGS_FLUX_VIDEO_PIP_OVERLAY_ENABLED_SUB_LABEL},
   };
   html_source->AddLocalizedStrings(kLocalizedStrings);
 }

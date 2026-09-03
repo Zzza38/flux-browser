@@ -285,6 +285,15 @@
       initial: true,
     },
 
+    // Flux: hover picture-in-picture button on <video>, independent of the
+    // page's own `controls` attribute. Default off so content_shell and tests
+    // stay clean; Chrome copies the user pref on top.
+    {
+      name: "fluxVideoPictureInPictureOverlayEnabled",
+      initial: false,
+      invalidate: ["MediaControls"],
+    },
+
     {
       name: "webAppScope",
       type: "String",

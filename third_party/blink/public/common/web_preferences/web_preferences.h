@@ -400,6 +400,11 @@ struct BLINK_COMMON_EXPORT WebPreferences {
   // Whether Picture-in-Picture is enabled.
   bool picture_in_picture_enabled = true;
 
+  // Flux: hover picture-in-picture button on <video> elements. Chrome copies
+  // the user pref here; default off so tests and content_shell do not create
+  // the overlay.
+  bool flux_video_picture_in_picture_overlay_enabled = false;
+
   // Whether a translate service is available.
   // blink's hrefTranslate attribute existence relies on the result.
   // See https://github.com/dtapuska/html-translate

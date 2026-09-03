@@ -166,6 +166,7 @@ class WebSettings {
   virtual void SetMainFrameResizesAreOrientationChanges(bool) = 0;
   virtual void SetMaxTouchPoints(int) = 0;
   virtual void SetPictureInPictureEnabled(bool) = 0;
+  virtual void SetFluxVideoPictureInPictureOverlayEnabled(bool) = 0;
   virtual void SetWebAppScope(const WebString&) = 0;
   virtual void SetIsInitialProfile(bool) = 0;
   virtual void SetPresentationRequiresUserGesture(bool) = 0;

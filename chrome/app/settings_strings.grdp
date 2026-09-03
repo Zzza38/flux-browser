@@ -1010,6 +1010,12 @@
     <message name="IDS_SETTINGS_FLUX_SIDEBAR_ENABLED_SUB_LABEL" desc="Description of the toggle that controls whether the Flux website sidebar is shown.">
       Keep pinned websites available in a sidebar on the left side of the browser
     </message>
+    <message name="IDS_SETTINGS_FLUX_VIDEO_PIP_OVERLAY_ENABLED_LABEL" desc="Label for the toggle that controls whether Flux shows a picture-in-picture button on videos.">
+      Show picture-in-picture button on videos
+    </message>
+    <message name="IDS_SETTINGS_FLUX_VIDEO_PIP_OVERLAY_ENABLED_SUB_LABEL" desc="Description of the toggle that controls whether Flux shows a picture-in-picture button on videos.">
+      Hover a video to pop it out, even when the page hides its own controls
+    </message>
     <message name="IDS_SETTINGS_ON_STARTUP_OPEN_NEW_TAB" desc="Radio button option to open the new tab page.">
       Open the New Tab page
     </message>

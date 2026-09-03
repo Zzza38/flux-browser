@@ -1899,6 +1899,8 @@ void WebView::ApplyWebPreferences(const web_pref::WebPreferences& prefs,
           prefs.low_priority_iframes_threshold));
 
   settings->SetPictureInPictureEnabled(prefs.picture_in_picture_enabled);
+  settings->SetFluxVideoPictureInPictureOverlayEnabled(
+      prefs.flux_video_picture_in_picture_overlay_enabled);
 
   settings->SetImmersiveVideoPlaybackEnabled(
       prefs.immersive_video_playback_enabled);

@@ -75,12 +75,23 @@ String MediaControlsResourceLoader::GetMediaInterstitialsStyleSheet() {
   return UncompressResourceAsString(IDR_UASTYLE_MEDIA_INTERSTITIALS_CSS);
 }
 
+// static
+String MediaControlsResourceLoader::GetFluxPipOverlayStyleSheet() {
+  return UncompressResourceAsString(IDR_UASTYLE_FLUX_PIP_OVERLAY_CSS);
+}
+
 String MediaControlsResourceLoader::GetUAStyleSheet() {
+  // Always included: the UA sheet is shared by the whole renderer process,
+  // while the button itself is switched on per profile in HTMLVideoElement.
+  // The rules are inert unless that element exists.
+  const String flux_pip_overlay_css = GetFluxPipOverlayStyleSheet();
+
   if (ShouldLoadAndroidCSS()) {
     return StrCat({GetMediaControlsCSS(), GetMediaControlsAndroidCSS(),
-                   GetMediaInterstitialsStyleSheet()});
+                   GetMediaInterstitialsStyleSheet(), flux_pip_overlay_css});
   }
-  return StrCat({GetMediaControlsCSS(), GetMediaInterstitialsStyleSheet()});
+  return StrCat({GetMediaControlsCSS(), GetMediaInterstitialsStyleSheet(),
+                 flux_pip_overlay_css});
 }
 
 void MediaControlsResourceLoader::InjectMediaControlsUAStyleSheet() {

@@ -38,6 +38,7 @@
 #include "chrome/browser/ui/toolbar/toolbar_pref_names.h"
 #include "chrome/common/chrome_features.h"
 #include "chrome/common/extensions/api/settings_private.h"
+#include "chrome/common/flux_pref_names.h"
 #include "chrome/common/flux_sidebar_pref_names.h"
 #include "chrome/common/pref_names.h"
 #include "components/autofill/core/common/autofill_prefs.h"
@@ -286,6 +287,8 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlistedKeys() {
   (*s_allowlist)[::prefs::kSidePanelAlignmentOverrides] =
       settings_api::PrefType::kDictionary;
   (*s_allowlist)[::prefs::kFluxSidebarEnabled] =
+      settings_api::PrefType::kBoolean;
+  (*s_allowlist)[::prefs::kFluxVideoPictureInPictureOverlayEnabled] =
       settings_api::PrefType::kBoolean;
   (*s_allowlist)[::prefs::kVerticalTabsEnabled] =
       settings_api::PrefType::kBoolean;

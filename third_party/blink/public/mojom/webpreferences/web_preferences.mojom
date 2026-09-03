@@ -460,6 +460,9 @@ struct WebPreferences {
   // Whether Picture-in-Picture is enabled.
   bool picture_in_picture_enabled;
 
+  // Flux: whether to show a hover picture-in-picture button on <video>.
+  bool flux_video_picture_in_picture_overlay_enabled;
+
   // Whether a translate service is available.
   // blink's hrefTranslate attribute existence relies on the result.
   // See https://github.com/dtapuska/html-translate

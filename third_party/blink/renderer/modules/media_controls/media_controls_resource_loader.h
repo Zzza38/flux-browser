@@ -39,6 +39,9 @@ class MediaControlsResourceLoader
   // Returns the specific stylesheet used for media related interstitials.
   static String GetMediaInterstitialsStyleSheet();
 
+  // Flux: the hover picture-in-picture button drawn over every <video>.
+  static String GetFluxPipOverlayStyleSheet();
+
   String GetUAStyleSheet() override;
 
   MediaControlsResourceLoader();

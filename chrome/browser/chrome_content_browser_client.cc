@@ -226,6 +226,7 @@
 #include "chrome/common/chrome_switches.h"
 #include "chrome/common/crash_keys.h"
 #include "chrome/common/env_vars.h"
+#include "chrome/common/flux_pref_names.h"
 #include "chrome/common/google_url_loader_throttle.h"
 #include "chrome/common/logging_chrome.h"
 #include "chrome/common/pref_names.h"
@@ -4809,6 +4810,11 @@ void ChromeContentBrowserClient::OverrideWebPreferences(
       GetRootScrollbarThemeColor(web_contents);
 
   web_prefs->translate_service_available = TranslateService::IsAvailable(prefs);
+
+#if !BUILDFLAG(IS_ANDROID)
+  web_prefs->flux_video_picture_in_picture_overlay_enabled =
+      prefs->GetBoolean(prefs::kFluxVideoPictureInPictureOverlayEnabled);
+#endif
 
   std::optional<ui::CaptionStyle> style =
       captions::GetCaptionStyleFromUserSettings(prefs,

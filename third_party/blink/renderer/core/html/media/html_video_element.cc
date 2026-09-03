@@ -61,6 +61,7 @@
 #include "third_party/blink/renderer/core/html/media/media_custom_controls_fullscreen_detector.h"
 #include "third_party/blink/renderer/core/html/media/media_remoting_interstitial.h"
 #include "third_party/blink/renderer/core/html/media/media_video_visibility_tracker.h"
+#include "third_party/blink/renderer/core/html/media/flux_picture_in_picture_overlay.h"
 #include "third_party/blink/renderer/core/html/media/picture_in_picture_interstitial.h"
 #include "third_party/blink/renderer/core/html/media/video_frame_callback_requester.h"
 #include "third_party/blink/renderer/core/html/media/video_wake_lock.h"
@@ -155,6 +156,7 @@ void HTMLVideoElement::Trace(Visitor* visitor) const {
   visitor->Trace(wake_lock_);
   visitor->Trace(remoting_interstitial_);
   visitor->Trace(picture_in_picture_interstitial_);
+  visitor->Trace(flux_picture_in_picture_overlay_);
   visitor->Trace(video_timing_);
   visitor->Trace(cache_deleting_timer_);
   Supplementable<HTMLVideoElement>::Trace(visitor);
@@ -401,9 +403,51 @@ void HTMLVideoElement::UpdatePictureInPictureAvailability() {
     return;
   }
 
+  EnsureFluxPictureInPictureOverlay();
+
   for (auto& observer : GetMediaPlayerObserverRemoteSet()) {
     observer->OnPictureInPictureAvailabilityChanged(SupportsPictureInPicture());
   }
+}
+
+void HTMLVideoElement::EnsureFluxPictureInPictureOverlay() {
+  Settings* settings = GetDocument().GetSettings();
+  const bool enabled = settings &&
+                       settings->GetFluxVideoPictureInPictureOverlayEnabled() &&
+                       settings->GetPictureInPictureEnabled() &&
+                       !FastHasAttribute(
+                           html_names::kDisablepictureinpictureAttr);
+
+  if (!enabled) {
+    if (flux_picture_in_picture_overlay_) {
+      flux_picture_in_picture_overlay_->Detach();
+      flux_picture_in_picture_overlay_->remove();
+      flux_picture_in_picture_overlay_ = nullptr;
+      if (ShadowRoot* shadow_root = UserAgentShadowRoot()) {
+        HTMLMediaElement::AssertShadowRootChildren(*shadow_root);
+      }
+    }
+    return;
+  }
+
+  // Do not wait for IsElementAllowed(). MediaSource players such as YouTube
+  // create their video element before metadata and the WebMediaPlayer are
+  // ready, and may not produce another useful availability callback after
+  // that point. The controller performs the final eligibility check on click.
+  if (flux_picture_in_picture_overlay_) {
+    flux_picture_in_picture_overlay_->UpdateAvailability();
+    return;
+  }
+
+  flux_picture_in_picture_overlay_ =
+      MakeGarbageCollected<FluxPictureInPictureOverlay>(*this);
+
+  // Appended last so the button draws over the native controls when the page
+  // asked for those too. The two never overlap: the button sits in the top
+  // right corner and the control panel along the bottom edge.
+  ShadowRoot& shadow_root = EnsureUserAgentShadowRoot();
+  shadow_root.AppendChild(flux_picture_in_picture_overlay_);
+  HTMLMediaElement::AssertShadowRootChildren(shadow_root);
 }
 
 void HTMLVideoElement::UpdateVideoFrameAvailability() {
@@ -796,6 +840,7 @@ void HTMLVideoElement::OnFirstFrame(base::TimeTicks frame_time,
 
   MaybeEnterImmersivePictureInPicture();
   UpdateVideoFrameAvailability();
+  EnsureFluxPictureInPictureOverlay();
 
   LocalFrame* frame = GetDocument().GetFrame();
   bool is_ad = IsAdRelated() || (frame && frame->IsAdFrame());
@@ -1117,6 +1162,10 @@ void HTMLVideoElement::OnEnteredPictureInPicture() {
   }
   picture_in_picture_interstitial_->Show();
 
+  if (flux_picture_in_picture_overlay_) {
+    flux_picture_in_picture_overlay_->UpdateButtonLabel();
+  }
+
   PseudoStateChanged(CSSSelector::kPseudoPictureInPicture);
 
   DCHECK(GetWebMediaPlayer());
@@ -1126,6 +1175,10 @@ void HTMLVideoElement::OnEnteredPictureInPicture() {
 void HTMLVideoElement::OnExitedPictureInPicture() {
   if (picture_in_picture_interstitial_) {
     picture_in_picture_interstitial_->Hide();
+  }
+
+  if (flux_picture_in_picture_overlay_) {
+    flux_picture_in_picture_overlay_->UpdateButtonLabel();
   }
 
   PseudoStateChanged(CSSSelector::kPseudoPictureInPicture);
