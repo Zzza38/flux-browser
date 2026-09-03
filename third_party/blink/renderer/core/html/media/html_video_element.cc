@@ -412,8 +412,11 @@ void HTMLVideoElement::UpdatePictureInPictureAvailability() {
 
 void HTMLVideoElement::EnsureFluxPictureInPictureOverlay() {
   Settings* settings = GetDocument().GetSettings();
-  const bool enabled =
-      settings && settings->GetFluxVideoPictureInPictureOverlayEnabled();
+  const bool enabled = settings &&
+                       settings->GetFluxVideoPictureInPictureOverlayEnabled() &&
+                       settings->GetPictureInPictureEnabled() &&
+                       !FastHasAttribute(
+                           html_names::kDisablepictureinpictureAttr);
 
   if (!enabled) {
     if (flux_picture_in_picture_overlay_) {
@@ -427,9 +430,12 @@ void HTMLVideoElement::EnsureFluxPictureInPictureOverlay() {
     return;
   }
 
-  // Availability is re-checked as the video loads, so a video that is not
-  // ready yet gets another chance on a later call.
-  if (flux_picture_in_picture_overlay_ || !SupportsPictureInPicture()) {
+  // Do not wait for IsElementAllowed(). MediaSource players such as YouTube
+  // create their video element before metadata and the WebMediaPlayer are
+  // ready, and may not produce another useful availability callback after
+  // that point. The controller performs the final eligibility check on click.
+  if (flux_picture_in_picture_overlay_) {
+    flux_picture_in_picture_overlay_->UpdateAvailability();
     return;
   }
 

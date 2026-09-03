@@ -48,7 +48,7 @@ video::-internal-flux-picture-in-picture-button {
     pointer-events: none;
 }
 
-video::-internal-flux-picture-in-picture-button.visible {
+video::-internal-flux-picture-in-picture-button.available.visible {
     opacity: 1;
     pointer-events: auto;
 }

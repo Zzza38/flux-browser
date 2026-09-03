@@ -84,6 +84,7 @@ FluxPictureInPictureOverlay::FluxPictureInPictureOverlay(
                                    video_hover_event_listener_);
 
   UpdateButtonLabel();
+  UpdateAvailability();
 }
 
 void FluxPictureInPictureOverlay::Detach() {
@@ -105,6 +106,17 @@ void FluxPictureInPictureOverlay::UpdateButtonLabel() {
   button_->setAttribute(html_names::kTitleAttr, AtomicString(label));
 }
 
+void FluxPictureInPictureOverlay::UpdateAvailability() {
+  const bool available = video_element_->SupportsPictureInPicture() &&
+                         video_element_->videoWidth() > 0 &&
+                         video_element_->videoHeight() > 0;
+  if (available_ == available) {
+    return;
+  }
+  available_ = available;
+  UpdateClassAttribute();
+}
+
 void FluxPictureInPictureOverlay::HandleVideoHoverEvent(Event& event) {
   const bool hovered = event.type() == event_type_names::kMouseenter;
   if (hovered_ == hovered) {
@@ -115,8 +127,16 @@ void FluxPictureInPictureOverlay::HandleVideoHoverEvent(Event& event) {
 }
 
 void FluxPictureInPictureOverlay::UpdateClassAttribute() {
-  button_->setAttribute(html_names::kClassAttr,
-                        hovered_ ? AtomicString("visible") : g_empty_atom);
+  if (available_ && hovered_) {
+    button_->setAttribute(html_names::kClassAttr,
+                          AtomicString("available visible"));
+  } else if (available_) {
+    button_->setAttribute(html_names::kClassAttr, AtomicString("available"));
+  } else if (hovered_) {
+    button_->setAttribute(html_names::kClassAttr, AtomicString("visible"));
+  } else {
+    button_->setAttribute(html_names::kClassAttr, g_empty_atom);
+  }
 }
 
 void FluxPictureInPictureOverlay::HandleButtonEvent(Event& event) {
@@ -124,6 +144,10 @@ void FluxPictureInPictureOverlay::HandleButtonEvent(Event& event) {
   // its own UI.
   event.stopPropagation();
   event.preventDefault();
+
+  if (!available_) {
+    return;
+  }
 
   PictureInPictureController& controller =
       PictureInPictureController::From(video_element_->GetDocument());

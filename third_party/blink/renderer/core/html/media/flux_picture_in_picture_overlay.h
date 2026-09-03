@@ -30,6 +30,7 @@ class FluxPictureInPictureOverlay final : public HTMLDivElement {
   // Points the button's label and tooltip at whichever direction the click
   // will take the video.
   void UpdateButtonLabel();
+  void UpdateAvailability();
 
   // Stops observing the video before the overlay is removed at runtime.
   void Detach();
@@ -53,6 +54,7 @@ class FluxPictureInPictureOverlay final : public HTMLDivElement {
   Member<ButtonEventListener> button_event_listener_;
   Member<VideoHoverEventListener> video_hover_event_listener_;
   Member<HTMLVideoElement> video_element_;
+  bool available_ = false;
   bool hovered_ = false;
 };
 
