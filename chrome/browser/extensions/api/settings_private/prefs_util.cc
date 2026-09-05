@@ -290,6 +290,9 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlistedKeys() {
       settings_api::PrefType::kBoolean;
   (*s_allowlist)[::prefs::kFluxVideoPictureInPictureOverlayEnabled] =
       settings_api::PrefType::kBoolean;
+  (*s_allowlist)[::prefs::kFluxRgbModeEnabled] =
+      settings_api::PrefType::kBoolean;
+  (*s_allowlist)[::prefs::kFluxRgbModeSpeed] = settings_api::PrefType::kNumber;
   (*s_allowlist)[::prefs::kVerticalTabsEnabled] =
       settings_api::PrefType::kBoolean;
   (*s_allowlist)[::prefs::kVerticalTabsExpandOnHoverEnabled] =

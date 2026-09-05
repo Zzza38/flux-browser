@@ -1586,6 +1586,12 @@ void AddFluxFeaturesStrings(content::WebUIDataSource* html_source) {
        IDS_SETTINGS_FLUX_VIDEO_PIP_OVERLAY_ENABLED_LABEL},
       {"fluxVideoPipOverlayEnabledSubLabel",
        IDS_SETTINGS_FLUX_VIDEO_PIP_OVERLAY_ENABLED_SUB_LABEL},
+      {"fluxRgbModeEnabledLabel", IDS_SETTINGS_FLUX_RGB_MODE_ENABLED_LABEL},
+      {"fluxRgbModeEnabledSubLabel",
+       IDS_SETTINGS_FLUX_RGB_MODE_ENABLED_SUB_LABEL},
+      {"fluxRgbModeSpeedLabel", IDS_SETTINGS_FLUX_RGB_MODE_SPEED_LABEL},
+      {"fluxRgbModeSpeedSlow", IDS_SETTINGS_FLUX_RGB_MODE_SPEED_SLOW},
+      {"fluxRgbModeSpeedFast", IDS_SETTINGS_FLUX_RGB_MODE_SPEED_FAST},
   };
   html_source->AddLocalizedStrings(kLocalizedStrings);
 }

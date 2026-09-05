@@ -455,6 +455,8 @@ enum {
   kFluxSidebarWidth = 100388,
   kFluxSidebarSplitVertical = 100389,
   kFluxVideoPictureInPictureOverlayEnabled = 100390,
+  kFluxRgbModeEnabled = 100391,
+  kFluxRgbModeSpeed = 100392,
   // See components/sync_preferences/README.md about adding new entries here.
   // vvvvv IMPORTANT! vvvvv
   // Note to the reviewer: IT IS YOUR RESPONSIBILITY to ensure that new syncable
@@ -1582,6 +1584,14 @@ constexpr auto kChromeSyncablePrefsAllowlist = base::MakeFixedFlatMap<
     {prefs::kFluxVideoPictureInPictureOverlayEnabled,
      {syncable_prefs_ids::kFluxVideoPictureInPictureOverlayEnabled,
       syncer::PREFERENCES, sync_preferences::PrefSensitivity::kNone,
+      sync_preferences::MergeBehavior::kNone}},
+    {prefs::kFluxRgbModeEnabled,
+     {syncable_prefs_ids::kFluxRgbModeEnabled, syncer::PREFERENCES,
+      sync_preferences::PrefSensitivity::kNone,
+      sync_preferences::MergeBehavior::kNone}},
+    {prefs::kFluxRgbModeSpeed,
+     {syncable_prefs_ids::kFluxRgbModeSpeed, syncer::PREFERENCES,
+      sync_preferences::PrefSensitivity::kNone,
       sync_preferences::MergeBehavior::kNone}},
     {prefs::kExtensionsUIDeveloperMode,
      {syncable_prefs_ids::kExtensionsUIDeveloperMode, syncer::PREFERENCES,

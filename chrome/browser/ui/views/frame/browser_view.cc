@@ -156,6 +156,7 @@
 #include "chrome/browser/ui/views/eye_dropper/eye_dropper.h"
 #include "chrome/browser/ui/views/find_bar_host.h"
 #include "chrome/browser/ui/views/find_bar_owner.h"
+#include "chrome/browser/ui/views/flux_rgb_mode/flux_rgb_mode_controller.h"
 #include "chrome/browser/ui/views/flux_sidebar/flux_sidebar_view.h"
 #include "chrome/browser/ui/views/frame/app_menu_button.h"
 #include "chrome/browser/ui/views/frame/browser_frame_view.h"
@@ -1169,6 +1170,7 @@ BrowserView::~BrowserView() {
   vertical_tab_strip_background_blur_backdrop_ = nullptr;
   vertical_tab_strip_top_corner_ = nullptr;
   vertical_tab_strip_bottom_corner_ = nullptr;
+  flux_rgb_mode_controller_.reset();
   flux_sidebar_ = nullptr;
   flux_sidebar_top_corner_ = nullptr;
   flux_sidebar_bottom_corner_ = nullptr;
@@ -4993,6 +4995,11 @@ void BrowserView::AddedToWidget() {
 #endif
 
   widget_observation_.Observe(GetWidget());
+
+  // Needs the widget, since the color sweep runs on the window's compositor.
+  flux_rgb_mode_controller_ =
+      std::make_unique<flux_rgb_mode::FluxRgbModeController>(
+          GetWidget(), browser_->GetProfile()->GetPrefs());
 
   auto* browser_elements =
       BrowserElements::From(browser_)->AsA<BrowserElementsViewsImpl>();

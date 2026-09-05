@@ -6550,6 +6550,7 @@ test("unit_tests") {
       "//chrome/browser/ui/views/dictation:unit_tests",
       "//chrome/browser/ui/views/drive_picker_host",
       "//chrome/browser/ui/views/drive_picker_host:unit_tests",
+      "//chrome/browser/ui/views/flux_rgb_mode:unit_tests",
       "//chrome/browser/ui/views/flux_sidebar:unit_tests",
       "//chrome/browser/ui/views/glic",
       "//chrome/browser/ui/views/page_action:test_support",
